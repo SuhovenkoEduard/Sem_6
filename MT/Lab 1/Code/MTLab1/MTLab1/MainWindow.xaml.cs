@@ -1,4 +1,5 @@
-﻿using MTLab1.Windows;
+﻿using MTLab1.ErrorWindows;
+using MTLab1.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,12 @@ namespace MTLab1
     public partial class MainWindow : Window
     {
         private string selectedTaskName = string.Empty;
+        private Dictionary<string, string> taskDescriptions = new()
+        {
+            { "Task1 (IsInLanguage)", "Task1" },
+            { "Task2 (StringChilds)", "Task2" },
+            { "Task3 (TwoStrings)", "Task3" }
+        };
 
         public MainWindow()
         {
@@ -36,6 +43,7 @@ namespace MTLab1
                 if (comboBoxItem?.Content is TextBlock textBlock)
                 {
                     selectedTaskName = textBlock.Text;
+                    TaskDescription.Text = $"Description of task: [{selectedTaskName}]: {taskDescriptions[selectedTaskName]}";
                 }
             }
         }
@@ -45,24 +53,24 @@ namespace MTLab1
             Window? childWindow = null;
             switch (selectedTaskName)
             {
-                case "Task1":
+                case "Task1 (IsInLanguage)":
                     {
                         childWindow = new IsInLanguageWindow();
                         break;
                     }
-                case "Task2":
+                case "Task2 (StringChilds)":
                     {
                         childWindow = new StringChildsWindow();
                         break;
                     }
-                case "Task3":
+                case "Task3 (TwoStrings)":
                     {
                         childWindow = new TwoStringsWindow();
                         break;
                     }
                 default:
                     {
-                        MessageBox.Show("You need to choose correct task!");
+                        ErrorWindow.ShowDialog("You need to choose the right task!");
                         break;
                     }
             }

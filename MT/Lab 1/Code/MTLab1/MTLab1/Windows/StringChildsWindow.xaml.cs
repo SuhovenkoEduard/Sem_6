@@ -1,4 +1,5 @@
-﻿using MTLab1.FileReaders;
+﻿using MTLab1.ErrorWindows;
+using MTLab1.FileReaders;
 using MTLab1.StringUtils;
 using System;
 using System.Collections.Generic;
@@ -82,7 +83,7 @@ namespace MTLab1.Windows
         {
             if (stringChild == StringChild.Other)
             {
-                MessageBox.Show("You should to select correct string child type!");
+                ErrorWindow.ShowDialog("You should to select the right string child type!");
                 return;
             }
 
@@ -95,7 +96,7 @@ namespace MTLab1.Windows
                     ResultedStringChilds.Items.Add(child);
             } else
             {
-                MessageBox.Show("Current string is not in language!");
+                ErrorWindow.ShowDialog("Current string is not in language!");
             }
         }
 

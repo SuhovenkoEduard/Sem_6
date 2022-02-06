@@ -1,4 +1,5 @@
-﻿using MTLab1.FileReaders;
+﻿using MTLab1.ErrorWindows;
+using MTLab1.FileReaders;
 using MTLab1.StringUtils;
 using System;
 using System.Collections.Generic;
@@ -48,12 +49,12 @@ namespace MTLab1.Windows
             bool isInLanguageSequence = StringUtilsLibrary.IsInLanguage(alphabet, sequence);
             if (!isInLanguageText)
             {
-                MessageBox.Show("The text is not in a language!");
+                ErrorWindow.ShowDialog("The text is not in a language!");
                 return;
             }
             if (!isInLanguageSequence)
             {
-                MessageBox.Show("The sequence is not in a language!");
+                ErrorWindow.ShowDialog("The sequence is not in a language!");
                 return;
             }
 

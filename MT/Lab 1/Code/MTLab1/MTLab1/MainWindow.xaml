@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="30"
@@ -11,50 +10,63 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        xmlns:local="clr-namespace:MTLab1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid Width="600"
-              Height="50"
-              HorizontalAlignment="Left"
-              Margin="20">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"></ColumnDefinition>
-                <ColumnDefinition Width="300"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <ComboBox
-                Grid.Row="0"
-                Grid.Column="0"
-                x:Name="TaskSelector"
-                SelectionChanged="OnSelectionChanged"
-                >
-                <ComboBoxItem 
-                    IsEnabled="False"
-                    IsSelected="true">
-                    <TextBlock
-                        FontSize="30">Choose the task</TextBlock>
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    <TextBlock>Task1</TextBlock>
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    <TextBlock>Task2</TextBlock>
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    <TextBlock>Task3</TextBlock>
-                </ComboBoxItem>
-            </ComboBox>
-            <Button
-                Grid.Row="0"
-                Grid.Column="1"
-                Content="Start"
-                Width="100"
-                Click="OnStartButton"
-                />
+        Title="MainWindow" Height="600" Width="800">
+    <StackPanel>
+        <TextBlock Height="40"
+                   Margin="5"
+                   FontSize="30">Author: Eduard Sukhavenka IP-32</TextBlock>
+        <TextBlock
+            Height="40"
+            Margin="5"
+            FontSize="30">Teacher: Volgha Alekseevna </TextBlock>
+        <TextBlock
+            x:Name="TaskDescription"
+            Height="300"
+            Margin="5"
+            />
+        <Grid>
+            <Grid Width="610"
+                  Height="50"
+                  HorizontalAlignment="Left"
+                  Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="310"></ColumnDefinition>
+                    <ColumnDefinition Width="300"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ComboBox
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    x:Name="TaskSelector"
+                    SelectionChanged="OnSelectionChanged"
+                    >
+                    <ComboBoxItem 
+                        IsEnabled="False"
+                        IsSelected="true">
+                        <TextBlock
+                            FontSize="30">Choose the task</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>Task1 (IsInLanguage)</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>Task2 (StringChilds)</TextBlock>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <TextBlock>Task3 (TwoStrings)</TextBlock>
+                    </ComboBoxItem>
+                </ComboBox>
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Content="Start"
+                    Width="100"
+                    Click="OnStartButton"
+                    />
+            </Grid>
         </Grid>
-    </Grid>
+    </StackPanel>
 </Window>
