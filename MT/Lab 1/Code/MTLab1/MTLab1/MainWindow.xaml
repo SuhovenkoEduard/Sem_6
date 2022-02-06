@@ -19,11 +19,12 @@
         <TextBlock
             Height="40"
             Margin="5"
-            FontSize="30">Teacher: Volgha Alekseevna </TextBlock>
+            FontSize="30">Teacher: Olga Alekseevna </TextBlock>
         <TextBlock
             x:Name="TaskDescription"
             Height="300"
             Margin="5"
+            TextWrapping="Wrap"
             />
         <Grid>
             <Grid Width="610"

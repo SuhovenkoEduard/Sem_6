@@ -25,9 +25,9 @@ namespace MTLab1
         private string selectedTaskName = string.Empty;
         private Dictionary<string, string> taskDescriptions = new()
         {
-            { "Task1 (IsInLanguage)", "Task1" },
-            { "Task2 (StringChilds)", "Task2" },
-            { "Task3 (TwoStrings)", "Task3" }
+            { "Task1 (IsInLanguage)", "Program checking that the language with input alphabet contains the input string." },
+            { "Task2 (StringChilds)", "Program show all prefixes/suffixes/substrings of the input string, wich is belongs to the input language." },
+            { "Task3 (TwoStrings)", "Program show the information about sequence in text, that sequence can be a suffix, a prefix or a substring of the text, or text may not contain the sequence.  " }
         };
 
         public MainWindow()
