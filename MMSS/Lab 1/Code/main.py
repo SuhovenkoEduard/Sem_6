@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from prettytable import PrettyTable
 
 fig = plt.figure(facecolor='white')
 
@@ -29,6 +30,21 @@ YA = OA * np.sin(Fi)
 
 XC = XA - AC * np.cos(Fi - YY)
 YC = YA - AC * np.sin(Fi - YY)
+
+# table
+my_table = PrettyTable()
+my_table.field_names = ["№", "t", "fi", "ax", "ay", "cx", "cy"]
+for i in range(len(t)):
+    my_table.add_row((i, t[i], Fi[i], XA[i], YA[i], XC[i], YC[i]))
+print(my_table)
+
+ymax = np.max(YC)
+ind = np.where(YC == ymax)
+xmax = XC[ind]
+
+print('y max = ', ymax)
+print('x max = ', xmax)
+print('t = ', t[ind])
 
 
 def redraw(i):
