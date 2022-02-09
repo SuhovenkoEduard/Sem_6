@@ -10,7 +10,8 @@ namespace MTLab1.StringUtils
         Other,
         Prefix,
         Suffix,
-        Substring
+        Substring,
+        Subsequence
     }
 
     internal class StringUtilsLibrary
@@ -60,7 +61,7 @@ namespace MTLab1.StringUtils
             for (int i = 0; i < s.Length; i++)
             {
                 currectPrefix.Append(s[i]);
-                prefixes.Add(currectPrefix.ToString()); 
+                prefixes.Add(currectPrefix.ToString());
             }
             return prefixes.ToArray();
         }
@@ -114,6 +115,20 @@ namespace MTLab1.StringUtils
             return resultedChilds;
         }
 
+        public static bool IsSubSequence(string text, string sequence)
+        {
+            if (sequence.Length == 0) return true;
+            int pos = 0;
+            int currentIndex = -1;
+            while(pos < sequence.Length && text.IndexOf(sequence[pos], currentIndex + 1) != -1)
+            {
+                currentIndex = text.IndexOf(sequence[pos], currentIndex + 1);
+                pos += 1;
+
+            }
+            return pos == sequence.Length;
+        }
+
         public static StringChild[] InvestigateText(string text, string sequence)
         {
             if (sequence.Length > text.Length)
@@ -122,13 +137,16 @@ namespace MTLab1.StringUtils
             }
 
             List<StringChild> children = new();
-            if (text.IndexOf(sequence) != -1)
+            if (IsSubSequence(text, sequence) || text.IndexOf(sequence) != -1)
             {
-                children.Add(StringChild.Substring);
+                if (text.IndexOf(sequence) != -1)
+                    children.Add(StringChild.Substring);
                 if (text[..sequence.Length] == sequence)
                     children.Add(StringChild.Prefix);
                 if (text[(text.Length - sequence.Length)..] == sequence)
                     children.Add(StringChild.Suffix);
+                if (IsSubSequence(text, sequence))
+                    children.Add(StringChild.Subsequence);
             }
             else
             {
