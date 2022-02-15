@@ -1,5 +1,0 @@
-D:\course3\sem6\ОСиС\coursework\mainApp\MathModule\bin\Debug\MathModule.dll
-D:\course3\sem6\ОСиС\coursework\mainApp\MathModule\bin\Debug\MathModule.pdb
-D:\course3\sem6\ОСиС\coursework\mainApp\MathModule\obj\Debug\MathModule.csprojAssemblyReference.cache
-D:\course3\sem6\ОСиС\coursework\mainApp\MathModule\obj\Debug\MathModule.dll
-D:\course3\sem6\ОСиС\coursework\mainApp\MathModule\obj\Debug\MathModule.pdb
