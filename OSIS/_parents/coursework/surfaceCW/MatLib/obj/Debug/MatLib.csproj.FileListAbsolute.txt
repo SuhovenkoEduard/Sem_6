@@ -1,0 +1,5 @@
+D:\course3\sem6\ОСиС\coursework\surfaceCW\MatLib\bin\Debug\MatLib.dll
+D:\course3\sem6\ОСиС\coursework\surfaceCW\MatLib\bin\Debug\MatLib.pdb
+D:\course3\sem6\ОСиС\coursework\surfaceCW\MatLib\obj\Debug\MatLib.csprojAssemblyReference.cache
+D:\course3\sem6\ОСиС\coursework\surfaceCW\MatLib\obj\Debug\MatLib.dll
+D:\course3\sem6\ОСиС\coursework\surfaceCW\MatLib\obj\Debug\MatLib.pdb
