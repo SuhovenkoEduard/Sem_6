@@ -1,0 +1,18 @@
+[
+  {
+    "diagonal": "1600x900",
+    "CPU": "mediatek1200",
+    "resolution": "7.0",
+    "operatingSystem": "android",
+    "randomAccessMemory": "4",
+    "localMemory": "32"
+  },
+  {
+    "diagonal": "1280x720",
+    "CPU": "snapdragon600",
+    "resolution": "5.0",
+    "operatingSystem": "ios",
+    "randomAccessMemory": "1",
+    "localMemory": "16"
+  }
+]
