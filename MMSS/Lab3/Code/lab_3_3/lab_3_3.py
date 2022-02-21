@@ -36,6 +36,6 @@ plt.plot(axs, ays)
 plt.grid()
 plt.show()
 
-plt.plot(list(map(num_f, axs)), axs)
+plt.plot(axs, list(map(num_f, axs)))
 plt.grid()
 plt.show()
