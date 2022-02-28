@@ -1,5 +1,6 @@
 import { CPU, Diagonal, LocalMemory, OperatingSystem, RandomAccessMemory, Resolution, Tablet } from './types'
 
+export const ERRORS_LOG_DIRPATH = './out'
 export const ERRORS_LOG_FILEPATH = './out/errors.log'
 export const RES_TABLETS_FILEPATH = './res/tablets.json'
 
