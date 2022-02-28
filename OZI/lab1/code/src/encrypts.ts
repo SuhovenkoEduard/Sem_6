@@ -8,7 +8,7 @@ type PositionedLetter = {
   value: number
 }
 
-const RUSSIAN_ALPHABET = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+export const RUSSIAN_ALPHABET = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 
 const findPositions = (keyWord: string): number[] => keyWord.split('')
   .map((letter: string, index: number): IndexedLetter => ({ letter, index }))
