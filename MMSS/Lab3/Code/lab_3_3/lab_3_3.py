@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import sympy
 import sympy as sm
 
 ys = np.loadtxt('./res/tan1.dat', dtype=np.float64, delimiter='\r\n')

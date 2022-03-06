@@ -64,8 +64,11 @@ def delta_q(phi):
 def delta_psi(phi):
     return delta_q(phi) / (2 * b * c * np.cos(vu(phi)))
 
+
 # exist because vu(0) < 1.38
-print(a, b, c)
+print('A: ', a)
+print('B: ', b)
+print('C: ', c)
 phis = np.arange(0, 2 * np.pi, 0.01)
 psis = []
 delta_psis = []
@@ -84,7 +87,8 @@ for i in range(len(phis)):
         mx_phi = phi
         mx_i = i
 
-print(mx_phi, mx_delt)
+print('mx_phi: ', mx_phi)
+print('mx_delt: ', mx_delt)
 
 plt.plot(phis, psis)
 plt.plot(phis, delta_psis)
