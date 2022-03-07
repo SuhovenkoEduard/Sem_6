@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Hut",
+    "size": "small",
+    "hasCheese": true,
+    "hasMeat": true
+  },
+  {
+    "name": "Margherita",
+    "size": "middle",
+    "hasCheese": true,
+    "hasMeat": false
+  },
+  {
+    "name": "Sicilian",
+    "size": "large",
+    "hasCheese": false,
+    "hasMeat": true
+  },
+  {
+    "name": "Neapolitan",
+    "size": "small",
+    "hasCheese": false,
+    "hasMeat": false
+  },
+  {
+    "name": "Calzone",
+    "size": "large",
+    "hasCheese": false,
+    "hasMeat": true
+  },
+  {
+    "name": "Greek",
+    "size": "middle",
+    "hasCheese": true,
+    "hasMeat": true
+  }
+]
