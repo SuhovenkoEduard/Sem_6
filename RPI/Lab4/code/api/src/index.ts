@@ -17,10 +17,11 @@ app.post('/', (req: express.Request, res: express.Response) => {
   req.on('end', () => {
     try {
       const pizzaQuery: Pizza = JSON.parse(jsonString)
-      res.json(pizzas.filter(pizza =>
-        (pizza.size ?? pizza.size !== pizzaQuery.size) &&
-        (pizza.hasMeat ?? pizza.hasMeat !== pizzaQuery.hasMeat) &&
-        (pizza.hasCheese ?? pizza.hasCheese !== pizzaQuery.hasCheese)))
+      const filteredPizzas: Pizza[] = pizzas
+        .filter(pizza => pizzaQuery.size === undefined || pizza.size === pizzaQuery.size)
+        .filter(pizza => pizzaQuery.hasMeat === undefined || pizza.hasMeat === pizzaQuery.hasMeat)
+        .filter(pizza => pizzaQuery.hasCheese === undefined || pizza.hasCheese === pizzaQuery.hasCheese)
+      res.json(filteredPizzas)
     } catch (error) {
       res.json({ message: 'Error', details: error.toString() })
     }
