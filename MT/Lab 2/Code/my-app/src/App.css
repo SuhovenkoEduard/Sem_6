@@ -1,0 +1,16 @@
+.App {
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+.outputContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+.listContainer, .hashTableContainer, .inputComponent {
+  border: 1px solid brown;
+}

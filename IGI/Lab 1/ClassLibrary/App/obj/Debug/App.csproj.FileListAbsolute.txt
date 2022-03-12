@@ -1,0 +1,24 @@
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe.config
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.pdb
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.pdb
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll.config
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.AssemblyReference.cache
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.SuggestedBindingRedirects.cache
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CoreCompileInputs.cache
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CopyComplete
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.exe
+D:\3_course_2_sem\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.pdb
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe.config
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.pdb
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.pdb
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll.config
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.AssemblyReference.cache
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.SuggestedBindingRedirects.cache
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CoreCompileInputs.cache
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CopyComplete
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.exe
+D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.pdb
