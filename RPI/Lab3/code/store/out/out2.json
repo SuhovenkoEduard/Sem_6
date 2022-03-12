@@ -1,0 +1,35 @@
+[
+  {
+    "tabletInfo": {
+      "diagonal": "1280x720",
+      "CPU": "snapdragon600",
+      "resolution": "7.0",
+      "operatingSystem": "android",
+      "randomAccessMemory": "4",
+      "localMemory": "32"
+    },
+    "time": "Mon, 07 Mar 2022 19:23:49 GMT"
+  },
+  {
+    "tabletInfo": {
+      "diagonal": "1280x720",
+      "CPU": "snapdragon600",
+      "resolution": "7.0",
+      "operatingSystem": "ios",
+      "randomAccessMemory": "4",
+      "localMemory": "32"
+    },
+    "time": "Mon, 07 Mar 2022 19:23:49 GMT"
+  },
+  {
+    "tabletInfo": {
+      "diagonal": "1280x720",
+      "CPU": "snapdragon600",
+      "resolution": "7.0",
+      "operatingSystem": "windows",
+      "randomAccessMemory": "4",
+      "localMemory": "32"
+    },
+    "time": "Mon, 07 Mar 2022 19:23:49 GMT"
+  }
+]
