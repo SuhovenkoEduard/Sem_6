@@ -1,9 +1,0 @@
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\bin\Release\netcoreapp2.1\Surface.deps.json
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\bin\Release\netcoreapp2.1\Surface.dll
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\bin\Release\netcoreapp2.1\Surface.pdb
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.csprojAssemblyReference.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.csproj.CoreCompileInputs.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.AssemblyInfoInputs.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.AssemblyInfo.cs
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.dll
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\Surface\obj\Release\netcoreapp2.1\Surface.pdb

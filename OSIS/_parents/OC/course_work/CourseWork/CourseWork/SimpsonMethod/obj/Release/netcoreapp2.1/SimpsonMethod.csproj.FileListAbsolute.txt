@@ -1,9 +1,0 @@
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\bin\Release\netcoreapp2.1\SimpsonMethod.deps.json
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\bin\Release\netcoreapp2.1\SimpsonMethod.dll
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\bin\Release\netcoreapp2.1\SimpsonMethod.pdb
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.csprojAssemblyReference.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.csproj.CoreCompileInputs.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.AssemblyInfoInputs.cache
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.AssemblyInfo.cs
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.dll
-D:\University\c3s2\OC\course_work\CourseWork\CourseWork\SimpsonMethod\obj\Release\netcoreapp2.1\SimpsonMethod.pdb

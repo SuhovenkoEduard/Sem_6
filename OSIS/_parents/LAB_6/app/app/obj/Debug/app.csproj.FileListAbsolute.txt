@@ -1,6 +1,0 @@
-D:\course3\sem6\ОСиС\LAB_6\app\app\bin\Debug\app.exe.config
-D:\course3\sem6\ОСиС\LAB_6\app\app\bin\Debug\app.exe
-D:\course3\sem6\ОСиС\LAB_6\app\app\bin\Debug\app.pdb
-D:\course3\sem6\ОСиС\LAB_6\app\app\obj\Debug\app.csprojAssemblyReference.cache
-D:\course3\sem6\ОСиС\LAB_6\app\app\obj\Debug\app.exe
-D:\course3\sem6\ОСиС\LAB_6\app\app\obj\Debug\app.pdb

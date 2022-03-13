@@ -1,7 +1,0 @@
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\bin\Debug\Kursavoy_Proekt[OSiS].exe.config
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\bin\Debug\Kursavoy_Proekt[OSiS].exe
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\bin\Debug\Kursavoy_Proekt[OSiS].pdb
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\obj\Debug\Kursavoy_Proekt[OSiS].csprojAssemblyReference.cache
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\obj\Debug\Kursavoy_Proekt[OSiS].csproj.CoreCompileInputs.cache
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\obj\Debug\Kursavoy_Proekt[OSiS].exe
-E:\3 kurs[2-семестр]\Курсач[OSiS]\Kursavoy_Proekt[OSiS]\Kursavoy_Proekt[OSiS]\obj\Debug\Kursavoy_Proekt[OSiS].pdb

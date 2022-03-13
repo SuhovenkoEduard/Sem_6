@@ -1,4 +1,0 @@
-﻿  Program.cpp
-D:\University\c3s2\OC\lab7\lab7\Program.cpp(42,10): warning C4477:  "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "double"
-D:\University\c3s2\OC\lab7\lab7\Program.cpp(64,10): warning C4477:  "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "double"
-  lab7.vcxproj -> D:\University\c3s2\OC\lab7\Debug\lab7.exe
