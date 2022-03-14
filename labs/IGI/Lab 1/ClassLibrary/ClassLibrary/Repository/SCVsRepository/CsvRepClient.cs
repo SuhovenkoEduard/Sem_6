@@ -11,7 +11,7 @@ namespace ClassLibrary.Repository.SCVsRepository
 {
     public class CsvRepClient : IRepository<Client>
     {
-        private static readonly string path = @"D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\CSVs\clients.csv";
+        private static readonly string path = @"D:\Projects\University\Sem_6\labs\IGI\Lab 1\CSVs\clients.csv";
 
         public void Delete(int id)
         {
