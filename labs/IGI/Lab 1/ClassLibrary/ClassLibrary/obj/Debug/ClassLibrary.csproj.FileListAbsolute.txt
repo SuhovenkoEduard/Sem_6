@@ -19,3 +19,10 @@ D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll.config
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.dll
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\bin\Debug\ClassLibrary.pdb
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.AssemblyReference.cache
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.csproj.CoreCompileInputs.cache
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.dll
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\ClassLibrary\obj\Debug\ClassLibrary.pdb

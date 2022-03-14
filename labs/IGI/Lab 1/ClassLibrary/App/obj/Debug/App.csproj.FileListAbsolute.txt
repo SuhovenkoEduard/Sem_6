@@ -22,3 +22,15 @@ D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CopyComplete
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.exe
 D:\Projects\University\Semester 6\Sem_6\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.pdb
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe.config
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.exe
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\App.pdb
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.pdb
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\bin\Debug\ClassLibrary.dll.config
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.AssemblyReference.cache
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.SuggestedBindingRedirects.cache
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CoreCompileInputs.cache
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.csproj.CopyComplete
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.exe
+D:\Projects\University\Sem_6\labs\IGI\Lab 1\ClassLibrary\App\obj\Debug\App.pdb
