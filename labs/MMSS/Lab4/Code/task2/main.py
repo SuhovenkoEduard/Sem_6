@@ -17,8 +17,8 @@ average_y = np.sum(ys) / len(ys)
 r = np.sum([(xs[i] - average_x) * (ys[i] - average_y) for i in range(len(xs))]) \
     / (np.sqrt(np.sum([(x - average_x) ** 2 for x in xs])) * np.sqrt(np.sum([(y - average_y) ** 2 for y in ys])))
 
-print(f'Correlation coefficient: {r}')
-print('Connection is ', end='')
+print(f'The correlation coefficient: {r}')
+print('The connection is ', end='')
 if r < 0.3:
     print('Weak', end='')
 elif r < 0.5:
@@ -31,6 +31,6 @@ elif r <= 1:
     print('Very strong', end='')
 print('.')
 
-plt.plot(xs, ys)
+plt.scatter(xs, ys)
 plt.grid()
 plt.show()
