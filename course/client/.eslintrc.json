@@ -39,7 +39,10 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-console": [1],
+    "no-shadow": "off",
+    "no-unused-vars": ["off"]
   },
   "settings": {
     "import/resolver": {
