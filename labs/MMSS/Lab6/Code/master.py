@@ -44,9 +44,20 @@ def main():
     model = create_model(y0, t, K, Kt, L, R, Ke, u, C, J)
     plt.plot(t, model[:, 0], c='blue')
     plt.legend(['tetta(t)'])
+
+    xs = model[:, 0]
+    lastX = xs[-1]
+    lastY = t[len(xs) - 1]
+
+    upY = lastX + 0.05 * lastX
+    downY = lastX - 0.05 * lastX
+    print(lastX, lastY)
+
+    plt.plot(t, [upY] * len(t))
+    plt.plot(t, [downY] * len(t))
+
     plt.grid()
     plt.show()
-
     # plt.plot(model[:, 1], c='red')
     # plt.legend(['tetta\'(t)'])
     # plt.show()
