@@ -61,10 +61,15 @@ def main():
     plt.grid()
     plt.show()
 
+    # Y = create_model(y0, t, K, Kt, 1, R, Ke, u, C, J)
+    # plt.plot(Y[:, 0], c='blue')
+    # plt.legend(['tetta(t)'])
+    # plt.show()
+    #
     # plt.plot(Y[:, 1], c='red')
     # plt.legend(['tetta\'(t)'])
     # plt.show()
-    #
+
     # plt.plot(Y[:, 2], c='orange')
     # plt.legend(['i(t)'])
     # plt.show()
