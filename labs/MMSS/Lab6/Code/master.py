@@ -1,9 +1,9 @@
 import numpy as np
 import scipy.integrate
 import matplotlib.pyplot as plt
+from scipy.signal import find_peaks
 
-
-def create_model(y0, t, K, Kt, L, R, Ke, u, C, J):
+def create_model(y0, t, K, Kt, L, R, Ke, u, C, J, heavysideTime):
     def y1_der(y1, y2, y3):
         return y2
 
@@ -15,7 +15,7 @@ def create_model(y0, t, K, Kt, L, R, Ke, u, C, J):
 
     def pend(y, t):
         cur_u = 0
-        if t > 2:
+        if t > heavysideTime:
             cur_u = u
 
         y1, y2, y3 = y
@@ -40,24 +40,56 @@ def main():
 
     t = np.linspace(0, 20, 3000)
     y0 = [0, 0, 0]
+    heavysideTime = 2
 
-    model = create_model(y0, t, K, Kt, L, R, Ke, u, C, J)
+    model = create_model(y0, t, K, Kt, L, R, Ke, u, C, J, heavysideTime)
     plt.plot(t, model[:, 0], c='blue')
     plt.legend(['tetta(t)'])
 
-    xs = model[:, 0]
-    lastX = xs[-1]
-    lastY = t[len(xs) - 1]
+    ys = model[:, 0]
+    establishedY = ys[-1]
+    lastX = t[len(ys) - 1]
 
-    upY = lastX + 0.05 * lastX
-    downY = lastX - 0.05 * lastX
-    print(lastX, lastY)
+    upY = establishedY + 0.05 * establishedY
+    downY = establishedY - 0.05 * establishedY
+    print('establishedPoint:', lastX, establishedY, '[s, rad]')
 
-    plt.plot(t, [upY] * len(t))
-    plt.plot(t, [downY] * len(t))
+    plt.plot(t, [upY] * len(t), linestyle='--')
+    plt.plot(t, [downY] * len(t), linestyle='--')
 
+    eps = 1e-3
+    idXs = []
+    idYs = []
+    for i in range(len(t)):
+        time = t[i]
+        yi = ys[i]
+        if np.abs(yi - upY) < eps or np.abs(yi - downY) < eps:
+            idXs.append(time)
+            idYs.append(yi)
+
+    lastIntersectionX = idXs[-1]
+
+    stabilizationCorridor = [downY, upY]
+    timeOfProcess = lastIntersectionX - heavysideTime
+    aMax = np.max(ys) - establishedY
+    dynamicCoefficient = 1 + aMax / establishedY
+
+    # decrement
+    peaksMaxima, _ = find_peaks(ys, height=downY)
+    peaksMinima, _ = find_peaks(-1 * ys, height=-upY)
+    decrementOfFluctuations = ((ys[peaksMaxima[0]] - establishedY) / (establishedY - ys[peaksMinima[0]]))
+
+    print('stabilizationCorridor: ', stabilizationCorridor, '[rad, rad]')
+    print('establishedY:', establishedY, 'rad')
+    print('timeOfProcess:', timeOfProcess, 's')
+    print('aMax:', aMax, 'rad')
+    print('dynamicCoefficient:', dynamicCoefficient)
+    print("decrementOfFluctuations: ", decrementOfFluctuations)
+
+    plt.plot(idXs[-1], idYs[-1], '*', c='red')
     plt.grid()
     plt.show()
+
     # plt.plot(model[:, 1], c='red')
     # plt.legend(['tetta\'(t)'])
     # plt.show()
