@@ -43,7 +43,7 @@ def main():
         model = create_model(y0, t, K, Kt, _l, R, Ke, u, C, J)
         ys_t = model[:, 0]
         mxh.append(np.max(ys_t))
-        plt.plot(ys_t, linewidth=1, linestyle='-.')
+        plt.plot(t, ys_t, linewidth=1, linestyle='-.')
     plt.show()
 
     min_n = 4
@@ -62,15 +62,15 @@ def main():
     plt.show()
 
     # Y = create_model(y0, t, K, Kt, 1, R, Ke, u, C, J)
-    # plt.plot(Y[:, 0], c='blue')
+    # plt.plot(t, Y[:, 0], c='blue')
     # plt.legend(['tetta(t)'])
     # plt.show()
     #
-    # plt.plot(Y[:, 1], c='red')
+    # plt.plot(t, Y[:, 1], c='red')
     # plt.legend(['tetta\'(t)'])
     # plt.show()
-
-    # plt.plot(Y[:, 2], c='orange')
+    #
+    # plt.plot(t, Y[:, 2], c='orange')
     # plt.legend(['i(t)'])
     # plt.show()
 
