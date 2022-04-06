@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Регистрация</h4>
+        <form method="post" asp-controller="Register" asp-action="AddUser">
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="Login" asp-validation-for="RegisterModel.Login" class="form-control" placeholder="Логин" type="text">
+            </div> 
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="Email" asp-validation-for="RegisterModel.Email" class="form-control" placeholder="Email" type="email">
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" name="Password" asp-validation-for="RegisterModel.Password" placeholder="Пароль" type="password">
+            </div> 
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control"  name="ConfirmPassword" asp-validation-for="RegisterModel.ConfirmPassword"  placeholder="Повторите пароль" type="password">
+            </div>                                       
+            <div class="form-group">
+                <button type="submit" as class="btn btn-primary btn-block"> Создать аккаунт  </button>
+            </div>       
+            <p class="text-center">Уже есть аккаунт? <a href="/login">Войти</a> </p>                                                                 
+        </form>
+    </article>
+</div>

@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table class="table">
+
+        <thead>
+            <tr>
+                <th colspan="3"> Панель инструментов</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                    <td><a asp-area="" asp-controller="Address" asp-action="Index">Address</a></td>
+                    <td>
+                        <a href="@Url.Action("AddressAdd", "Address")">
+                            <img src="@Url.Content("Image/32360.png")"/>
+                        </a>
+                    </td>
+                    <td>Change</td>
+            </tr>
+
+            <tr>
+                    <td><a asp-area="" asp-controller="Course" asp-action="Index">Course</a></td>
+                    <td>
+                        <a href="@Url.Action("CourseAdd", "Course")">
+                            <img src="@Url.Content("Image/32360.png")"/>
+                        </a>
+                    </td>
+                    <td>Change</td>
+            </tr>
+            <tr>
+                    <td><a asp-area="" asp-controller="StudInfo" asp-action="Index">StudInfo</a></td>
+                    <td>
+                        <a href="@Url.Action("", "StudInfo")">
+                            <img src="@Url.Content("Image/32360.png")"/>
+                        </a>
+                    </td>
+                    <td>Change</td>
+
+            </tr>
+            <tr>
+                    <td><a asp-area="" asp-controller="User" asp-action="Index">Users</a></td>
+                    <td>
+                        <a href="@Url.Action("AddUser", "User")">
+                            <img src="@Url.Content("Image/32360.png")"/>
+                        </a>
+                    </td>
+                    <td>Change</td>
+        
+            </tr>
+        </tbody>
+    </table>

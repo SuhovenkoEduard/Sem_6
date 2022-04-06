@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Address Add";
+    Layout = "_Layout";
+}
+@model AddressModel;
+
+<div class="login-box">
+    <h2>Добавление в таблицу: Address</h2>
+    <form asp-controller="Address", asp-action="AddressAdd", method="post">
+        <div class="user-box">
+            <input type="text" name="ExistAddress" required="">
+            <label>Адресс</label>
+        </div>
+        <input style="background: black" type="submit" value="Сохранить"/>
+    </form>
+</div>

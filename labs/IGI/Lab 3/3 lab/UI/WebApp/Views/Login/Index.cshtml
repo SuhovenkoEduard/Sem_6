@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Log In";
+}
+
+
+<div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Авторизация</h4>
+        <form method="post" asp-controller="Login" asp-action="SignIn" asp-route-returnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="Email" asp-validation-for="RegisterModel.Email" class="form-control" placeholder="Email" type="email">
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" name="Password" asp-validation-for="RegisterModel.Password" placeholder="Пароль" type="password">
+            </div>
+            <div class="form-group">
+                <button type="submit" as class="btn btn-primary btn-block"> Войти </button>
+            </div>
+            <p class="text-center">Нет аккаунта? <a href="/register">Регистрация</a> </p>
+        </form>
+    </article>
+</div>

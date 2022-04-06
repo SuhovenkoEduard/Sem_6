@@ -1,0 +1,33 @@
+﻿@model List<AddressModel>
+
+@{
+    ViewBag.Title = "address";
+    Layout = "_Layout";
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th>Address</th>
+        <th> Таблица Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (AddressModel address in Model)
+    {
+        <tr>
+            <td>@address.Id</td>
+            <td>@address.ExistAddress</td>
+            <td>
+                <a href="@Url.Action("AddressDelete", "Address", address)">
+                    <img src="@Url.Content("Image/img_216917.png")"/>
+                </a>
+                <a href="@Url.Action("AddressUpdate", "Address", address)">
+                    <img src="@Url.Content("Image/update-icon-12.jpg")"/>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

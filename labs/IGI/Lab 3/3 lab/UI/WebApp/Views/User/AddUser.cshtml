@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "User Add";
+    Layout = "_Layout";
+}
+@model WebApp.ViewModel.RegisterViewModel;
+
+<div class="login-box">
+    <h2>Добавление пользователя</h2>
+    <form asp-controller="User", asp-action="AddUser", method="post">
+        <div class="user-box">
+            <input name="Login" 
+                   asp-validation-for="RegisterModel.Login" 
+                   class="form-control" 
+                   placeholder="Логин" 
+                   type="text">
+            <label>Логин</label>
+        </div>
+        <div class="user-box">
+            <input name="Email" 
+                   -validation-for="RegisterModel.Email" 
+                   class="form-control" 
+                   placeholder="Email" 
+                   type="email">
+            <label>Почта</label>
+        </div>
+        <div class="user-box">
+            <input class="form-control" 
+                   name="Password" 
+                   asp-validation-for="RegisterModel.Password" 
+                   placeholder="Пароль" 
+                   type="password">
+            <label>Пароль</label>
+        </div>
+        <div class="user-box">
+            <input class="form-control"  
+                   name="ConfirmPassword"
+                   asp-validation-for="RegisterModel.ConfirmPassword"
+                   placeholder="Повторите пароль" 
+                   type="password">
+            <label>Повторите пароль</label>
+        </div>
+        
+        <input style="background: black" type="submit" value="Добавить"/>
+    </form>
+</div>

@@ -1,0 +1,40 @@
+﻿@using BLL
+@model List<StudInfoModel>
+
+@{
+    ViewBag.Title = "stud info";
+    Layout = "_Layout";
+}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th>Gender</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>MiddleName</th>
+        <th>Graduate</th>
+        <th>YearGraduate</th>
+        <th> Таблица StudInfo</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (StudInfoModel studInfo in Model)
+    {
+        <tr>
+            <td>@studInfo.Id</td>
+            <td>@studInfo.Gender</td>
+            <td>@studInfo.FirstName</td>
+            <td>@studInfo.LastName</td>
+            <td>@studInfo.MiddleName</td>
+            <td>@studInfo.Graduate</td>
+            <td>@studInfo.YearGraduate</td>
+            <td>
+                @Html.ActionLink("Удалить", "", "StudInfo", studInfo)
+                @Html.ActionLink("Обновить", "", "StudInfo", studInfo)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

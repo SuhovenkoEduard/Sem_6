@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityUser>
+@{
+    Layout = "_Layout";
+}
+<table class="table">
+    <thead>
+    <tr>
+        <th> Id</th>
+        <th>Address</th>
+        <th> Таблица Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Id</td>
+            <td>@user.Email</td>
+            <td>
+                <a href="@Url.Action("UserDelete", "User", user)">
+                    <img src="@Url.Content("Image/img_216917.png")"/>
+                </a>
+                <a href="@Url.Action("UserUpdate", "User", user)">
+                    <img src="@Url.Content("Image/update-icon-12.jpg")"/>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
