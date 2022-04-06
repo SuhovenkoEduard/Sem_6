@@ -27,26 +27,24 @@ router.get('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id;
   const {Name, Job_Title, Phone_no, Sallary} = req.body;
-  db.run(`UPDATE Employee SET Name = ?, Job_Title = ?, Phone_no = ?, Sallary = ? WHERE id = ?`,
-    [Name, Job_Title, Phone_no, Sallary, id], function (err) {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        res.status(200).json({message: 'Employee updated successfully'});
-      }
-    });
+  db.run(`UPDATE Employee SET Name = ?, Job_Title = ?, Phone_no = ?, Sallary = ? WHERE id = ?`, [Name, Job_Title, Phone_no, Sallary, id], function (err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).json({message: 'Employee updated successfully'});
+    }
+  });
 });
 
 router.post('/', (req, res) => {
   const {Name, Job_Title, Phone_no, Sallary, Dept_id, Project_id} = req.body;
-  db.run(`INSERT INTO Employee (Name, Job_Title, Phone_no, Sallary) VALUES (?, ?, ?, ?, ?, ?)`,
-    [Name, Job_Title, Phone_no, Sallary, Dept_id, Project_id], function (err) {
-      if (err) {
-        res.status(500).send(err);
-      } else {
-        res.status(200).json({message: 'Employee added successfully'});
-      }
-    });
+  db.run(`INSERT INTO Employee (Name, Job_Title, Phone_no, Sallary) VALUES (?, ?, ?, ?, ?, ?)`, [Name, Job_Title, Phone_no, Sallary, Dept_id, Project_id], function (err) {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).json({message: 'Employee added successfully'});
+    }
+  });
 });
 
 router.delete('/:id', (req, res) => {
