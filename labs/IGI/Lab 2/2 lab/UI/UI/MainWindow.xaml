@@ -10,7 +10,7 @@
         Height="450" 
         Width="800"
         Visibility="Visible"
-        WindowState="Minimized"
+        WindowState="Normal"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
@@ -22,7 +22,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" 
                
-                Background="Orange"
+                Background="Green"
                 MouseDown="Grid_MouseDown">
 
             <Border
@@ -37,7 +37,7 @@
                         Content="{materialDesign:PackIcon Kind=Power, Size=45}" Cursor="Hand"
                         FontSize="24" 
                         FontFamily="Arial Black" 
-                        Background="Orange"
+                        Background="Green"
                         BorderBrush="Black"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFloatingActionDarkButton}">
@@ -78,7 +78,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFlatButton}" 
-                        Background="Orange"
+                        Background="Green"
                         Click="FirstTableClick"/>
             </Grid>
             <Grid Grid.Column="1">
@@ -91,7 +91,7 @@
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Click="SecondTableClick"
-                        Background="Orange"/>
+                        Background="Green"/>
             </Grid>
             <Grid Grid.Column="2">
                 <Button     Width="150"
@@ -102,7 +102,7 @@
                         BorderBrush="Black"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFlatButton}" 
-                        Background="Orange"
+                        Background="Green"
                         Click="ThirdTableClick"
                         />
             </Grid>
@@ -112,7 +112,7 @@
         <Border Grid.Row="2" 
                 BorderBrush="Black" 
                 BorderThickness="0,2,0,0" 
-                Background="Orange">
+                Background="Green">
 
         </Border>
 

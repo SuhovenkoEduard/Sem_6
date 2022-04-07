@@ -51,25 +51,9 @@ namespace UI
 
         private void ShowWindowByType()
         {
-            /*switch (TypeService().ToString())
-            {
-                case "Bll.Services.AddressService":
-                    var param1 = _service as AddressService;
-                    var win1 = new MainWindow(param1);
-                    win1.Show();
-                    Close();
-                    break;
-                case "Bll.Services.CourseService":
-                    var param2 = _service as CourseService;
-                    var win2 = new MainWindow(param2);
-                    win2.Show();
-                    break;
-                case "Bll.Services.StudInfoService":
-                    var param3 = _service as StudInfoService;
-                    var win3 = new MainWindow(param3);
-                    win3.Show();
-                    break;
-            }*/
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
 
         private void ButtonReadAll(object sender, RoutedEventArgs e)
@@ -110,16 +94,22 @@ namespace UI
 
             if (TypeService() == typeof(AddressService))
             {
-                var custom = _service as AddressService;
-                custom.Add(new AddressDTO()
+                try
                 {
-                    Id = Convert.ToInt32(dto_Id.Text),
-                    ExistAddress = dto_Address.Text,
-                });
-                
+                    var custom = _service as AddressService;
+                    custom.Add(new AddressDTO()
+                    {
+                        Id = Convert.ToInt32(dto_Id.Text),
+                        ExistAddress = dto_Address.Text,
+                    });
+                    dto_Id.Text = "";
+                    dto_Address.Text = "";
+                    MessageBox.Show($"Объект был добавлен!");
+                } catch (Exception ex)
+                {
+                    MessageBox.Show($"Error {ex.Message}");
+                }
             }
-            
-            MessageBox.Show($"Объект был добавлен!");
         }
 
         private void ButtonDisplayCreate(object sender, RoutedEventArgs e)
@@ -140,12 +130,18 @@ namespace UI
                 if (dto != null)
                 {
                     custom.Delete(dto);
+                    try
+                    {
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show($"Объект был удален! {ex.Message}");
+                    }
+                } else
+                {
+                    MessageBox.Show("Вы не выбрали элемент.");
                 }
-                
             }
-
             ButtonReadAll(sender, e);
-            MessageBox.Show($"Объект был удален!");
         }
 
         private void ButtonDisplayUpdate(object sender, RoutedEventArgs e)
@@ -154,20 +150,21 @@ namespace UI
             
             addressData.Visibility = Visibility.Hidden;
             add_pnl.Visibility = Visibility.Hidden;
-            
-            
-            
+            find_pnl.Visibility = Visibility.Hidden;
             
             if (TypeService() == typeof(AddressService))
             {
                 AddressDTO dto = (AddressDTO)addressData.SelectedItem;
-
-                if (dto == null) return;
-                dto_Id_Update.Text = Convert.ToString(dto.Id);
-                dto_Address_Update.Text = dto.ExistAddress;
+                if (dto == null)
+                {
+                    MessageBox.Show("Объект не был выбран.");
+                    ButtonReadAll(sender, e);
+                } else
+                {
+                    dto_Id_Update.Text = Convert.ToString(dto.Id);
+                    dto_Address_Update.Text = dto.ExistAddress;
+                }
             }
-            
-            
         }
 
         private void ButtonDisplayFind(object sender, RoutedEventArgs e)
@@ -177,29 +174,46 @@ namespace UI
             update_pnl.Visibility = Visibility.Hidden;
             addressData.Visibility = Visibility.Hidden;
             add_pnl.Visibility = Visibility.Hidden;
-            
         }
 
         private void ButtonUpdate(object sender, RoutedEventArgs e)
         {
+            update_pnl.Visibility = Visibility.Visible;
+
+            find_pnl.Visibility = Visibility.Hidden;
+            addressData.Visibility = Visibility.Hidden;
+            add_pnl.Visibility = Visibility.Hidden;
+
             if (TypeService() == typeof(AddressService))
             {
-                var custom = _service as AddressService;
-                AddressDTO dto = new AddressDTO()
+                try
                 {
-                    Id = Convert.ToInt32(dto_Id_Update.Text),
-                    ExistAddress = dto_Address_Update.Text,
-                };
-                if (dto != null)
+                    if (dto_Id_Update.Text == "")
+                        throw new Exception("Id is null.");
+                    
+                    var custom = _service as AddressService;
+                    AddressDTO dto = new AddressDTO()
+                    {
+                        Id = Convert.ToInt32(dto_Id_Update.Text),
+                        ExistAddress = dto_Address_Update.Text,
+                    };
+                    if (dto != null)
+                    {
+                        custom.Update(dto);
+                        MessageBox.Show($"Объект был обновлен!");
+                        ButtonReadAll(sender, e);
+                        dto_Id_Update.Text = "";
+                        dto_Address_Update.Text = "";
+                    } else
+                    {
+                        MessageBox.Show("Обновление не удалось.");
+                    }
+                } catch (Exception ex)
                 {
-                    custom.Update(dto);
+                    MessageBox.Show("Объект не был выбран.");
                 }
             }
-
-            ButtonReadAll(sender, e);
-            MessageBox.Show($"Объект был обновлен!");
         }
-
         private void ButtonFind(object sender, RoutedEventArgs e)
         {
             if (TypeService() == typeof(AddressService))
@@ -210,17 +224,21 @@ namespace UI
                     Id = Convert.ToInt32(dto_Id_Find.Text),
                     ExistAddress = dto_Address_Find.Text,
                 };
+                dto_Id_Find.Text = "";
+                dto_Address_Find.Text = "";
                 if (dto != null)
                 {
                     var items = custom.Find(dto);
-                    addressData.ItemsSource = items;
-                    addressData.Visibility = Visibility.Visible;
-                    find_pnl.Visibility = Visibility.Hidden;
+                    if (items.Count > 0)
+                    {
+                        addressData.ItemsSource = items;
+                        addressData.Visibility = Visibility.Visible;
+                        find_pnl.Visibility = Visibility.Hidden;
+                        MessageBox.Show($"Объект был найден!");
+                    } else 
+                        MessageBox.Show("Объект не был найден.");
                 }
             }
-
-            
-            MessageBox.Show($"Объект был найден!");
         }
     }
 }

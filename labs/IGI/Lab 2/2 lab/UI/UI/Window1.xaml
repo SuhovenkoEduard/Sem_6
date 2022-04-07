@@ -10,7 +10,7 @@
         Height="450" 
         Width="800"
         Visibility="Visible"
-        WindowState="Minimized"
+        WindowState="Normal"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" 
                
-                Background="Orange"
+                Background="Green"
                 MouseDown="Grid_MouseDown">
 
             <Border
@@ -36,7 +36,7 @@
                         Content="{materialDesign:PackIcon Kind=Power, Size=45}" Cursor="Hand"
                         FontSize="24" 
                         FontFamily="Arial Black" 
-                        Background="Orange"
+                        Background="Green"
                         BorderBrush="Black"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFloatingActionDarkButton}">
@@ -68,11 +68,10 @@
                         Content="{materialDesign:PackIcon Kind=ArrowLeft, Size=45}" Cursor="Hand"
                         FontSize="24" 
                         FontFamily="Arial Black" 
-                        Background="Orange"
+                        Background="Green"
                         BorderBrush="Black"
                         Foreground="Black"
                         Style="{StaticResource MaterialDesignFloatingActionDarkButton}">
-
 
 
                 </Button>
@@ -120,7 +119,7 @@
                         <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="Read all"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -132,7 +131,7 @@
                         <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="Add"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -144,7 +143,7 @@
                         <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="Delete"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -156,7 +155,7 @@
                         <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="Update"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -167,7 +166,7 @@
                         <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="Find"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -199,7 +198,7 @@
 
                         <Style TargetType="{x:Type DataGridColumnHeader }">
                             <Setter Property="Height" Value="45"/>
-                            <Setter Property="Background" Value="#FFFF7900"/>
+                            <Setter Property="Background" Value="Green"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontFamily" Value="Fonts/Roboto-Light.ttf #Roboto"/>
@@ -234,7 +233,7 @@
                     <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="{materialDesign:PackIcon Kind=Send, Size=25}"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -266,7 +265,7 @@
                     <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="{materialDesign:PackIcon Kind=Send, Size=25}"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -278,7 +277,7 @@
 
                 <StackPanel x:Name="find_pnl" 
                             Orientation="Vertical"
-                            Visibility="Hidden"
+                            Visibility="Visible"
                             VerticalAlignment="Center" Height="380" Margin="68,0,127,0">
                     <TextBlock Text="Поиск по криттериям"
                            FontSize="24"
@@ -296,7 +295,7 @@
                     <Button FontSize="20" 
                                 FontFamily="Arial Black" 
                                 Content="{materialDesign:PackIcon Kind=Send, Size=25}"
-                                Background="Orange"
+                                Background="Green"
                                 BorderBrush="Black"
                                 Foreground="Black"
                                 Margin="10"
@@ -321,7 +320,7 @@
 
                         <Style TargetType="{x:Type DataGridColumnHeader }">
                             <Setter Property="Height" Value="45"/>
-                            <Setter Property="Background" Value="#FFFF7900"/>
+                            <Setter Property="Background" Value="Green"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontFamily" Value="Fonts/Roboto-Light.ttf #Roboto"/>
@@ -370,7 +369,7 @@
 
                         <Style TargetType="{x:Type DataGridColumnHeader }">
                             <Setter Property="Height" Value="45"/>
-                            <Setter Property="Background" Value="#FFFF7900"/>
+                            <Setter Property="Background" Value="Green"/>
                             <Setter Property="BorderBrush" Value="Transparent"/>
                             <Setter Property="Foreground" Value="White"/>
                             <Setter Property="FontFamily" Value="Fonts/Roboto-Light.ttf #Roboto"/>

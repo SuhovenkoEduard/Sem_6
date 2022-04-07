@@ -23,9 +23,9 @@ namespace UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private AddressService _addressService;
-        private CourseService _courseService;
-        private StudInfoService _studInfoService;
+        static private AddressService _addressService;
+        static private CourseService _courseService;
+        static private StudInfoService _studInfoService;
 
         public MainWindow()
         {
@@ -42,17 +42,17 @@ namespace UI
         public MainWindow(AddressService addressService)
         {
             InitializeComponent();
-            _addressService = addressService;
+            // _addressService = addressService;
         }
         public MainWindow(CourseService courseService)
         {
             InitializeComponent();
-            _courseService = courseService;
+            // _courseService = courseService;
         }
         public MainWindow(StudInfoService studInfoService)
         {
             InitializeComponent();
-            _studInfoService = studInfoService;
+            // _studInfoService = studInfoService;
         }
         
 
