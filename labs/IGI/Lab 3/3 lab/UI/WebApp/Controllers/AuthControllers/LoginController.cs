@@ -40,6 +40,13 @@ namespace WebApp.Controllers.AuthControllers
 
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index","Home");
+        }
         
     }
 }

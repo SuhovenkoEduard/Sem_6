@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Bll.Repository;
-
-
-namespace Bll
+﻿namespace WebApi.Models
 {
-    public class StudInfoDTO : IModel
+    public class StudInfoModel
     {
         public int Id { get; set; }
         public int? AddressId { get; set; }
@@ -17,6 +12,5 @@ namespace Bll
         public string DateEnrolled { get; set; }
         public string YearGraduate { get; set; }
         public string Graduate { get; set; }
-        
     }
 }

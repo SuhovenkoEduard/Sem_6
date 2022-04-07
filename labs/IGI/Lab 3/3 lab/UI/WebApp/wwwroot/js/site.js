@@ -1,4 +1,35 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿$('#logout').submit(function (e) {
+    $.ajax({
+        type:"Post",
+        url:"/login/logout"
+    })
+})
+$('#signIn').submit(function (e) {
+    
+    $.ajax({
+        type:"Post",
+        data:$(this).serialize(),
+        url:"/login/signin"
+    })
+})
+$('#Reg').submit(function (e) {
+    $.ajax({
+        type:"Post",
+        data:$(this).serialize(),
+        url:"/register/adduser"
+    })
+})
+// $("#addr").click(function() {
+//     $.ajax({
+//         type: "GET",
+//         url: "/Address",
+//         success : function(data) {
+//             $("#rootAddrr").html(data);
+//         }
+//     });
+// });
+$("#stud1").mouseenter(function () {
+    $(".stud").css("display","block")
+}).mouseleave(function () {
+    $(".stud").css("display","none")
+})

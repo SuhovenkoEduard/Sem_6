@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.ComponentModel.Design
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
@@ -11,8 +12,15 @@
 <header>
     <nav class="VBar">
         <div class="VContainer">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp Lab 3</a>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp Lab 4</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form method="post" id="logout">
+                    <input class="navbar-brand" type="submit" value="Logout">
+                </form>
+            }
         </div>
+        
     </nav>
 </header>
 <div class="VContainer">
@@ -25,6 +33,7 @@
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)

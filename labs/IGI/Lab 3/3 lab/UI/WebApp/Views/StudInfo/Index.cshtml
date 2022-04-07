@@ -9,13 +9,7 @@
 <table class="table">
     <thead>
     <tr>
-        <th> Id</th>
-        <th>Gender</th>
         <th>FirstName</th>
-        <th>LastName</th>
-        <th>MiddleName</th>
-        <th>Graduate</th>
-        <th>YearGraduate</th>
         <th> Таблица StudInfo</th>
     </tr>
     </thead>
@@ -23,17 +17,38 @@
     @foreach (StudInfoModel studInfo in Model)
     {
         <tr>
-            <td>@studInfo.Id</td>
-            <td>@studInfo.Gender</td>
-            <td>@studInfo.FirstName</td>
-            <td>@studInfo.LastName</td>
-            <td>@studInfo.MiddleName</td>
-            <td>@studInfo.Graduate</td>
-            <td>@studInfo.YearGraduate</td>
             <td>
-                @Html.ActionLink("Удалить", "", "StudInfo", studInfo)
-                @Html.ActionLink("Обновить", "", "StudInfo", studInfo)
+                <div id="container">
+                
+                    <div class="box" id="stud1">
+                        @studInfo.FirstName
+                    </div>
+                    
+                    @*???*@
+                    @if (studInfo.FirstName == "Vitalij")
+                    {
+                        <div class="box">
+                            @* <course-list stud="@studInfo"></course-list> *@
+                            <course stud="@studInfo"></course>
+                        </div>
+                    }
+                
+                </div>
             </td>
+            @* <td>@studInfo.FirstName <course stud="@studInfo"></course></td> *@
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    @Html.ActionLink("Удалить", "", "StudInfo", studInfo)
+                    @Html.ActionLink("Обновить", "", "StudInfo", studInfo)
+                </td>
+            }
+            @if (User.IsInRole("Moder"))
+            {
+                <td>
+                    @Html.ActionLink("Обновить", "", "StudInfo", studInfo)
+                </td>
+            }
         </tr>
     }
     </tbody>

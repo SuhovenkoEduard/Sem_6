@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using System.Linq;
+using BLL;
 using Bll.Repository;
 using Dal;
 using Dal.Interfaces;
@@ -23,7 +24,8 @@ namespace Bll.Mappers
             {
                 Id = entity.Id,
                 Description = entity.Description,
-                CourseName = entity.CourseName
+                CourseName = entity.CourseName,
+                StudInfos = entity.StudInfos.ToList()
             };
         }
     }

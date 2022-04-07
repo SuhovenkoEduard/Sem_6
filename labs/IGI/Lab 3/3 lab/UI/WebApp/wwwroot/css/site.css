@@ -299,3 +299,7 @@ body {
     bottom: 100%;
   }
 }
+
+.stud{
+  display: none;
+}

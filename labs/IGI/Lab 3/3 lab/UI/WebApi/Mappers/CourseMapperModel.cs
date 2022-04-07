@@ -1,8 +1,8 @@
 ﻿using BLL;
 using Bll.Repository;
-using WebApp.Models;
+using WebApi.Models;
 
-namespace WebApp.Mappers
+namespace WebApi.Mappers
 {
     public static class CourseMapperModel
     {
@@ -14,7 +14,6 @@ namespace WebApp.Mappers
                 Id = dto!.Id,
                 Description = dto.Description,
                 CourseName = dto.CourseName,
-                StudInfos = dto.StudInfos
             };
         }
         public static CourseDTO ToDto(CourseModel entity)

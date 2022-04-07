@@ -19,14 +19,25 @@
         <tr>
             <td>@address.Id</td>
             <td>@address.ExistAddress</td>
-            <td>
-                <a href="@Url.Action("AddressDelete", "Address", address)">
-                    <img src="@Url.Content("Image/img_216917.png")"/>
-                </a>
-                <a href="@Url.Action("AddressUpdate", "Address", address)">
-                    <img src="@Url.Content("Image/update-icon-12.jpg")"/>
-                </a>
-            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a href="@Url.Action("AddressDelete", "Address", address)">
+                        <img src="@Url.Content("Image/img_216917.png")"/>
+                    </a>
+                    <a href="@Url.Action("AddressUpdate", "Address", address)">
+                        <img src="@Url.Content("Image/update-icon-12.jpg")"/>
+                    </a>
+                </td>
+            }
+            @if (User.IsInRole("Moder"))
+            {
+                <td>
+                    <a href="@Url.Action("AddressUpdate", "Address", address)">
+                        <img src="@Url.Content("Image/update-icon-12.jpg")"/>
+                    </a>
+                </td>
+            }
         </tr>
     }
     </tbody>

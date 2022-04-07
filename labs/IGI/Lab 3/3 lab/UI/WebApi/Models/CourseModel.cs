@@ -2,7 +2,7 @@
 using Bll;
 using Dal;
 
-namespace WebApp.Models
+namespace WebApi.Models
 {
     public class CourseModel
     {
@@ -10,6 +10,5 @@ namespace WebApp.Models
         public string CourseName { get; set; }
         public string Description { get; set; }
         
-        public List<StudInfo> StudInfos { get; set; }
     }
 }
