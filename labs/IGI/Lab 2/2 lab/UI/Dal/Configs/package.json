@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "providerName": "System.Data.SqlClient",
-    "connectionDb" : "Data Source=D:\\Projects\\University\\Sem_6\\labs\\IGI\\Lab 2\\2 lab\\UI\\Dal\\Database\\database.db"
+    "connectionDb" : "Data Source=..\\..\\..\\..\\Dal\\Database\\database.db"
   }
 }
