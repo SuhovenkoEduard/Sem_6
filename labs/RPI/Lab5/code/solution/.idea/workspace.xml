@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 (1/4 task)">
-      <change afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/controllers/cook.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/controllers/pizza.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/database.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/models/cook.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/models/pizza.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/models/restaurant.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/apis/cook.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/apis/pizza.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/apis/restaurant.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/apis/routers.api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/views/cook.viewRouter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/views/pizza.viewRouter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/orm/routers/views/routers.view.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/pizza.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layouts/layout.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/tables/cooks/cooks.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/tables/pizzas/add.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/tables/pizzas/pizzas.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Lab5/code/Lab 5 Samovend/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Lab5/code/Lab 5 Samovend/database.db" afterDir="false" />
+    <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 (4/4 task), code in report is invalid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/dbQueries.helper.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/dbQueries.helpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/generic.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/generic.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/routers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql/routers/routers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/pizza.db" beforeDir="false" afterPath="$PROJECT_DIR$/../db/pizza.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/orm/routers/apis" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -71,7 +43,7 @@
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
-    <property name="ts.external.directory.path" value="D:\Projects\Sem_6\labs\RPI\Lab5Eduard\code\api\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Projects\Sem_6\labs\RPI\Lab5Eduard\code\solution\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -90,7 +62,7 @@
       <recent name="D:\Projects\Sem_6\labs\RPI\Lab5Eduard\code\api\src\sql" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.test">
+  <component name="RunManager" selected="npm.watch-and-run">
     <configuration name="test" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -126,6 +98,7 @@
       <workItem from="1649461461247" duration="374000" />
       <workItem from="1649461893546" duration="297000" />
       <workItem from="1649501266218" duration="12277000" />
+      <workItem from="1649513732961" duration="232000" />
     </task>
     <task id="LOCAL-00001" summary="RPI Lab5 (1/4 task)">
       <created>1649457615339</created>
@@ -155,7 +128,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649462178193</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="RPI Lab5 (4/4 task), code in report is invalid">
+      <created>1649513932002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649513932002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="RPI Lab5 (4/4 task), code in report is invalid">
+      <created>1649513941328</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649513941328</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +169,8 @@
       <path value="$PROJECT_DIR$/../../../.." />
     </ignored-roots>
     <MESSAGE value="RPI Lab5 (1/4 task)" />
-    <option name="LAST_COMMIT_MESSAGE" value="RPI Lab5 (1/4 task)" />
+    <MESSAGE value="RPI Lab5 (4/4 task), code in report is invalid" />
+    <option name="LAST_COMMIT_MESSAGE" value="RPI Lab5 (4/4 task), code in report is invalid" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
