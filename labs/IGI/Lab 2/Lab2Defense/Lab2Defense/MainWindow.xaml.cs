@@ -19,6 +19,7 @@ public partial class MainWindow
         WidthTextBox.SetBinding(TextBox.TextProperty, widthBinding);
 
         // button's styles
+
         // CalculateButton.Height = 50;
         // CalculateButton.Width = 150;
         // AboutButton.Height = 50;
