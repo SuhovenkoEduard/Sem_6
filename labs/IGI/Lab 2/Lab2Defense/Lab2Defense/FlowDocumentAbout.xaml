@@ -1,0 +1,31 @@
+﻿<Window x:Class="Lab2Defense.FlowDocumentAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="PageViewer" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <FlowDocumentPageViewer>
+            <FlowDocument Background="White">
+                <Paragraph>
+                    <Bold>Some bold text in the paragraph.</Bold>
+                </Paragraph>
+                <Paragraph>
+                    Some text that is not bold.
+                </Paragraph>
+                <List>
+                    <ListItem>
+                        <Paragraph>Suhovenko Eduard IP-32</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>Male</Paragraph>
+                    </ListItem>
+                    <ListItem>
+                        <Paragraph>19 years</Paragraph>
+                    </ListItem>
+                </List>
+            </FlowDocument>
+        </FlowDocumentPageViewer>
+    </Grid>
+</Window>
