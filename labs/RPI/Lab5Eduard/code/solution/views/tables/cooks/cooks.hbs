@@ -1,0 +1,21 @@
+<div class="box">
+  <div id="content">
+    <h1>{{tableName}}</h1>
+    <table class="table">
+      <tr>
+        {{#each propNames}}
+          <th>{{this}}</th>
+        {{/each}}
+      </tr>
+      {{#each entities}}
+        <tr>
+          <td>{{this.cookId}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.age}}</td>
+          <td>{{this.pizzaId}}</td>
+          <td>{{this.restaurantId}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
