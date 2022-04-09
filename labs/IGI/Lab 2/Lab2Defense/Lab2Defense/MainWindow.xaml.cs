@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace Lab2Defense;
 
-public partial class MainWindow : Window
+public partial class MainWindow
 {
     public MainWindow()
     {
