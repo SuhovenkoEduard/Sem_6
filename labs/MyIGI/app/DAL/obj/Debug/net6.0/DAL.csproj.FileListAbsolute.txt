@@ -1,0 +1,12 @@
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\bin\Debug\net6.0\DAL.dll
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.dll
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Projects\Sem_6\labs\MyIGI\app\DAL\obj\Debug\net6.0\ref\DAL.dll

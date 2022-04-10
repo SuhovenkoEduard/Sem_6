@@ -1,0 +1,8 @@
+﻿{
+  "name": "Configs",
+  "version": "1.0.0",
+  "dependencies": {
+    "providerName": "System.Data.SqlClient",
+    "connectionDb" : "Data Source=..\\..\\..\\..\\DAL\\Database\\pizzeria.db"
+  }
+}
