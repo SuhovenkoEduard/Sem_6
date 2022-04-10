@@ -9,11 +9,11 @@ public class Pizza : IEntity
     {
         Cooks = new HashSet<Cook>();
     }
-    
-    [Key]
-    public int Id { get; set; }
+
     public string Name { get; set; } = string.Empty;
     public int Caloric { get; set; }
-    
+
     public ICollection<Cook> Cooks { get; set; }
+
+    [Key] public int Id { get; set; }
 }

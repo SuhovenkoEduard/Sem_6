@@ -938,6 +938,19 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BLL.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2415,6 +2428,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BLL/1.0.0": {
+      "type": "project",
+      "path": "../BLL/BLL.csproj",
+      "msbuildProject": "../BLL/BLL.csproj"
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -2423,6 +2441,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BLL >= 1.0.0",
       "DAL >= 1.0.0"
     ]
   },
@@ -2453,6 +2472,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj": {
+              "projectPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj"
+            },
             "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj": {
               "projectPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj"
             }

@@ -1,5 +1,5 @@
-﻿using DAL.Entities;
-using DAL.EntityFramework;
+﻿using DAL.EF;
+using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,26 +14,39 @@ public class PizzaRepository : IRepository<Pizza>
         _database = database;
     }
 
-    public IEnumerable<Pizza> GetAll() => _database.Pizzas;
+    public IEnumerable<Pizza> GetAll()
+    {
+        return _database.Pizzas;
+    }
 
-    public Pizza? Get(int id) => _database.Pizzas.Find(id);
+    public Pizza? Get(int id)
+    {
+        return _database.Pizzas.Find(id);
+    }
 
     public IEnumerable<Pizza> Find(Func<Pizza, bool> predicate)
-        => _database.Pizzas.Where(predicate).ToList();
+    {
+        return _database.Pizzas.Where(predicate).ToList();
+    }
 
-    public void Create(Pizza item) => _database.Pizzas.Add(item);
+    public void Create(Pizza item)
+    {
+        _database.Pizzas.Add(item);
+    }
 
-    public void Update(Pizza item) 
-        => _database.Entry(item).State = EntityState.Modified;
-    
+    public void Update(Pizza item)
+    {
+        _database.Entry(item).State = EntityState.Modified;
+    }
+
     public void Delete(int id)
     {
         var pizza = _database.Pizzas.Find(id);
-        if (pizza != null)
-        {
-            _database.Pizzas.Remove(pizza);
-        }
+        if (pizza != null) _database.Pizzas.Remove(pizza);
     }
 
-    public void Save() => _database.SaveChanges();
+    public void Save()
+    {
+        _database.SaveChanges();
+    }
 }

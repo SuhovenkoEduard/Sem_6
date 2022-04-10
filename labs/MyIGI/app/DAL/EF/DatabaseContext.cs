@@ -2,15 +2,19 @@
 using DAL.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DAL.EntityFramework;
+namespace DAL.EF;
 
 #nullable disable
 
 public class DatabaseContext : DbContext
 {
-    public DatabaseContext() { }
+    public DatabaseContext()
+    {
+    }
 
-    public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
+    public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+    {
+    }
 
     public virtual DbSet<Cook> Cooks { get; set; }
     public virtual DbSet<Pizza> Pizzas { get; set; }
@@ -18,10 +22,7 @@ public class DatabaseContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlite(Config.DbConfig());
-        }
+        if (!optionsBuilder.IsConfigured) optionsBuilder.UseSqlite(Config.DbConfig());
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,7 +35,7 @@ public class DatabaseContext : DbContext
             entity.Property(e => e.Name).HasColumnType("CHAR");
             entity.Property(e => e.Caloric).HasColumnType("INT");
         });
-        
+
         modelBuilder.Entity<Restaurant>(entity =>
         {
             entity.ToTable("Restaurant");
@@ -43,7 +44,7 @@ public class DatabaseContext : DbContext
             entity.Property(e => e.Address).HasColumnType("CHAR");
             entity.Property(e => e.Revenue).HasColumnType("INT");
         });
-        
+
         modelBuilder.Entity<Cook>(entity =>
         {
             entity.ToTable("Cook");

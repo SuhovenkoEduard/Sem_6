@@ -1,25 +1,24 @@
-﻿using DAL.Entities;
-using DAL.EntityFramework;
+﻿using DAL.EF;
+using DAL.Entities;
 using DAL.Interfaces;
 using DAL.Repositories;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DAL;
 
-public static class DiModule
+public static class DIModule
 {
-    public static void ConfigurationDalServices(this IServiceCollection builder, string connectionString)
+    public static void ConfigurationDalServices(this IServiceCollection serviceCollection, string connectionString)
     {
-        builder.AddDbContext<DatabaseContext>(options =>
+        serviceCollection.AddDbContext<DatabaseContext>(options =>
             options.UseSqlite(connectionString));
         // builder.AddDbContext<AuthDbContext>(options =>
         //     options.UseSqlite(connectionString));
-             
-        builder.AddScoped<IRepository<Pizza>, PizzaRepository>();
-        builder.AddScoped<IRepository<Restaurant>, RestaurantRepository>();
-        builder.AddScoped<IRepository<Cook>, CookRepository>();
+
+        serviceCollection.AddScoped<IRepository<Pizza>, PizzaRepository>();
+        serviceCollection.AddScoped<IRepository<Restaurant>, RestaurantRepository>();
+        serviceCollection.AddScoped<IRepository<Cook>, CookRepository>();
 
         // builder.AddIdentity<IdentityUser, IdentityRole>(opts =>
         // {
@@ -29,8 +28,8 @@ public static class DiModule
         //     opts.Password.RequireUppercase = false;
         //     opts.Password.RequireDigit = true;
         // });
-            // .AddEntityFrameworkStores<AuthDbContext>();
-            
-        builder.AddScoped<DbContext, DatabaseContext>();
+        // .AddEntityFrameworkStores<AuthDbContext>();
+
+        serviceCollection.AddScoped<DbContext, DatabaseContext>();
     }
 }

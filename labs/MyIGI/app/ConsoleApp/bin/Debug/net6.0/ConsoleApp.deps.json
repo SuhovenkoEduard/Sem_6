@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ConsoleApp/1.0.0": {
         "dependencies": {
+          "BLL": "1.0.0",
           "DAL": "1.0.0"
         },
         "runtime": {
@@ -758,6 +759,14 @@
           }
         }
       },
+      "BLL/1.0.0": {
+        "dependencies": {
+          "DAL": "1.0.0"
+        },
+        "runtime": {
+          "BLL.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "dependencies": {
           "DependencyInjection": "1.2.0",
@@ -1226,6 +1235,11 @@
       "sha512": "sha512-HKntuGiMgJeOxdwm7J0rtjQio5UfICFD8AGOq117YFv90Pms5squj+Ezvm7jBFd6m18CUYNgqb4K3O9brJ/TYQ==",
       "path": "system.text.json/7.0.0-preview.2.22152.2",
       "hashPath": "system.text.json.7.0.0-preview.2.22152.2.nupkg.sha512"
+    },
+    "BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DAL/1.0.0": {
       "type": "project",

@@ -1,9 +1,7 @@
-﻿using DAL.Entities;
+﻿namespace DAL.Interfaces;
 
-namespace DAL.Interfaces;
-
-public interface IRepository<T> 
-    where T: IEntity
+public interface IRepository<T>
+    where T : IEntity
 {
     IEnumerable<T> GetAll();
     T? Get(int id);

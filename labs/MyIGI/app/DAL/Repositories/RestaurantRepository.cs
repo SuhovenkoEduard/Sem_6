@@ -1,5 +1,5 @@
-﻿using DAL.Entities;
-using DAL.EntityFramework;
+﻿using DAL.EF;
+using DAL.Entities;
 using DAL.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,26 +14,39 @@ public class RestaurantRepository : IRepository<Restaurant>
         _database = database;
     }
 
-    public IEnumerable<Restaurant> GetAll() => _database.Restaurants;
+    public IEnumerable<Restaurant> GetAll()
+    {
+        return _database.Restaurants;
+    }
 
-    public Restaurant? Get(int id) => _database.Restaurants.Find(id);
+    public Restaurant? Get(int id)
+    {
+        return _database.Restaurants.Find(id);
+    }
 
     public IEnumerable<Restaurant> Find(Func<Restaurant, bool> predicate)
-        => _database.Restaurants.Where(predicate).ToList();
+    {
+        return _database.Restaurants.Where(predicate).ToList();
+    }
 
-    public void Create(Restaurant item) => _database.Restaurants.Add(item);
+    public void Create(Restaurant item)
+    {
+        _database.Restaurants.Add(item);
+    }
 
-    public void Update(Restaurant item) 
-        => _database.Entry(item).State = EntityState.Modified;
-    
+    public void Update(Restaurant item)
+    {
+        _database.Entry(item).State = EntityState.Modified;
+    }
+
     public void Delete(int id)
     {
         var restaurant = _database.Restaurants.Find(id);
-        if (restaurant != null)
-        {
-            _database.Restaurants.Remove(restaurant);
-        }
+        if (restaurant != null) _database.Restaurants.Remove(restaurant);
     }
 
-    public void Save() => _database.SaveChanges();
+    public void Save()
+    {
+        _database.SaveChanges();
+    }
 }

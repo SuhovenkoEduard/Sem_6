@@ -10,10 +10,10 @@ public class Restaurant : IEntity
         Cooks = new HashSet<Cook>();
     }
 
-    [Key]
-    public int Id { get; set; }
     public string Address { get; set; } = string.Empty;
     public int Revenue { get; set; }
-    
+
     public virtual ICollection<Cook> Cooks { get; set; }
+
+    [Key] public int Id { get; set; }
 }

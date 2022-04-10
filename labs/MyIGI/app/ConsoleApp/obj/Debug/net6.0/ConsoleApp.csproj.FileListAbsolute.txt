@@ -87,3 +87,5 @@ D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\obj\Debug\net6.0\refint\ConsoleApp.d
 D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\obj\Debug\net6.0\ConsoleApp.pdb
 D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\obj\Debug\net6.0\ConsoleApp.genruntimeconfig.cache
 D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\obj\Debug\net6.0\ref\ConsoleApp.dll
+D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\bin\Debug\net6.0\BLL.dll
+D:\Projects\Sem_6\labs\MyIGI\app\ConsoleApp\bin\Debug\net6.0\BLL.pdb
