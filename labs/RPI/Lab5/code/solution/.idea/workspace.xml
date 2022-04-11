@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 change folder name and delete old version" />
+    <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 change folder name and delete old version">
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/code.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/res/input.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/src/graphGenerator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/code/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/Lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +48,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -41,7 +59,7 @@
     <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="D:\Projects\Sem_6\labs\RPI\Lab5\code\solution\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Programs\WebStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -100,6 +118,7 @@
       <workItem from="1649514037888" duration="83000" />
       <workItem from="1649579378699" duration="24000" />
       <workItem from="1649598800099" duration="65000" />
+      <workItem from="1649706618381" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="RPI Lab5 (1/4 task)">
       <created>1649457615339</created>
