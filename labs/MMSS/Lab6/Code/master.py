@@ -3,6 +3,7 @@ import scipy.integrate
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
 
+
 def create_model(y0, t, K, Kt, L, R, Ke, u, C, J, heavysideTime):
     def y1_der(y1, y2, y3):
         return y2
@@ -57,17 +58,20 @@ def main():
     plt.plot(t, [upY] * len(t), linestyle='--')
     plt.plot(t, [downY] * len(t), linestyle='--')
 
-    eps = 1e-3
+    eps = 1e-5
     idXs = []
     idYs = []
+    idIs = []
     for i in range(len(t)):
         time = t[i]
         yi = ys[i]
         if np.abs(yi - upY) < eps or np.abs(yi - downY) < eps:
             idXs.append(time)
             idYs.append(yi)
+            idIs.append(i)
 
     lastIntersectionX = idXs[-1]
+    lastIndexX = idIs[-1]
 
     stabilizationCorridor = [downY, upY]
     timeOfProcess = lastIntersectionX - heavysideTime
@@ -86,6 +90,11 @@ def main():
     print('dynamicCoefficient:', dynamicCoefficient)
     print("decrementOfFluctuations: ", decrementOfFluctuations)
 
+    pMax, _ = find_peaks(ys[:lastIndexX], height=upY)
+    pMin, _ = find_peaks(-1 * ys[:lastIndexX], height=-downY)
+    print('Oscillation:', len(pMin) + len(pMax))
+    plt.plot(t[pMax], list(map(lambda i: ys[i], pMax)), 'x')
+    plt.plot(t[pMin], list(map(lambda i: ys[i], pMin)), 'x')
     plt.plot(idXs[-1], idYs[-1], '*', c='red')
     plt.grid()
     plt.show()

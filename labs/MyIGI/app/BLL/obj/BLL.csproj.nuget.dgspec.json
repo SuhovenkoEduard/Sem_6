@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj": {}
+    "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj": {
+    "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj",
+        "projectUniqueName": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj",
         "projectName": "BLL",
-        "projectPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj",
-        "packagesPath": "C:\\Users\\eduar\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\BLL\\obj\\",
+        "projectPath": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\BLL\\BLL.csproj",
+        "packagesPath": "C:\\Users\\avata\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eduar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\avata\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj": {
-                "projectPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj"
+              "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj": {
+                "projectPath": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj"
               }
             }
           }
@@ -58,21 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj": {
+    "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj",
+        "projectUniqueName": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj",
-        "packagesPath": "C:\\Users\\eduar\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\Sem_6\\labs\\MyIGI\\app\\DAL\\obj\\",
+        "projectPath": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\DAL.csproj",
+        "packagesPath": "C:\\Users\\avata\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\University\\Sem_6\\labs\\MyIGI\\app\\DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eduar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\avata\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
