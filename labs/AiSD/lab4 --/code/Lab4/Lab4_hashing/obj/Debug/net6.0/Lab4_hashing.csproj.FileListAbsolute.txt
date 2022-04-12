@@ -1,0 +1,15 @@
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\bin\Debug\net6.0\Lab4_hashing.exe
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\bin\Debug\net6.0\Lab4_hashing.deps.json
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\bin\Debug\net6.0\Lab4_hashing.runtimeconfig.json
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\bin\Debug\net6.0\Lab4_hashing.dll
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\bin\Debug\net6.0\Lab4_hashing.pdb
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.csproj.AssemblyReference.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.AssemblyInfoInputs.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.AssemblyInfo.cs
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.csproj.CoreCompileInputs.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.dll
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\refint\Lab4_hashing.dll
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.pdb
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\Lab4_hashing.genruntimeconfig.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab4 --\code\Lab4\Lab4_hashing\obj\Debug\net6.0\ref\Lab4_hashing.dll
