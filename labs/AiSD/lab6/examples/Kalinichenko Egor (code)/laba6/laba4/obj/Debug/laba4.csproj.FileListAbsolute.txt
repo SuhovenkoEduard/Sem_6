@@ -1,0 +1,7 @@
+H:\egor\6 семестр\АСД\laba4\laba4\bin\Debug\laba4.exe.config
+H:\egor\6 семестр\АСД\laba4\laba4\bin\Debug\laba4.exe
+H:\egor\6 семестр\АСД\laba4\laba4\bin\Debug\laba4.pdb
+H:\egor\6 семестр\АСД\laba4\laba4\obj\Debug\laba4.csprojAssemblyReference.cache
+H:\egor\6 семестр\АСД\laba4\laba4\obj\Debug\laba4.csproj.CoreCompileInputs.cache
+H:\egor\6 семестр\АСД\laba4\laba4\obj\Debug\laba4.exe
+H:\egor\6 семестр\АСД\laba4\laba4\obj\Debug\laba4.pdb

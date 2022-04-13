@@ -1,8 +1,0 @@
-﻿{
-  "name": "Configs",
-  "version": "1.0.0",
-  "dependencies": {
-    "providerName": "System.Data.SqlClient",
-    "connectionDb" : "Data Source=..\\..\\..\\..\\Dal\\Database\\database.db"
-  }
-}
