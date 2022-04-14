@@ -1,28 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Diagnostics;
+using BLL.DTO;
+using BLL.Interfaces;
+using BLL.Services;
+using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
-namespace WebApp.Controllers
+namespace WebApp.Controllers;
+
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly ILogger<HomeController> _logger;
+    private readonly IService<PizzaDTO> _pizzaService;
+    
+    public HomeController(ILogger<HomeController> logger, IService<PizzaDTO> pizzaService)
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        _logger = logger;
+        _pizzaService = pizzaService;
+    }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-            return View();
-        }
+    public IActionResult Index()
+    {
+        return View(_pizzaService.GetAll());
+    }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-            return View();
-        }
+    public IActionResult Privacy()
+    {
+        return View();
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
     }
 }
