@@ -1,7 +1,4 @@
 ﻿using System.Diagnostics;
-using BLL.DTO;
-using BLL.Interfaces;
-using BLL.Services;
 using Microsoft.AspNetCore.Mvc;
 using WebApp.Models;
 
@@ -10,17 +7,15 @@ namespace WebApp.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly IService<PizzaDTO> _pizzaService;
-    
-    public HomeController(ILogger<HomeController> logger, IService<PizzaDTO> pizzaService)
+
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
-        _pizzaService = pizzaService;
     }
 
     public IActionResult Index()
     {
-        return View(_pizzaService.GetAll());
+        return View();
     }
 
     public IActionResult Privacy()

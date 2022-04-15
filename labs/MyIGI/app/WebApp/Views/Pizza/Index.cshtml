@@ -1,0 +1,85 @@
+﻿@model List<BLL.DTO.PizzaDTO>
+
+@{ 
+    ViewData["Title"] = "Index";
+}
+
+@* <p> *@
+@*     <a asp-action="Create"  class="btn btn-outline-dark m-1">Create</a> *@
+@* </p> *@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index">Id</a>
+            </th>
+            <th>
+                <a asp-action="Index">Name</a>
+            </th>
+            <th>
+                <a asp-action="Index">Caloric</a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-dark m-1">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark m-1">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-dark m-1">Delete</a>
+                </td>
+            </tr>
+        }
+        <tr>
+            <a asp-action="Create" class="btn btn-outline-dark m-1">Create</a>
+        </tr>
+    </tbody>
+</table>
+@* <div class="d-flex align-items-center justify-content-center"> *@
+@*     @if (Model.PageViewModel.HasPreviousPage) *@
+@*     { *@
+@*         <a asp-action="Index" *@
+@*            asp-route-page="1" *@
+@*            asp-route-sortState="@Model.SortManufacturerViewModel.Current" *@
+@*            asp-route-selectedName="@Model.FilterManufacturerViewModel.SelectedName" *@
+@*            class="btn btn-outline-dark m-1"> *@
+@*             First page *@
+@*         </a> *@
+@*      *@
+@*         <a asp-action="Index" *@
+@*            asp-route-page="@(Model.PageViewModel.PageNumber - 1)" *@
+@*            asp-route-sortState="@Model.SortManufacturerViewModel.Current" *@
+@*            asp-route-selectedName="@Model.FilterManufacturerViewModel.SelectedName" *@
+@*            class="btn btn-outline-dark m-1"> *@
+@*             Previous page *@
+@*         </a> *@
+@*     } *@
+@*     <a class="btn btn-outline-dark m-1"> *@
+@*         @Model.PageViewModel.PageNumber *@
+@*     </a> *@
+@*     @if (Model.PageViewModel.HasNextPage) *@
+@*     { *@
+@*         <a asp-action="Index" *@
+@*            asp-route-page="@(Model.PageViewModel.PageNumber + 1)" *@
+@*            asp-route-sortState="@Model.SortManufacturerViewModel.Current" *@
+@*            asp-route-selectedName="@Model.FilterManufacturerViewModel.SelectedName" *@
+@*            class="btn btn-outline-dark m-1"> *@
+@*             Next page *@
+@*         </a> *@
+@*         <a asp-action="Index" *@
+@*            asp-route-page="@Model.PageViewModel.TotalPages" *@
+@*            asp-route-sortState="@Model.SortManufacturerViewModel.Current" *@
+@*            asp-route-selectedName="@Model.FilterManufacturerViewModel.SelectedName" *@
+@*            class="btn btn-outline-dark m-1"> *@
+@*             Last page (@Model.PageViewModel.TotalPages) *@
+@*         </a> *@
+@*     } *@
+@* </div> *@

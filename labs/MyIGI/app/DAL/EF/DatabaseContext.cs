@@ -31,7 +31,7 @@ public class DatabaseContext : DbContext
         {
             entity.ToTable("Pizza");
             entity.HasIndex(e => e.Id, "Id");
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasColumnType("CHAR");
             entity.Property(e => e.Caloric).HasColumnType("INT");
         });
@@ -40,7 +40,7 @@ public class DatabaseContext : DbContext
         {
             entity.ToTable("Restaurant");
             entity.HasIndex(e => e.Id, "Id");
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Address).HasColumnType("CHAR");
             entity.Property(e => e.Revenue).HasColumnType("INT");
         });
@@ -49,7 +49,7 @@ public class DatabaseContext : DbContext
         {
             entity.ToTable("Cook");
             entity.HasIndex(e => e.Id, "Id");
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasColumnType("CHAR");
             entity.Property(e => e.Age).HasColumnType("INT");
             entity.Property(e => e.PizzaId).HasColumnType("INT");
