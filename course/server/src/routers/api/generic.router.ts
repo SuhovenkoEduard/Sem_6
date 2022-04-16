@@ -1,10 +1,10 @@
 import express, { Request, Response } from 'express'
 import Sequelize from 'sequelize'
-import { ApiRouters } from '../../constants/constants'
+import { ApiRouters, CLIENT_ERROR_STATUS_CODE } from '../../constants/constants'
 import { messages } from '../../constants/messages'
 
 export const errorHandler = (reason: object, errorType: string, res: Response) =>
-  res.json({ error: {
+  res.status(CLIENT_ERROR_STATUS_CODE).json({ error: {
     header: messages.DATABASE_ERROR,
     type: errorType,
     body: reason,
