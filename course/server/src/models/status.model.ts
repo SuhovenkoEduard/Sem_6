@@ -12,7 +12,7 @@ export const StatusModel = sequelize.define(TableNames.statuses, {
     allowNull: false,
   },
   [StatusSchema.type]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

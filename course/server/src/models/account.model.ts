@@ -12,11 +12,11 @@ export const AccountModel = sequelize.define(TableNames.accounts, {
     allowNull: false,
   },
   [AccountSchema.email]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [AccountSchema.password]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

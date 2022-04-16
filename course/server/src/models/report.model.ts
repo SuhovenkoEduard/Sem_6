@@ -21,11 +21,11 @@ export const ReportModel = sequelize.define(TableNames.reports, {
     },
   },
   [ReportSchema.date]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [ReportSchema.description]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

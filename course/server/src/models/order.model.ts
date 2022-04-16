@@ -48,11 +48,11 @@ export const OrderModel = sequelize.define(TableNames.orders, {
     },
   },
   [OrderSchema.address]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [OrderSchema.date]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

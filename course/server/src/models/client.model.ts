@@ -22,15 +22,15 @@ export const ClientModel = sequelize.define(TableNames.clients, {
     unique: true,
   },
   [ClientSchema.name]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [ClientSchema.phone]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [ClientSchema.description]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

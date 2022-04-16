@@ -8,7 +8,7 @@ export const Catalog = () => {
   const authedUser = authUser()
   return (
     <div>
-      <p>{`Hello ${authedUser?.name}, your age is: ${authedUser?.age}`}</p>
+      <p>{JSON.stringify(authedUser, null, '  ')}</p>
       <button type="button" onClick={() => signOut()}>Sign Out!</button>
     </div>
   )

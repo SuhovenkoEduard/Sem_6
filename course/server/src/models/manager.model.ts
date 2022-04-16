@@ -22,7 +22,7 @@ export const ManagerModel = sequelize.define(TableNames.managers, {
     unique: true,
   },
   [ManagerSchema.name]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [ManagerSchema.salary]: {
@@ -30,7 +30,7 @@ export const ManagerModel = sequelize.define(TableNames.managers, {
     allowNull: false,
   },
   [ManagerSchema.description]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

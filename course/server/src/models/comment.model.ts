@@ -21,11 +21,11 @@ export const CommentModel = sequelize.define(TableNames.comments, {
     },
   },
   [CommentSchema.content]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [CommentSchema.date]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { ShortAccountData } from '../../constants/types'
+import { AccountType } from '../../constants/types'
 
 import styles from '../../scss/components/sign/sign-in-form.module.scss'
 
 type SignInFormProps = {
   goToHome: () => void
   goToSignUp: () => void
-  onSignIn: (account: ShortAccountData) => void
+  onSignIn: (account: AccountType) => Promise<void>
 }
 
 export const SignInForm = (props: SignInFormProps) => {
@@ -18,12 +18,12 @@ export const SignInForm = (props: SignInFormProps) => {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-    onSignIn({ login: email, password })
+    onSignIn({ email, password })
   }
 
   return (
     <div className={styles.formContainer}>
-      <div className={styles.formHeader}>Sign Up</div>
+      <div className={styles.formHeader}>Sign In</div>
       <form className={styles.signInForm} onSubmit={handleSubmit}>
         <TextField
           label="Email"

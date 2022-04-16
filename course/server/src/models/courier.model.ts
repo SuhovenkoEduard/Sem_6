@@ -22,7 +22,7 @@ export const CourierModel = sequelize.define(TableNames.couriers, {
     unique: true,
   },
   [CourierSchema.name]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [CourierSchema.salary]: {
@@ -30,7 +30,7 @@ export const CourierModel = sequelize.define(TableNames.couriers, {
     allowNull: false,
   },
   [CourierSchema.description]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

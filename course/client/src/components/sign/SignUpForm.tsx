@@ -1,29 +1,32 @@
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-
-import { LongAccountData } from '../../constants/types'
+import { AccountType, ClientType } from '../../constants/types'
 
 import styles from '../../scss/components/sign/sign-up-form.module.scss'
 
 type SignUpFormProps = {
   goToHome: () => void
   goToSignIn: () => void
-  onSignUp: (account: LongAccountData) => void
+  onSignUp: (clientData: ClientType & AccountType) => Promise<void>
 }
 
 export const SignUpForm = (props: SignUpFormProps) => {
   const { goToHome, goToSignIn, onSignUp } = props
   const [name, setName] = useState('')
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
+  const [description, setDescription] = useState<string>('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
     onSignUp({
-      login: email,
+      name,
+      phoneNumber,
+      description,
+      email,
       password,
-      user: { name },
     })
   }
 
@@ -37,6 +40,20 @@ export const SignUpForm = (props: SignUpFormProps) => {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
+        />
+        <TextField
+          label="Phone number"
+          variant="filled"
+          required
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+        />
+        <TextField
+          label="Description"
+          variant="filled"
+          required
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
         <TextField
           label="Email"

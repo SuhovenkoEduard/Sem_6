@@ -1,5 +1,3 @@
-import { LongAccountData } from './types'
-
 export enum RoutesPaths {
   any = '*',
   home = '/home',
@@ -8,7 +6,7 @@ export enum RoutesPaths {
   catalog = '/catalog'
 }
 
-export const ACCOUNTS_DATA: LongAccountData[] = [
+export const ACCOUNTS_DATA: any[] = [
   {
     login: 'aaa@er',
     password: '3',

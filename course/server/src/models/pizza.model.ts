@@ -12,11 +12,11 @@ export const PizzaModel = sequelize.define(TableNames.pizzas, {
     allowNull: false,
   },
   [PizzaSchema.name]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [PizzaSchema.description]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
   [PizzaSchema.price]: {
@@ -24,7 +24,7 @@ export const PizzaModel = sequelize.define(TableNames.pizzas, {
     allowNull: false,
   },
   [PizzaSchema.imageUrl]: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false,
   },
 }, {

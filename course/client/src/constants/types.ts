@@ -1,11 +1,11 @@
-export type ShortAccountData = {
-  login: string
+export type AccountType = {
+  email: string
   password: string
 }
 
-export type UserType = {
+export type ClientType = {
   name: string
-  age?: number
+  phoneNumber: string
+  description: string
 }
 
-export type LongAccountData = ShortAccountData & { user: UserType }
