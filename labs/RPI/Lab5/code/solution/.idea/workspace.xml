@@ -5,39 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 change folder name and delete old version">
-      <change afterPath="$PROJECT_DIR$/../../../../../course/db/pizzeria.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/db/pizzeria.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/runConfigurations/watch-and-run.run.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/constants/constants.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/constants/messages.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/constants/schemas.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/constants/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/dbConnection.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/account.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/client.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/comment.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/courier.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/manager.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/models.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/order.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/pizza.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/report.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/models/status.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/routers/api/generic.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/src/routers/api/routers.api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../../course/server/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,6 +29,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Projects/Sem_6/course/server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -131,7 +99,8 @@
       <workItem from="1650006969496" duration="353000" />
       <workItem from="1650007736807" duration="16000" />
       <workItem from="1650117919054" duration="242000" />
-      <workItem from="1650118252311" duration="6376000" />
+      <workItem from="1650118252311" duration="6379000" />
+      <workItem from="1650131192007" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="RPI Lab5 (1/4 task)">
       <created>1649457615339</created>
