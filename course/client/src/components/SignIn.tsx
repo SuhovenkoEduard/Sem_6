@@ -29,7 +29,7 @@ export const SignIn = () => {
         authState: user,
         expiresIn: 120, // Token Expriration time, in minutes
       })
-      navigate(RoutesPaths.catalog)
+      navigate(RoutesPaths.home)
     } catch (e: any) {
       console.log(e.message)
     }
@@ -37,7 +37,7 @@ export const SignIn = () => {
 
   if (isAuthenticated()) {
     return (
-      <Navigate to={RoutesPaths.catalog} replace />
+      <Navigate to={RoutesPaths.home} replace />
     )
   }
   return (

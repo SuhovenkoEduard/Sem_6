@@ -1,5 +1,5 @@
 import {
-  Account, Client, Courier, Manager,
+  AccountDTO, ClientDTO, CourierDTO, ManagerDTO,
 } from './models'
 
 export enum RequestMethod {
@@ -28,8 +28,8 @@ export type ClientType = {
 }
 
 export type UserType = {
-  account: Account
-  client?: Client
-  courier?: Courier
-  manager?: Manager
+  account: AccountDTO
+  client?: ClientDTO
+  courier?: CourierDTO
+  manager?: ManagerDTO
 }
