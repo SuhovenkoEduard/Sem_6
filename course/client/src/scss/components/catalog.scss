@@ -1,0 +1,77 @@
+@import '../colors.scss';
+
+.catalog-container {
+  &__header {
+
+  }
+  &__error {
+
+  }
+  &__loading {
+
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    &__card {
+      &.even {
+        background-color: $red-dark-10 !important;
+      }
+      background-color: $red-light-20;
+      width: 33%;
+      max-width: 500px;
+      max-height: 520px;
+      aspect-ratio: 1 / 1.2;
+      display: grid;
+      grid-template-areas:
+              "image"
+              "data"
+              "order";
+      grid-template-rows: 1fr 10fr 4fr;
+      text-align: center;
+      &__image-container {
+        grid-area: image;
+        padding: 2vh;
+        margin-top: 2vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          object-fit: contain;
+          width: 80%;
+          max-height: 266px;
+          aspect-ratio: 1 / 1;
+        }
+      }
+      &__data {
+        padding: 2vh;
+        grid-area: data;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 1.3rem;
+        &__name {
+          text-transform: uppercase;
+        }
+        &__description {
+          align-self: center;
+          font-size: 0.8rem;
+        }
+      }
+      &__order {
+        grid-area: order;
+        margin: 2vh auto;
+        padding: 1vh;
+        width: 80%;
+        max-width: 130px;
+        aspect-ratio: 3 / 1;
+        background-color: white;
+        border: 2px solid $red-dark-70;
+        font-size: 1.1rem;
+        border-radius: 1vh;
+        color: $red-light-10;
+      }
+    }
+  }
+}

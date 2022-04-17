@@ -11,31 +11,31 @@ export interface IWorker extends IUser {
   salary: number
 }
 
-export type Account = IModel & {
+export type AccountDTO = IModel & {
   email: string
   passwordHash: string
 }
 
-export type Client = IUser & {
+export type ClientDTO = IUser & {
   phoneNumber: string
   description: string
 }
 
-export type Courier = IWorker & {
+export type CourierDTO = IWorker & {
   description: string
 }
 
-export type Manager = IWorker & {
+export type ManagerDTO = IWorker & {
   description: string
 }
 
-export type Comment = IModel & {
+export type CommentDTO = IModel & {
   clientId: number
   content: string
   date: string
 }
 
-export type Order = IModel & {
+export type OrderDTO = IModel & {
   pizzaId: number
   clientId: number
   courierId: number
@@ -44,19 +44,19 @@ export type Order = IModel & {
   date: string
 }
 
-export type Pizza = IModel & {
+export type PizzaDTO = IModel & {
   name: string
   description: string
   price: number
   imageUrl: string
 }
 
-export type Report = IModel & {
+export type ReportDTO = IModel & {
   courierId: number
   date: string
   description: string
 }
 
-export type Status = IModel & {
+export type StatusDTO = IModel & {
   type: string
 }

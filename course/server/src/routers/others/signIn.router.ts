@@ -2,9 +2,10 @@ import express from 'express'
 import { AccountModel, ClientModel, CourierModel, ManagerModel } from '../../models/models'
 import { AccountSchema, ClientSchema, CourierSchema, ManagerSchema } from '../../constants/schemas'
 import stringHash from 'string-hash'
-import { Account, Client, Courier, Manager } from '../../constants/models'
+import { AccountDTO, ClientDTO, CourierDTO, ManagerDTO } from '../../constants/models'
 import { messages } from '../../constants/messages'
 import { sendError } from '../../helpers/server.helper'
+import { RoutesPaths } from '../../constants/constants'
 
 export const signInRouter = express.Router()
 
@@ -13,10 +14,10 @@ type SignInData = {
   password: string
 }
 
-signInRouter.post('/', async (req: express.Request, res: express.Response) => {
+signInRouter.post(RoutesPaths.root, async (req: express.Request, res: express.Response) => {
   try {
     const signInData: SignInData = { ...req.body }
-    const account: Account | null  = await AccountModel.findOne({
+    const account: AccountDTO | null  = await AccountModel.findOne({
       where: {
         [AccountSchema.email]: signInData.email,
         [AccountSchema.password]: stringHash(signInData.password).toString(),
@@ -27,7 +28,7 @@ signInRouter.post('/', async (req: express.Request, res: express.Response) => {
       return sendError(messages.NO_SUCH_ACCOUNT_FOUND, res)
     }
 
-    const client: Client | null = await ClientModel.findOne({
+    const client: ClientDTO | null = await ClientModel.findOne({
       where: {
         [ClientSchema.accountId]: account.id,
       },
@@ -37,7 +38,7 @@ signInRouter.post('/', async (req: express.Request, res: express.Response) => {
       return res.json({ account, client })
     }
 
-    const courier: Courier | null = await CourierModel.findOne({
+    const courier: CourierDTO | null = await CourierModel.findOne({
       where: {
         [CourierSchema.accountId]: account.id,
       },
@@ -47,7 +48,7 @@ signInRouter.post('/', async (req: express.Request, res: express.Response) => {
       return res.json({ account, courier })
     }
 
-    const manager: Manager | null = await ManagerModel.findOne({
+    const manager: ManagerDTO | null = await ManagerModel.findOne({
       where: {
         [ManagerSchema.accountId]: account.id,
       },
