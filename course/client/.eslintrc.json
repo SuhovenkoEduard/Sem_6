@@ -40,9 +40,11 @@
         "tsx": "never"
       }
     ],
-    "no-console": [1],
+    "no-console": ["off"],
     "no-shadow": "off",
-    "no-unused-vars": ["off"]
+    "no-unused-vars": ["off"],
+    "no-nested-ternary": ["off"],
+    "quote-props": ["off"]
   },
   "settings": {
     "import/resolver": {

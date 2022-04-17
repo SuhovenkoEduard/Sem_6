@@ -1,11 +1,35 @@
-export type ShortAccountData = {
-  login: string
+import {
+  AccountDTO, ClientDTO, CourierDTO, ManagerDTO,
+} from './models'
+
+export enum RequestMethod {
+  get = 'GET',
+  post = 'POST',
+  put = 'PUT',
+  delete = 'DELETE',
+}
+
+export type FetchRequest = {
+  url: string
+  method: RequestMethod
+  body?: object | null
+  headers?: { [key: string]: string }
+}
+
+export type AccountType = {
+  email: string
   password: string
 }
 
-export type UserType = {
+export type ClientType = {
   name: string
-  age?: number
+  phoneNumber: string
+  description: string
 }
 
-export type LongAccountData = ShortAccountData & { user: UserType }
+export type UserType = {
+  account: AccountDTO
+  client?: ClientDTO
+  courier?: CourierDTO
+  manager?: ManagerDTO
+}

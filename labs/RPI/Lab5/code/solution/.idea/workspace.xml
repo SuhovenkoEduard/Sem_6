@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c85368b-a303-47b2-b9d9-ebd7fac7be24" name="Changes" comment="RPI Lab5 change folder name and delete old version">
-      <change afterPath="$PROJECT_DIR$/../../../../IGI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/bin/Debug/net6.0/Lab4_hashing.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/Lab4_hashing.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Debug/net6.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Lab4_hashing.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/Lab4_hashing.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab4/code/Lab4/Lab4_hashing/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab5/graph/graph.depend" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/graph/graph.depend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../AiSD/lab5/graph/graph.layout" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../AiSD/lab5/graph/graph.layout" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../IGI/Examples/Vitalya/3 lab/UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../IGI/Examples/Vitalya/3 lab/UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/pizza.db" beforeDir="false" afterPath="$PROJECT_DIR$/../db/pizza.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,25 +26,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../course/client" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="D:\Projects\University\Sem_6\labs\RPI\Lab5\code\solution\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Projects/Sem_6/course/server",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\Projects\\Sem_6\\labs\\RPI\\Lab5\\code\\solution\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projects\Sem_6\labs\RPI\Lab5Eduard\code\api\src\orm\routers\apis" />
@@ -123,6 +98,9 @@
       <workItem from="1649706618381" duration="13000" />
       <workItem from="1650006969496" duration="353000" />
       <workItem from="1650007736807" duration="16000" />
+      <workItem from="1650117919054" duration="242000" />
+      <workItem from="1650118252311" duration="6379000" />
+      <workItem from="1650131192007" duration="40000" />
     </task>
     <task id="LOCAL-00001" summary="RPI Lab5 (1/4 task)">
       <created>1649457615339</created>

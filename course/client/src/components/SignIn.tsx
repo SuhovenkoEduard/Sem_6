@@ -2,41 +2,60 @@ import React from 'react'
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
 import { useNavigate, Navigate } from 'react-router-dom'
 import { SignInForm } from './sign/SignInForm'
-import { ShortAccountData } from '../constants/types'
+import { AccountType, UserType } from '../constants/types'
 import { RoutesPaths } from '../constants/constants'
 import { generateUuid } from '../helpers/helpers'
-import { getAccountData } from '../api/fakeApi'
+import { useFetch } from '../hooks/useFetch'
+import { createSignInRequest } from '../api/api'
 
 export const SignIn = () => {
   const isAuthenticated = useIsAuthenticated()
   const signIn = useSignIn()
   const navigate = useNavigate()
 
-  const onSignIn = (shortAccountData: ShortAccountData) => {
-    const longAccountData = getAccountData(shortAccountData)
-    if (longAccountData) {
+  const {
+    loading,
+    request,
+    error,
+    clearError,
+  } = useFetch()
+
+  const onSignIn = async (accountData: AccountType) => {
+    try {
+      const user: UserType = await request(createSignInRequest(accountData))
       signIn({
         token: generateUuid(),
         tokenType: 'Bearer', // Token type set as Bearer
-        authState: longAccountData.user,
+        authState: user,
         expiresIn: 120, // Token Expriration time, in minutes
       })
-      navigate(RoutesPaths.catalog)
-    } else {
-      // eslint-disable-next-line no-alert
-      alert('Error Occoured. Try Again')
+      navigate(RoutesPaths.home)
+    } catch (e: any) {
+      console.log(e.message)
     }
   }
+
   if (isAuthenticated()) {
     return (
-      <Navigate to={RoutesPaths.catalog} replace />
+      <Navigate to={RoutesPaths.home} replace />
     )
   }
   return (
-    <SignInForm
-      goToHome={() => navigate(RoutesPaths.home)}
-      goToSignUp={() => navigate(RoutesPaths.signUp)}
-      onSignIn={onSignIn}
-    />
+    loading ? (<div>Loading...</div>) : (
+      error ? (
+        <>
+          <div>{`Error: ${error}`}</div>
+          <button type="button" onClick={clearError}>
+            Try Again
+          </button>
+        </>
+      ) : (
+        <SignInForm
+          goToHome={() => navigate(RoutesPaths.home)}
+          goToSignUp={() => navigate(RoutesPaths.signUp)}
+          onSignIn={onSignIn}
+        />
+      )
+    )
   )
 }

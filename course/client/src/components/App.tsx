@@ -1,6 +1,7 @@
 import React from 'react'
 import { AuthProvider } from 'react-auth-kit'
-import { RoutesComponent } from './Routes'
+import { RoutesResolver } from './RoutesResolver'
+import { AppHeader } from './AppHeader'
 
 export const App = () => {
   return (
@@ -8,7 +9,8 @@ export const App = () => {
       authName="_auth"
       authType="cookie"
     >
-      <RoutesComponent />
+      <AppHeader />
+      <RoutesResolver />
     </AuthProvider>
   )
 }

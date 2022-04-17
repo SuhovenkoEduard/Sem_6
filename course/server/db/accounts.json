@@ -1,0 +1,38 @@
+[
+  {
+    "role": "client",
+    "email": "avatar_dj@mail.ru",
+    "password": "12345",
+    "passwordHash": "109950804"
+  },
+  {
+    "role": "client",
+    "email": "indigo@gmail.com",
+    "password": "1097535489fg",
+    "passwordHash": "3569621005"
+  },
+  {
+    "role": "courier",
+    "email": "kessler.polly@mraz.org",
+    "password": "99999fdffff",
+    "passwordHash": "1454387486"
+  },
+  {
+    "role": "courier",
+    "email": "delphia.gutmann@hotmail.com",
+    "password": "jfpwsadkijfsdifh343",
+    "passwordHash": "431405298"
+  },
+  {
+    "role": "manager",
+    "email": "mireya16@turcotte.com",
+    "password": "90583040gffgfg5",
+    "passwordHash": "2192746066"
+  },
+  {
+    "role": "manager",
+    "email": "nayeli.jacobi@yahoo.com",
+    "password": "54fsd5f4sg6833348422__fds",
+    "passwordHash": "1270372722"
+  }
+]
