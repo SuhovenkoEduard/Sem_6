@@ -4,7 +4,7 @@ import { TableNames } from '../constants/types'
 import { AccountSchema, CourierSchema } from '../constants/schemas'
 import { AccountModel } from './account.model'
 
-export const CourierModel = sequelize.define(TableNames.couriers, {
+export const CourierModel = sequelize.define<any, any>(TableNames.couriers, {
   [CourierSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,

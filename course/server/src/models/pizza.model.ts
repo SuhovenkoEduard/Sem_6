@@ -3,7 +3,7 @@ import { sequelize } from '../dbConnection/dbConnection'
 import { TableNames } from '../constants/types'
 import { PizzaSchema } from '../constants/schemas'
 
-export const PizzaModel = sequelize.define(TableNames.pizzas, {
+export const PizzaModel = sequelize.define<any, any>(TableNames.pizzas, {
   [PizzaSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,

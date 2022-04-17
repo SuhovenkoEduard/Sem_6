@@ -9,7 +9,7 @@ import { SignUp } from './SignUp'
 import { Catalog } from './Catalog'
 import { RoutesPaths } from '../constants/constants'
 
-export const RoutesComponent = () => {
+export const RoutesResolver = () => {
   return (
     <BrowserRouter>
       <Routes>

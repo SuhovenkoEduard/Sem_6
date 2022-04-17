@@ -3,7 +3,7 @@ import { sequelize } from '../dbConnection/dbConnection'
 import { TableNames } from '../constants/types'
 import { StatusSchema } from '../constants/schemas'
 
-export const StatusModel = sequelize.define(TableNames.statuses, {
+export const StatusModel = sequelize.define<any, any>(TableNames.statuses, {
   [StatusSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,

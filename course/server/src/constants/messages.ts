@@ -9,4 +9,6 @@ export const messages = {
   DATABASE_ERROR_ADD: 'Add.',
   DATABASE_ERROR_UPDATE: 'Update.',
   DATABASE_ERROR_DELETE: 'Delete.',
+  NO_SUCH_ACCOUNT_FOUND: 'No such account found.',
+  NO_SUCH_USER_FOUND: 'No such user found.',
 }

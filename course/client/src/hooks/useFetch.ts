@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react'
+import { FetchRequest, RequestMethod } from '../constants/types'
 
 export const useFetch = () => {
   const [loading, setLoading] = useState<boolean>(false)
@@ -7,10 +8,12 @@ export const useFetch = () => {
   const clearError = () => setError('')
 
   const request = useCallback(async (
-    url: string,
-    method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
-    body: object | null = null,
-    headers: { [key: string]: string } = {},
+    {
+      url,
+      method = RequestMethod.get,
+      body = null,
+      headers = {},
+    }: FetchRequest,
   ) => {
     const handleError = (message: string) => {
       setLoading(false)
@@ -28,7 +31,7 @@ export const useFetch = () => {
       const data = await response.json()
 
       if (!response.ok) {
-        return handleError(data.message || 'Something went wrong (fetch-hook).')
+        return handleError(data?.message ?? 'Something went wrong (fetch-hook).')
       }
 
       setLoading(false)

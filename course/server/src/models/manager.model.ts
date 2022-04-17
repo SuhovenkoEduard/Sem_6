@@ -4,7 +4,7 @@ import { TableNames } from '../constants/types'
 import { AccountSchema, ManagerSchema } from '../constants/schemas'
 import { AccountModel } from './account.model'
 
-export const ManagerModel = sequelize.define(TableNames.managers, {
+export const ManagerModel = sequelize.define<any, any>(TableNames.managers, {
   [ManagerSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,

@@ -4,7 +4,7 @@ import { TableNames } from '../constants/types'
 import { ClientSchema, CommentSchema } from '../constants/schemas'
 import { ClientModel } from './client.model'
 
-export const CommentModel = sequelize.define(TableNames.comments, {
+export const CommentModel = sequelize.define<any, any>(TableNames.comments, {
   [CommentSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,

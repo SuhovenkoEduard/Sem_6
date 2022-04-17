@@ -3,7 +3,7 @@ import { sequelize } from '../dbConnection/dbConnection'
 import { TableNames } from '../constants/types'
 import { AccountSchema } from '../constants/schemas'
 
-export const AccountModel = sequelize.define(TableNames.accounts, {
+export const AccountModel = sequelize.define<any, any>(TableNames.accounts, {
   [AccountSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -13,6 +13,7 @@ export const AccountModel = sequelize.define(TableNames.accounts, {
   },
   [AccountSchema.email]: {
     type: Sequelize.TEXT,
+    unique: true,
     allowNull: false,
   },
   [AccountSchema.password]: {

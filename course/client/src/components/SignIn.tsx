@@ -2,12 +2,11 @@ import React from 'react'
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
 import { useNavigate, Navigate } from 'react-router-dom'
 import { SignInForm } from './sign/SignInForm'
-import { AccountType } from '../constants/types'
+import { AccountType, UserType } from '../constants/types'
 import { RoutesPaths } from '../constants/constants'
 import { generateUuid } from '../helpers/helpers'
-import { Account, Client } from '../constants/models'
-import { ApiRouters, TableRoutes } from '../constants/api'
 import { useFetch } from '../hooks/useFetch'
+import { createSignInRequest } from '../api/api'
 
 export const SignIn = () => {
   const isAuthenticated = useIsAuthenticated()
@@ -23,30 +22,16 @@ export const SignIn = () => {
 
   const onSignIn = async (accountData: AccountType) => {
     try {
-      const accounts: Account[] = await request(`${ApiRouters.api}${TableRoutes.accounts}${ApiRouters.getAll}`)
-      const account = accounts.find((account) => account.email === accountData.email
-        && account.passwordHash === accountData.password)
-      if (account) {
-        const clients: Client[] = await request(`${ApiRouters.api}${TableRoutes.clients}${ApiRouters.getAll}`)
-        const client = clients.find((client) => client.accountId === account.id)
-
-        if (!client) {
-          throw Error('No such client found.')
-        }
-
-        signIn({
-          token: generateUuid(),
-          tokenType: 'Bearer', // Token type set as Bearer
-          authState: {
-            ...client, clientId: client.id, ...account, accountId: account.id,
-          },
-          expiresIn: 120, // Token Expriration time, in minutes
-        })
-        navigate(RoutesPaths.catalog)
-      } else throw Error('No such account found.')
+      const user: UserType = await request(createSignInRequest(accountData))
+      signIn({
+        token: generateUuid(),
+        tokenType: 'Bearer', // Token type set as Bearer
+        authState: user,
+        expiresIn: 120, // Token Expriration time, in minutes
+      })
+      navigate(RoutesPaths.catalog)
     } catch (e: any) {
-      // eslint-disable-next-line no-alert
-      alert(`Error Occoured. Try Again ${e.message}`)
+      console.log(e.message)
     }
   }
 
@@ -56,10 +41,21 @@ export const SignIn = () => {
     )
   }
   return (
-    <SignInForm
-      goToHome={() => navigate(RoutesPaths.home)}
-      goToSignUp={() => navigate(RoutesPaths.signUp)}
-      onSignIn={onSignIn}
-    />
+    loading ? (<div>Loading...</div>) : (
+      error ? (
+        <>
+          <div>{`Error: ${error}`}</div>
+          <button type="button" onClick={clearError}>
+            Try Again
+          </button>
+        </>
+      ) : (
+        <SignInForm
+          goToHome={() => navigate(RoutesPaths.home)}
+          goToSignUp={() => navigate(RoutesPaths.signUp)}
+          onSignIn={onSignIn}
+        />
+      )
+    )
   )
 }

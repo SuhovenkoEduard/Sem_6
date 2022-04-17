@@ -5,9 +5,8 @@ import { RoutesPaths } from '../constants/constants'
 import { SignUpForm } from './sign/SignUpForm'
 import { generateUuid } from '../helpers/helpers'
 import { useFetch } from '../hooks/useFetch'
-import { AccountType, ClientType } from '../constants/types'
-import { ApiRouters, SERVER_URL, TableRoutes } from '../constants/api'
-import { Account, Client } from '../constants/models'
+import { AccountType, ClientType, UserType } from '../constants/types'
+import { createSignUpRequest } from '../api/api'
 
 export const SignUp = () => {
   const isAuthenticated = useIsAuthenticated()
@@ -24,35 +23,11 @@ export const SignUp = () => {
   const onSignUp = async (clientData: ClientType & AccountType) => {
     clearError()
     try {
-      const account: Account = await request(
-        `${ApiRouters.api}${TableRoutes.accounts}${ApiRouters.postSingle}`,
-        'POST',
-        {
-          email: clientData.email,
-          passwordHash: clientData.password,
-        },
-      )
-
-      const client: Client = await request(
-        `${ApiRouters.api}${TableRoutes.clients}${ApiRouters.postSingle}`,
-        'POST',
-        {
-          accountId: account.id,
-          name: clientData.name,
-          phoneNumber: clientData.phoneNumber,
-          description: clientData.description,
-        },
-      )
-
+      const user: UserType = await request(createSignUpRequest(clientData))
       signIn({
         token: generateUuid(),
         tokenType: 'Bearer', // Token type set as Bearer
-        authState: {
-          user: {
-            account,
-            client,
-          },
-        },
+        authState: user,
         expiresIn: 120, // Token Expriration time, in minutes
       })
       navigate(RoutesPaths.catalog)
@@ -66,14 +41,23 @@ export const SignUp = () => {
       <Navigate to={RoutesPaths.catalog} replace />
     )
   }
+
   return (
-    <>
-      {error ?? `Error state ${error}`}
-      <SignUpForm
-        goToHome={() => navigate(RoutesPaths.home)}
-        goToSignIn={() => navigate(RoutesPaths.signIn)}
-        onSignUp={onSignUp}
-      />
-    </>
+    loading ? (<div>Loading...</div>) : (
+      error ? (
+        <>
+          <div>{`Error: ${error}`}</div>
+          <button type="button" onClick={clearError}>
+            Try Again
+          </button>
+        </>
+      ) : (
+        <SignUpForm
+          goToHome={() => navigate(RoutesPaths.home)}
+          goToSignIn={() => navigate(RoutesPaths.signIn)}
+          onSignUp={onSignUp}
+        />
+      )
+    )
   )
 }

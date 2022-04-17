@@ -7,7 +7,7 @@ import { ClientModel } from './client.model'
 import { CourierModel } from './courier.model'
 import { StatusModel } from './status.model'
 
-export const OrderModel = sequelize.define(TableNames.orders, {
+export const OrderModel = sequelize.define<any, any>(TableNames.orders, {
   [OrderSchema.id]: {
     type: Sequelize.INTEGER,
     primaryKey: true,
