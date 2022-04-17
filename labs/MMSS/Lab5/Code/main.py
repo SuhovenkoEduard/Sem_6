@@ -37,42 +37,47 @@ def main():
     t = np.linspace(0, 10, 3000)
     y0 = [0, 0, 0]
 
-    ls = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-    mxh = []
-    for _l in ls:
-        model = create_model(y0, t, K, Kt, _l, R, Ke, u, C, J)
-        ys_t = model[:, 0]
-        mxh.append(np.max(ys_t))
-        plt.plot(t, ys_t, linewidth=1, linestyle='-.')
-    plt.show()
+    def additional_task():
+        ls = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+        mxh = []
+        for _l in ls:
+            model = create_model(y0, t, K, Kt, _l, R, Ke, u, C, J)
+            ys_t = model[:, 0]
+            mxh.append(np.max(ys_t))
+            plt.plot(t, ys_t, linewidth=1, linestyle='-.')
+        plt.show()
 
-    min_n = 4
-    max_n = 4
-    for n in range(min_n, max_n + 1):
-        k = np.polyfit(ls, mxh, n)
-        print('Power of polynom: ', n)
-        print('Coeff approx: ', k)
-        approx_fun = np.poly1d(k)
-        _ls = np.linspace(0, 1, 100)
-        plt.plot(_ls, list(map(lambda t: approx_fun(t), _ls)),
-                 linewidth=1,
-                 linestyle='--')
-    plt.plot(ls, mxh, '*', c='red')
-    plt.grid()
-    plt.show()
+        min_n = 4
+        max_n = 4
+        for n in range(min_n, max_n + 1):
+            k = np.polyfit(ls, mxh, n)
+            print('Power of polynom: ', n)
+            print('Coeff approx: ', k)
+            approx_fun = np.poly1d(k)
+            _ls = np.linspace(0, 1, 100)
+            plt.plot(_ls, list(map(lambda t: approx_fun(t), _ls)),
+                     linewidth=1,
+                     linestyle='--')
+        plt.plot(ls, mxh, '*', c='red')
+        plt.grid()
+        plt.show()
 
-    # Y = create_model(y0, t, K, Kt, 1, R, Ke, u, C, J)
-    # plt.plot(t, Y[:, 0], c='blue')
-    # plt.legend(['tetta(t)'])
-    # plt.show()
-    #
-    # plt.plot(t, Y[:, 1], c='red')
-    # plt.legend(['tetta\'(t)'])
-    # plt.show()
-    #
-    # plt.plot(t, Y[:, 2], c='orange')
-    # plt.legend(['i(t)'])
-    # plt.show()
+    def show_default_model():
+        Y = create_model(y0, t, K, Kt, L, R, Ke, u, C, J)
+        plt.plot(t, Y[:, 0], c='blue')
+        plt.legend(['tetta(t)'])
+        plt.show()
+
+        plt.plot(t, Y[:, 1], c='red')
+        plt.legend(['tetta\'(t)'])
+        plt.show()
+
+        plt.plot(t, Y[:, 2], c='orange')
+        plt.legend(['i(t)'])
+        plt.show()
+
+    # additional_task()
+    show_default_model()
 
 
 if __name__ == '__main__':
