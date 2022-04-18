@@ -27,7 +27,7 @@ def create_model(y0, t, K, Kt, L, R, Ke, u, C, J):
 def main():
     K = 35  # Nm
     Kt = 0.4  # Nm/A
-    L = 1  # G
+    L = 0.01  # G
     R = 0.56  # Om
     Ke = 0.4  # Nm/(Vs)
     u = 3  # V
