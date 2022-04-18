@@ -1,8 +1,8 @@
 import React from 'react'
 import { useAuthUser, useSignOut } from 'react-auth-kit'
 import { useNavigate } from 'react-router-dom'
-import { UserType } from '../constants/types'
-import { RoutesPaths } from '../constants/constants'
+import { UserType } from '../../constants/types'
+import { RoutesPaths } from '../../constants/constants'
 
 export const Profile = () => {
   const navigate = useNavigate()

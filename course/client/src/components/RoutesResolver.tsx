@@ -3,12 +3,12 @@ import { RequireAuth } from 'react-auth-kit'
 import {
   BrowserRouter, Route, Routes, Navigate,
 } from 'react-router-dom'
-import { Home } from './Home'
-import { SignIn } from './SignIn'
-import { SignUp } from './SignUp'
-import { Catalog } from './Catalog'
+import { Home } from './pages/Home'
+import { SignIn } from './sign/in/SignIn'
+import { SignUp } from './sign/up/SignUp'
+import { Catalog } from './pages/Catalog'
 import { RoutesPaths } from '../constants/constants'
-import { Profile } from './Profile'
+import { Profile } from './pages/Profile'
 
 export const RoutesResolver = () => {
   return (

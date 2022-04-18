@@ -1,12 +1,12 @@
 import React from 'react'
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
 import { useNavigate, Navigate } from 'react-router-dom'
-import { SignInForm } from './sign/SignInForm'
-import { AccountType, UserType } from '../constants/types'
-import { RoutesPaths } from '../constants/constants'
-import { generateUuid } from '../helpers/helpers'
-import { useFetch } from '../hooks/useFetch'
-import { createSignInRequest } from '../api/api'
+import { SignInForm } from './SignInForm'
+import { AccountType, UserType } from '../../../constants/types'
+import { RoutesPaths } from '../../../constants/constants'
+import { generateUuid } from '../../../helpers/helpers'
+import { useFetch } from '../../../hooks/useFetch'
+import { createSignInRequest } from '../../../api/api'
 
 export const SignIn = () => {
   const isAuthenticated = useIsAuthenticated()

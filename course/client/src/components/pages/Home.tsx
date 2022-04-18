@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useIsAuthenticated, useSignOut } from 'react-auth-kit'
-import { RoutesPaths } from '../constants/constants'
+import { RoutesPaths } from '../../constants/constants'
 
 export const Home = () => {
   const signOut = useSignOut()

@@ -1,0 +1,9 @@
+@import "../colors";
+@import "../variables";
+
+.app-container {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  @extend %custom-scroll-bar;
+}

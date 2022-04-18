@@ -44,7 +44,8 @@
     "no-shadow": "off",
     "no-unused-vars": ["off"],
     "no-nested-ternary": ["off"],
-    "quote-props": ["off"]
+    "quote-props": ["off"],
+    "linebreak-style": ["error", "windows"]
   },
   "settings": {
     "import/resolver": {

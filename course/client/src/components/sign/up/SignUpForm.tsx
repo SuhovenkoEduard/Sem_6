@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { AccountType, ClientType } from '../../constants/types'
+import { AccountType, ClientType } from '../../../constants/types'
 
-import styles from '../../scss/components/sign/sign-up-form.module.scss'
+import styles from '../../../scss/components/sign/sign-up-form.module.scss'
 
 type SignUpFormProps = {
   goToHome: () => void

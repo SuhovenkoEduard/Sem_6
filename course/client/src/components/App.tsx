@@ -1,7 +1,10 @@
 import React from 'react'
 import { AuthProvider } from 'react-auth-kit'
-import { RoutesResolver } from './RoutesResolver'
-import { AppHeader } from './AppHeader'
+import { AppHeader } from './layout/AppHeader'
+import { AppBody } from './layout/AppBody'
+import { AppFooter } from './layout/AppFooter'
+
+import '../scss/components/app.scss'
 
 export const App = () => {
   return (
@@ -9,8 +12,11 @@ export const App = () => {
       authName="_auth"
       authType="cookie"
     >
-      <AppHeader />
-      <RoutesResolver />
+      <div className="app-container">
+        <AppHeader />
+        <AppBody />
+        <AppFooter />
+      </div>
     </AuthProvider>
   )
 }

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { useNavigate } from 'react-router-dom'
-import { useFetch } from '../hooks/useFetch'
-import { PizzaDTO } from '../constants/models'
-import { createGetCatalogRequest } from '../api/api'
-import { RoutesPaths } from '../constants/constants'
+import { useFetch } from '../../hooks/useFetch'
+import { PizzaDTO } from '../../constants/models'
+import { createGetCatalogRequest } from '../../api/api'
+import { RoutesPaths } from '../../constants/constants'
 
-import '../scss/components/catalog.scss'
+import '../../scss/components/pages/catalog.scss'
 
 export const Catalog = () => {
   const navigate = useNavigate()
