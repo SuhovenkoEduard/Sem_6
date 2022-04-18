@@ -1,27 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1.Huffman
 {
     public class Node
     {
-        public int sym;
-        public int freq;
-        public int order;
-        public Node right, left, parent;
-        public NodeType nt;
+        public int Sym;
+        public int Freq;
+        public readonly int Order;
+        public Node Right, Left, Parent;
+        public NodeType Nt;
 
         public Node(NodeType nt, int sym, int freq, int order)
         {
-            this.nt = nt;
-            this.sym = sym;
-            this.freq = freq;
-            this.order = order;
-        }
-
-        private Node()
-        {
+            Nt = nt;
+            Sym = sym;
+            Freq = freq;
+            Order = order;
         }
     }
 

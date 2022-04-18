@@ -1,103 +1,63 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Huffman
 {
-    public class BitIO
+    public class BitIo
     {
-        private Stream stream;
-        private bool ownStream = false, IsOut = false, open = false;
+        private readonly Stream _stream;
+        private readonly bool _isOut;
+        private readonly bool _open;
+        private byte _bc;
+        private int _bi;
 
-        public BitIO(Stream stream, bool IsOut)
+        public BitIo(Stream stream, bool isOut)
         {
-            this.stream = stream;
-            open = true;
-            this.IsOut = IsOut;
-            if (!IsOut)
-                bi = stream.ReadByte();
+            _stream = stream;
+            _open = true;
+            _isOut = isOut;
+            if (!isOut)
+                _bi = stream.ReadByte();
         }
 
-        public BitIO(string FileName, bool IsOut)
-        {
-            ownStream = true;
-            open = true;
-            if (IsOut)
-                stream = new FileStream(FileName, FileMode.Create, FileAccess.Write);
-            else
-                stream = new FileStream(FileName, FileMode.Open, FileAccess.Read);
-        }
-
-        public void Close()
-        {
-            open = false;
-            if (IsOut)
-                BitFlush();
-            if (ownStream)
-                stream.Close();
-        }
-
-        private byte buffer = 0, bits = 0;
-
-        public bool CanRead
-        {
-            get { return this.open && !IsOut; }
-        }
-
-        public bool CanWrite
-        {
-            get { return this.open && IsOut; }
-        }
+        private byte _buffer, _bits;
 
         public void WriteBit(int bit)
         {
-            if (!open)
+            if (!_open)
                 throw new InvalidOperationException("Cannot write to the disposing stream");
-            if (!IsOut)
+            if (!_isOut)
                 throw new NotSupportedException("Cannot write to the read-only bit stream");
-            if (bits == 8)
+            if (_bits == 8)
             {
-                bits = 0;
-                stream.WriteByte(buffer);
-                buffer = 0;
+                _bits = 0;
+                _stream.WriteByte(_buffer);
+                _buffer = 0;
             }
-            bits++;
-            buffer <<= 1;
+            _bits++;
+            _buffer <<= 1;
             if (bit > 0)
-                buffer |= 0x1;
+                _buffer |= 0x1;
         }
-
-        private void BitFlush()
-        {
-            buffer <<= (8 - bits);
-            stream.WriteByte(buffer);
-        }
-
-        private byte bc = 0;
-        private int bi = 0;
-
+        
         public int ReadBit()
         {
-            if (!open)
+            if (!_open)
                 throw new InvalidOperationException("Cannot read from the disposing stream");
-            if (IsOut)
+            if (_isOut)
                 throw new NotSupportedException("Cannot read from a write-only bit stream");
-            bc++;
-            int ret = (bi & 0x80) > 0 ? 1 : 0;
-            bi <<= 1;
-            if (bc == 8)
+            _bc++;
+            var ret = (_bi & 0x80) > 0 ? 1 : 0;
+            _bi <<= 1;
+            if (_bc != 8) return ret;
+            _bc = 0;
+            _bi = _stream.ReadByte();
+            if (_bi == -1)
             {
-                bc = 0;
-                bi = stream.ReadByte();
-                if (bi == -1)
-                {
-                    return 2;
-                }
-                else
-
-                    bi &= 0xff;
+                return 2;
             }
+
+            _bi &= 0xff;
             return ret;
         }
     }

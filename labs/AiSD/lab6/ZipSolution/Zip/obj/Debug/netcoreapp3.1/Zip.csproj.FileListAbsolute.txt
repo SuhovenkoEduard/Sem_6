@@ -1,0 +1,14 @@
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.exe
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.deps.json
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.runtimeconfig.json
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.runtimeconfig.dev.json
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.dll
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\bin\Debug\netcoreapp3.1\Zip.pdb
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.csproj.AssemblyReference.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.AssemblyInfoInputs.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.AssemblyInfo.cs
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.csproj.CoreCompileInputs.cache
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.dll
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.pdb
+D:\Projects\University\Sem_6\labs\AiSD\lab6\ZipSolution\Zip\obj\Debug\netcoreapp3.1\Zip.genruntimeconfig.cache

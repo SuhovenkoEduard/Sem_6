@@ -1,81 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Huffman
 {
    
-    public class Huffman
+    public static class Huffman
     {
-        public delegate void UpdateCRC(int value);
+        private delegate void UpdateCrc(int value);
 
-        private static byte[] sign = { 0x5a, 0x52, 0x41, 0x48 };
+        private static readonly byte[] Sign = { 0x5a, 0x52, 0x41, 0x48 };
 
-        public static void Compress(string inputFile, string archFile, int sizeArch)
+        public static void Compress(string inputFilePath, string archDirPath, string archBaseFileName, int sizeArch)
         {
-            int parts = Part.NumberOfParts(archFile);
+            var parts = Part.NumberOfParts(inputFilePath);
+            for (var i = 0; i <= parts; i++)
+                File.Delete(Part.GetPartFilePath(archDirPath, archBaseFileName, i));
 
-            for (int i = 0; i <= parts; i++)
-                File.Delete(archFile + i.ToString());
+            Stream ifstreamIn = new FileStream(inputFilePath, FileMode.Open, FileAccess.Read);
+            Stream ofstreamIn = new FileStream(Part.GetFilePath(archDirPath, archBaseFileName), FileMode.Create, FileAccess.ReadWrite);
+            var crc = new CrcCalc();
 
-            try
-            {
-                Stream ifstreamIn = new FileStream(inputFile, FileMode.Open, FileAccess.Read);
-                Stream ofstreamIn = new FileStream(archFile, FileMode.Create, FileAccess.ReadWrite);
-                CRCCalc crc = new CRCCalc();
+            var startTime = DateTime.Now;
 
-                DateTime startTime = DateTime.Now;
+            ofstreamIn.Write(Sign, 0, Sign.Length);
+            for (var i = 0; i < 12; i++)
+                ofstreamIn.WriteByte(0x0);
 
-                ofstreamIn.Write(sign, 0, sign.Length);
-                for (int i = 0; i < 12; i++)
-                    ofstreamIn.WriteByte(0x0);
+            Huff(ifstreamIn, ofstreamIn, val => crc.UpdateByte((byte)val));
 
-                Huff(ifstreamIn, ofstreamIn, val => crc.UpdateByte((byte)val));
+            ofstreamIn.Seek(4, SeekOrigin.Begin);
+            var bufferIn = BitConverter.GetBytes(ofstreamIn.Length);
+            ofstreamIn.Write(bufferIn, 0, bufferIn.Length);
 
-                ofstreamIn.Seek(4, SeekOrigin.Begin);
-                byte[] bufferIn = BitConverter.GetBytes(ofstreamIn.Length);
-                ofstreamIn.Write(bufferIn, 0, bufferIn.Length);
+            bufferIn = BitConverter.GetBytes(crc.GetCrc());
 
-                bufferIn = BitConverter.GetBytes(crc.GetCRC());
+            var finishTime = DateTime.Now;
+            Console.WriteLine("Huffman");
 
-                DateTime finishTime = DateTime.Now;
-                Console.WriteLine("Huffman");
-
-                Console.WriteLine("time: " + (finishTime - startTime).TotalMilliseconds + "ms");
-                var koef = new System.IO.FileInfo(inputFile).Length;
-                var res = new System.IO.FileInfo(archFile).Length;
-                Console.WriteLine("koef " + (koef / Convert.ToDouble(res)));
-                ofstreamIn.Write(bufferIn, 0, bufferIn.Length);
-                ofstreamIn.Close();
-                Part.ToParts(archFile, sizeArch);
-                File.Delete(archFile);
-                ifstreamIn.Close();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+            Console.WriteLine("time: " + (finishTime - startTime).TotalMilliseconds + "ms");
+            var koef = new FileInfo(inputFilePath).Length;
+            var res = new FileInfo(Part.GetFilePath(archDirPath, archBaseFileName)).Length;
+            Console.WriteLine("koef " + (koef / Convert.ToDouble(res)));
+            ofstreamIn.Write(bufferIn, 0, bufferIn.Length);
+            ofstreamIn.Close();
+            Part.ToParts(Part.GetFilePath(archDirPath, archBaseFileName), archDirPath, archBaseFileName, sizeArch);
+            File.Delete(Part.GetFilePath(archDirPath, archBaseFileName));
+            ifstreamIn.Close();
         }
 
-        public static void Huff(Stream sin, Stream sout, UpdateCRC callback)
+        private static void Huff(Stream sin, Stream sout, UpdateCrc callback)
         {
-            Tree t = new Tree();
-            int rd, i, tmp;
+            var t = new Tree();
+            int rd;
             Stack<int> ret;
-            BitIO bw = new BitIO(sout, true);
+            var bw = new BitIo(sout, true);
             while ((rd = sin.ReadByte()) != -1)
             {
-                tmp = rd;
+                var tmp = rd;
                 callback((byte)tmp);
-                if (!t.contains(rd))
+                if (!t.Contains(rd))
                 {
                     ret = t.GetCode(257);
                     while (ret.Count > 0)
                         bw.WriteBit(ret.Pop());
+                    int i;
                     for (i = 0; i < 8; i++)
                     {
-                        bw.WriteBit((int)(rd & 0x80));
+                        bw.WriteBit(rd & 0x80);
                         rd <<= 1;
                     }
                     t.UpdateTree(tmp);
@@ -97,26 +91,23 @@ namespace ConsoleApp1
         }
 
         
-        public static void Decompress(string archFile, string outputFile)
+        public static void Decompress(string archDirPath, string archBaseFileName, string outputFilePath)
         {
-            var bytes = Part.FromParts(archFile);
-            File.WriteAllBytes(archFile, bytes);
-            Stream ifstream = new FileStream(archFile, FileMode.Open, FileAccess.Read);
-            Stream ofstream = new FileStream(outputFile, FileMode.Create, FileAccess.ReadWrite);
-            CRCCalc crcCalc = new CRCCalc();
-            uint crc_old, crc_new;
+            var bytes = Part.FromParts(archDirPath, archBaseFileName);
+            File.WriteAllBytes(Part.GetFilePath(archDirPath, archBaseFileName), bytes);
+            Stream ifstream = new FileStream(Part.GetFilePath(archDirPath, archBaseFileName), FileMode.Open, FileAccess.Read);
+            Stream ofstream = new FileStream(outputFilePath, FileMode.Create, FileAccess.ReadWrite);
+            var crcCalc = new CrcCalc();
+            if (Sign.Any(t => ifstream.ReadByte() != t))
+            {
+                ifstream.Close();
+                ofstream.Close();
+                throw new IOException("The supplied file is not a valid huff archive");
+            }
 
-            for (int i = 0; i < sign.Length; i++)
-                if (ifstream.ReadByte() != sign[i])
-                {
-                    ifstream.Close();
-                    ofstream.Close();
-                    throw new IOException("The supplied file is not a valid huff archive");
-                }
-
-            byte[] buffer = new byte[8];
+            var buffer = new byte[8];
             ifstream.Read(buffer, 0, 8);
-            long size = BitConverter.ToInt64(buffer, 0);
+            var size = BitConverter.ToInt64(buffer, 0);
             if (size != ifstream.Length)
             {
                 ifstream.Close();
@@ -125,16 +116,15 @@ namespace ConsoleApp1
             }
 
             ifstream.Read(buffer, 0, 4);
-            crc_old = BitConverter.ToUInt32(buffer, 0);
-
-            Thread myDecompressor = new Thread(o =>
+            var myDecompressor = new Thread(o =>
             {
                 try
                 {
                     UnHuff(ifstream, ofstream, x => crcCalc.UpdateByte((byte)x));
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
+                    // ignored
                 }
             });
             myDecompressor.Start();
@@ -145,21 +135,21 @@ namespace ConsoleApp1
 
             ofstream.Close();
             ifstream.Close();
-            File.Delete(archFile);
+            File.Delete(Part.GetFilePath(archDirPath, archBaseFileName));
         }
 
-        public static void UnHuff(Stream InStream, Stream OutStream, UpdateCRC callback)
+        private static void UnHuff(Stream inStream, Stream outStream, UpdateCrc callback)
         {
-            int i = 0, count = 0, sym;
-            Tree t = new Tree();
-            BitIO bitIO = new BitIO(InStream, false);
-            while ((i = bitIO.ReadBit()) != 2)
+            int i;
+            var t = new Tree();
+            var bitIo = new BitIo(inStream, false);
+            while ((i = bitIo.ReadBit()) != 2)
             {
+                int sym;
                 if ((sym = t.DecodeBinary(i)) != Tree.CharIsEof)
                 {
-                    OutStream.WriteByte((byte)sym);
+                    outStream.WriteByte((byte)sym);
                     callback(sym);
-                    count++;
                 }
             }
         }
@@ -168,10 +158,10 @@ namespace ConsoleApp1
 
     public enum NodeType
     {
-        SYM,
-        NYT,
-        EOF,
-        INT,
+        Sym,
+        Nyt,
+        Eof,
+        Int,
     }
 
 }

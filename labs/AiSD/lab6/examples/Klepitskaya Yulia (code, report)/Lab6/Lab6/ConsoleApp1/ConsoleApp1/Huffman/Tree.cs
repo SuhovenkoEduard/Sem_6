@@ -1,167 +1,158 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.Huffman
 {
     public class Tree
     {
         public const int CharIsEof = -1;
 
-        private Node root;
+        private readonly Node _root;
 
-        private Node[] nodes;
+        private readonly Node[] _nodes;
 
-        private int nodeCount = 0;
+        private readonly int _nodeCount;
 
-        private void SwapNodes(Node n1, Node n2)
+        private static void SwapNodes(Node n1, Node n2)
         {
-            int tmp = n1.freq;
-            n1.freq = n2.freq;
-            n2.freq = tmp;
+            (n1.Freq, n2.Freq) = (n2.Freq, n1.Freq);
 
-            Node t1 = n1.parent.left;
-            Node t2 = n2.parent.left;
+            var t1 = n1.Parent.Left;
+            var t2 = n2.Parent.Left;
 
             if (t1 == n1)
-                n1.parent.left = n2;
+                n1.Parent.Left = n2;
             else
-                n1.parent.right = n2;
+                n1.Parent.Right = n2;
 
             if (t2 == n2)
-                n2.parent.left = n1;
+                n2.Parent.Left = n1;
             else
-                n2.parent.right = n1;
+                n2.Parent.Right = n1;
 
-            Node t3 = n1.parent;
-            n1.parent = n2.parent;
-            n2.parent = t3;
+            (n1.Parent, n2.Parent) = (n2.Parent, n1.Parent);
         }
 
-        private Node FindHighestWithSameFreq(Node nd)
+        private static Node FindHighestWithSameFreq(Node nd)
         {
-            Node current = nd;
-            if (nd.parent != null)
-            {
-                Node nd2 = current.parent;
-                if ((nd2.left == current) && (nd2.right.freq == current.freq))
-                    current = nd2.right;
+            var current = nd;
+            if (nd.Parent == null) return current;
+            var nd2 = current.Parent;
+            if (nd2.Left == current && nd2.Right.Freq == current.Freq)
+                current = nd2.Right;
 
-                if (nd2.parent != null)
-                {
-                    Node nd3 = nd2.parent;
-                    if ((nd3.left == nd2) && (nd3.right.freq == current.freq))
-                        current = nd3.right;
-                    else if ((nd3.right == nd2) && (nd3.left.freq == current.freq))
-                        current = nd3.left;
-                }
-            }
+            if (nd2.Parent == null) return current;
+            Node nd3 = nd2.Parent;
+            if (nd3.Left == nd2 && nd3.Right.Freq == current.Freq)
+                current = nd3.Right;
+            else if ((nd3.Right == nd2) && (nd3.Left.Freq == current.Freq))
+                current = nd3.Left;
 
             return current;
         }
 
         private Node GetNytNode()
         {
-            return nodes[257];
+            return _nodes[257];
         }
 
         private Node AddToTree(int sym, int count)
         {
             Node nyt = GetNytNode();
-            nyt.nt = NodeType.INT;
+            nyt.Nt = NodeType.Int;
 
-            nyt.right = new Node(NodeType.NYT, 257, 0, nyt.order - 1);
-            nyt.left = new Node(NodeType.SYM, sym, count, nyt.order - 2);
-            nyt.left.parent = nyt.right.parent = nyt;
-            nyt.sym = 259;
-            nodes[257] = nyt.right;
-            nodes[sym] = nyt.left;
-            return nyt.right;
+            nyt.Right = new Node(NodeType.Nyt, 257, 0, nyt.Order - 1);
+            nyt.Left = new Node(NodeType.Sym, sym, count, nyt.Order - 2)
+            {
+                Parent = nyt.Right.Parent = nyt
+            };
+            nyt.Sym = 259;
+            _nodes[257] = nyt.Right;
+            _nodes[sym] = nyt.Left;
+            return nyt.Right;
         }
 
         public void UpdateTree(int sym)
         {
-            if (sym > nodeCount) return;
-            Node temp = nodes[sym];
-            if (temp == null)
-                temp = AddToTree(sym, 0);
+            if (sym > _nodeCount) return;
+            var temp = _nodes[sym] ?? AddToTree(sym, 0);
 
             do
             {
                 Node same = FindHighestWithSameFreq(temp);
-                if ((same != temp) && (temp.parent != same))
+                if ((same != temp) && (temp.Parent != same))
                     SwapNodes(temp, same);
-                temp.freq++;
-                temp = temp.parent;
+                temp.Freq++;
+                temp = temp.Parent;
             } while (temp != null);
         }
 
         public Tree()
         {
-            root = new Node(NodeType.INT, 258, 0, 516);
-            root.right = new Node(NodeType.NYT, 257, 0, root.order - 1);
-            root.left = new Node(NodeType.EOF, 256, 0, root.order - 2);
-            root.left.parent = root.right.parent = root;
-            nodes = new Node[259];
-            nodes[256] = root.left;
-            nodes[257] = root.right;
-            nodeCount = 258;
+            _root = new Node(NodeType.Int, 258, 0, 516);
+            _root.Right = new Node(NodeType.Nyt, 257, 0, _root.Order - 1);
+            _root.Left = new Node(NodeType.Eof, 256, 0, _root.Order - 2)
+            {
+                Parent = _root.Right.Parent = _root
+            };
+            _nodes = new Node[259];
+            _nodes[256] = _root.Left;
+            _nodes[257] = _root.Right;
+            _nodeCount = 258;
         }
 
-        public bool contains(int sym)
+        public bool Contains(int sym)
         {
-            return (sym <= nodeCount && nodes[sym] != null);
+            return (sym <= _nodeCount && _nodes[sym] != null);
         }
 
-        public Node GetRootNode()
-        {
-            return root;
-        }
-
-        private Node ptr;
-        private int _tempcode = 0, _count = 0;
-        private bool InNyt = false;
+        private Node _ptr;
+        private int _tempCode, _count;
+        private bool _inNyt;
 
         public int DecodeBinary(int bit)
         {
             try
             {
-                if (ptr == null) ptr = root;
-                if (InNyt)
+                _ptr ??= _root;
+                if (_inNyt)
                 {
-                    _tempcode <<= 1;
-                    _tempcode |= bit;
+                    _tempCode <<= 1;
+                    _tempCode |= bit;
                     _count++;
                     if (_count == 8)
                     {
-                        UpdateTree(_tempcode);
-                        int sym = _tempcode;
-                        _tempcode = _count = 0;
-                        InNyt = false;
+                        UpdateTree(_tempCode);
+                        int sym = _tempCode;
+                        _tempCode = _count = 0;
+                        _inNyt = false;
                         return sym;
                     }
                     return CharIsEof;
                 }
 
-                if (bit == 1) ptr = ptr.right;
-                else ptr = ptr.left;
+                _ptr = bit == 1 ? _ptr.Right : _ptr.Left;
 
-                if (ptr.nt == NodeType.NYT && ptr.sym == 257)
+                switch (_ptr.Nt)
                 {
-                    ptr = root;
-                    InNyt = true;
-                    return CharIsEof;
+                    case NodeType.Nyt when _ptr.Sym == 257:
+                        _ptr = _root;
+                        _inNyt = true;
+                        return CharIsEof;
+                    case NodeType.Sym:
+                    {
+                        int sym = _ptr.Sym;
+                        UpdateTree(sym);
+                        _ptr = _root;
+                        return sym;
+                    }
+                    case NodeType.Eof:
+                    case NodeType.Int:
+                    default:
+                        return CharIsEof;
                 }
-                if (ptr.nt == NodeType.SYM)
-                {
-                    int sym = ptr.sym;
-                    UpdateTree(sym);
-                    ptr = root;
-                    return sym;
-                }
-                return CharIsEof;
             }
-            catch (System.NullReferenceException)
+            catch (NullReferenceException)
             {
                 throw new Exception("Corrupted Huffman sequence supplied for decoding");
             }
@@ -169,19 +160,12 @@ namespace ConsoleApp1
 
         public Stack<int> GetCode(int sym)
         {
-            Stack<int> bits = new Stack<int>();
-            Node pointer = nodes[sym];
-            while (pointer != null && pointer.parent != null)
+            var bits = new Stack<int>();
+            var pointer = _nodes[sym];
+            while (pointer is {Parent: { }})
             {
-                if (pointer.parent.left == pointer)
-                {
-                    bits.Push(0);
-                }
-                else
-                {
-                    bits.Push(1);
-                }
-                pointer = pointer.parent;
+                bits.Push(pointer.Parent.Left == pointer ? 0 : 1);
+                pointer = pointer.Parent;
             }
             return bits;
         }

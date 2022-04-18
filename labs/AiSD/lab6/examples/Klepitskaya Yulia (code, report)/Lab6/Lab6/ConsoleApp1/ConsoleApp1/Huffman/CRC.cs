@@ -1,42 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1.Huffman
 {
-    public class CRCCalc
+    public class CrcCalc
     {
-        private static uint poly = 0x82608edb;
-        private static uint[] table = new uint[256];
+        private uint _crc;
+        private const uint Poly = 0x82608edb;
+        private static readonly uint[] Table = new uint[256];
 
-        static CRCCalc()
+        static CrcCalc()
         {
             for (uint i = 0; i < 256; i++)
             {
-                uint cs = i;
+                var cs = i;
                 for (uint j = 0; j < 8; j++)
-                    cs = (cs & 1) > 0 ? (cs >> 1) ^ poly : cs >> 1;
-                table[i] = cs;
+                    cs = (cs & 1) > 0 ? (cs >> 1) ^ Poly : cs >> 1;
+                Table[i] = cs;
             }
         }
-
-        private uint crc;
-
-        public uint GetCRC()
+        public uint GetCrc()
         {
-            return crc;
+            return _crc;
         }
 
-        public CRCCalc()
+        public CrcCalc()
         {
-            crc = 0xffffffff;
+            _crc = 0xffffffff;
         }
 
-        public uint UpdateByte(byte b)
+        public void UpdateByte(byte b)
         {
-            crc = table[(crc ^ b) & 0xff] ^ (crc >> 8);
-            crc ^= 0xffffffff;
-            return crc;
+            _crc = Table[(_crc ^ b) & 0xff] ^ (_crc >> 8);
+            _crc ^= 0xffffffff;
         }
     }
 

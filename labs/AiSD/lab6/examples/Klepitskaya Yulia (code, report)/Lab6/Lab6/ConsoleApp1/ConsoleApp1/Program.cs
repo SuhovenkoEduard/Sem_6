@@ -1,28 +1,37 @@
-﻿using System;
-
-namespace ConsoleApp1
+﻿namespace ConsoleApp1
 {
-    class Program
+    public static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            string p = "../../../Archives/";
+            const string basePath = "../../../";
+            const string resPath = basePath + "resources";
+            
+            // HUFFMAN
+            const string lzwPath = resPath + "/lzw";
+            // IO
+            const string lzwFrom = lzwPath + "/lzwInput.txt";
+            const string lzwTo = lzwPath + "/lzwOutput.txt";
+            // archives
+            const string lzwArchDirPath = lzwPath + "/archives";
+            const string lzwArchBaseFileName = "lzwArch";
+            const int lzwTom = 115;
 
-            string lwzFrom = p + "lwzInput.txt";
-            string lwzArch = p + "lwzArch.txt";
-            string lwzTo = p + "lwzOutput.txt";
-            int lwzTom = 115;
+            // LWZ
+            const string huffPath = resPath + "/huffman";
+            // IO
+            const string huffFrom = huffPath + "/huffInput.txt";
+            const string huffTo = huffPath + "/huffOutput.txt";
+            // archives
+            const string huffArchDirPath = huffPath + "/archives";
+            const string huffArchBaseFileName = "huffArch";
+            const int huffTom = 200;
 
-            string huffFrom = p + "huffInput.txt";
-            string huffArch = p + "huffArch.txt";
-            string huffTo = p + "huffOutput.txt";
-            int huffTom = 200;
+            Lzw.Lzw.Compress(lzwFrom, lzwArchDirPath, lzwArchBaseFileName, lzwTom);
+            Lzw.Lzw.Decompress(lzwArchDirPath, lzwArchBaseFileName, lzwTo);
 
-            Lwz.Compress(lwzFrom, lwzArch, lwzTom);
-            Lwz.Decompress(lwzArch, lwzTo);
-
-            Huffman.Compress(huffFrom, huffArch, huffTom);
-            Huffman.Decompress(huffArch, huffTo);
+            Huffman.Huffman.Compress(huffFrom, huffArchDirPath, huffArchBaseFileName, huffTom);
+            Huffman.Huffman.Decompress(huffArchDirPath, huffArchBaseFileName, huffTo);
         }
     }
 }
