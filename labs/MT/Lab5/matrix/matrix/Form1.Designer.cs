@@ -59,8 +59,7 @@
             this.tbGrammar.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbGrammar.Size = new System.Drawing.Size(231, 637);
             this.tbGrammar.TabIndex = 1;
-            this.tbGrammar.Text = "S→A \r\nA→Y \r\nA→A*Y \r\nY→T \r\nT→H \r\nT→T/H \r\nH→I\r\nH→(C\r\nC→A)\r\nI→D\r\nI→ID\r\nD→0\r\nD→1\r\nD→2" +
-    "\r\nD→3\r\nD→4\r\nD→5\r\nD→6\r\nD→7\r\nD→8\r\nD→9";
+            this.tbGrammar.Text = "S→$E$\r\nE→aEEb\r\nE→c";
             // 
             // label2
             // 

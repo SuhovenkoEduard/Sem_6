@@ -31,17 +31,17 @@ namespace laba4
         {
             var list = new List<KeyValuePair<string, string>>
             {
-                // new KeyValuePair<string, string>("S", "A"),               
-                new KeyValuePair<string, string>("A", "A-T"),
-                new KeyValuePair<string, string>("A", "T"),
-                new KeyValuePair<string, string>("T", "T^U"),
-                new KeyValuePair<string, string>("T", "U"),
-                new KeyValuePair<string, string>("U", "H"),
-                new KeyValuePair<string, string>("H", "(A)"),
-                new KeyValuePair<string, string>("H", "V"),
-                new KeyValuePair<string, string>("V", "VL"),
-                new KeyValuePair<string, string>("V", "L"),
-                new KeyValuePair<string, string>("L", "m"),
+                new("S", "A"),               
+                new("A", "A-T"),
+                new("A", "T"),
+                new("T", "T^U"),
+                new("T", "U"),
+                new("U", "H"),
+                new("H", "(A)"),
+                new("H", "V"),
+                new("V", "VL"),
+                new("V", "L"),
+                new("L", "m"),
             };
 
             var rules = list
@@ -50,8 +50,8 @@ namespace laba4
 
             var selectors = new List<KeyValuePair<char, Func<string, char>>>
             {
-                new KeyValuePair<char, Func<string, char>>('L', s => s.First()),
-                new KeyValuePair<char, Func<string, char>>('R', s => s.Last())
+                new('L', s => s.First()),
+                new('R', s => s.Last())
             };
             
             selectors.ForEach(selector =>
