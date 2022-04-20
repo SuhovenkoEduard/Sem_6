@@ -1,0 +1,5 @@
+S→$E$
+E→aEEb
+E→c
+
+check: http://koi.tspu.ru/koi_books/stas/prostoe_predshestvovanie.htm

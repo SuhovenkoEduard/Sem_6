@@ -1,0 +1,8 @@
+I→TR
+I→T
+R→+T 
+R→-T
+R→+TR
+R→-TR
+T→a
+T→b
