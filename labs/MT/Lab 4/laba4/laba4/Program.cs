@@ -4,71 +4,65 @@ using System.Linq;
 
 namespace laba4
 {
-    public class Program
+    public static class Program
     {
-        private static bool _isRightOrLeft = false;
-
-        private static void Main(string[] args)
+        private static IEnumerable<char> CollectSideChars
+        (
+            string key,
+            IReadOnlyDictionary<string, List<string>> rules, 
+            Func<string, char> selector
+        )
         {
-            var list = new List<NodeList>
+            if (!rules.ContainsKey(key))
+                return new HashSet<char>();
+
+            var result = new HashSet<char>();
+            var selectedUniqueChars = rules[key].Select(selector).Distinct();
+            foreach (var newKey in selectedUniqueChars)
             {
-                new NodeList("S", "A"),               
-                new NodeList("A", "A-T"),
-                new NodeList("A", "T"),
-                new NodeList("T", "T^U"),
-                new NodeList("T", "U"),
-                new NodeList("U", "H"),
-                new NodeList("H", "(A)"),
-                new NodeList("H", "V"),
-                new NodeList("V", "VL"),
-                new NodeList("V", "L"),
-                new NodeList("L", "m"),
+                result.Add(newKey);
+                if (!newKey.ToString().Equals(key))
+                    result.UnionWith(CollectSideChars(newKey.ToString(), rules, selector));   
+            }
+            return result;
+        }
+        
+        private static void Main()
+        {
+            var list = new List<KeyValuePair<string, string>>
+            {
+                // new KeyValuePair<string, string>("S", "A"),               
+                new KeyValuePair<string, string>("A", "A-T"),
+                new KeyValuePair<string, string>("A", "T"),
+                new KeyValuePair<string, string>("T", "T^U"),
+                new KeyValuePair<string, string>("T", "U"),
+                new KeyValuePair<string, string>("U", "H"),
+                new KeyValuePair<string, string>("H", "(A)"),
+                new KeyValuePair<string, string>("H", "V"),
+                new KeyValuePair<string, string>("V", "VL"),
+                new KeyValuePair<string, string>("V", "L"),
+                new KeyValuePair<string, string>("L", "m"),
             };
 
             list.Reverse();
 
-            var rules = list.GroupBy(rule => rule.Key).ToDictionary(rule => rule.Key, rule => rule.ToList());
+            var rules = list
+                .GroupBy(rule => rule.Key)
+                .ToDictionary(rule => rule.Key, rule => rule.Select(r => r.Value).ToList());
 
-            foreach (var key in rules.Take(rules.Count - 1))
+            var selectors = new List<KeyValuePair<char, Func<string, char>>>
             {
-                var result = new List<char>();
-                AppendDataInNodeList(key.Key, rules, result);
-                var flag = _isRightOrLeft ? "R" : "L";
-                Console.WriteLine($"{flag}({key.Key}) -> {{{string.Join(", ", result.Distinct())}}}");
-            }
-            Console.ReadLine();
-        }
-
-        private static void AppendDataInNodeList(string key, IReadOnlyDictionary<string, List<NodeList>> rules, ICollection<char> result)
-        {
-            if (!rules.ContainsKey(key)) return;
-
-            var values = rules[key];
-
-            foreach (var value in values)
+                new KeyValuePair<char, Func<string, char>>('L', s => s.First()),
+                new KeyValuePair<char, Func<string, char>>('R', s => s.Last())
+            };
+            
+            selectors.ForEach(selector =>
             {
-                var newKey = _isRightOrLeft ? value.Value.Last() : value.Value.First();
-                if (newKey.ToString().Equals(key))
-                {
-                    result.Add(newKey);
-                    continue;
-                }
-                result.Add(newKey);
-                AppendDataInNodeList(newKey.ToString(), rules, result);
-            }
+                rules.Keys
+                    .ToList()
+                    .ForEach(key => 
+                        Console.WriteLine($"{selector.Key}({key}) -> [{string.Join(", ", CollectSideChars(key, rules, selector.Value))}]"));
+            });
         }
-    }
-
-    public class NodeList
-    {
-        public NodeList(string key, string value)
-        {
-            Key = key;
-            Value = value;
-        }
-
-        public string Key { get; }
-
-        public string Value { get; }
     }
 }
