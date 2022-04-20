@@ -1,9 +1,12 @@
 ﻿using BLL.DTO;
 using BLL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Types;
 
 namespace WebApp.Controllers;
 
+[Authorize]
 public class PizzaController : Controller
 {
     private readonly IService<PizzaDTO> _pizzaService;
@@ -14,7 +17,7 @@ public class PizzaController : Controller
     }
     
     // GET: Manufacturers
-    public IActionResult Index(List<PizzaDTO>? model)
+    public IActionResult Index(IndexPizzaModel model)
     {
         // if (!User.IsInRole(Areas.Identity.Roles.Admin))
         // {
@@ -28,7 +31,18 @@ public class PizzaController : Controller
         //     ref selectedName);
         // _pizzaService.SetDefaultValuesIfNull(ref selectedName, ref page, ref sortState);
         // _pizzaService.SetCookies(Response.Cookies, User.Identity.Name, selectedName, page, sortState);
-        return View(model == null ? new List<PizzaDTO>() : _pizzaService.GetAll());
+
+        if (model.Pizzas != null)
+        {
+            return View(model);
+        }
+
+        var res = new IndexPizzaModel()
+        {
+            Pizzas = _pizzaService.GetAll(),
+            Filter = ""
+        };
+        return View(res);
     }
 
     // GET: Manufacturers/Details/5
@@ -46,6 +60,28 @@ public class PizzaController : Controller
         }
         
         return View(pizza);
+    }
+
+    public IActionResult Find(IndexPizzaModel indexPizzaModel)
+    {
+        IndexPizzaModel res;
+        if (indexPizzaModel.Filter != null)
+        {
+            res = new IndexPizzaModel()
+            {
+                Pizzas = _pizzaService.GetAll().Where(pizza => pizza.Caloric >= int.Parse(indexPizzaModel.Filter)).ToList(),
+                Filter = indexPizzaModel.Filter
+            };
+        }
+        else
+        {
+            res = new IndexPizzaModel()
+            {
+                Pizzas = _pizzaService.GetAll(),
+                Filter = ""
+            };
+        }
+        return View("Index", res);
     }
     
     // GET: Manufacturers/Create

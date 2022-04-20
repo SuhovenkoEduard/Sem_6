@@ -6,7 +6,7 @@ namespace Dal.Configs
 {
     public static class Config
     {
-        private const string Path = @"B:\3 course\2 sem\IGI\2 lab\UI\Dal\Configs\package.json";
+        private const string Path = @"D:\Projects\University\Sem_6\labs\IGI\Examples\Vitalya\3 lab\UI\Dal\Configs\package.json";
 
         public static string DbConfig()
         {
