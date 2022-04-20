@@ -6,7 +6,7 @@ using WebApp.Types;
 
 namespace WebApp.Controllers;
 
-[Authorize]
+[Authorize(Roles = "Admin")]
 public class PizzaController : Controller
 {
     private readonly IService<PizzaDTO> _pizzaService;
@@ -19,19 +19,6 @@ public class PizzaController : Controller
     // GET: Manufacturers
     public IActionResult Index(IndexPizzaModel model)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
-        // var isFromFilter = HttpContext.Request.Query["isFromFilter"] == "true";
-
-        // _pizzaService.GetSortPagingCookiesForUserIfNull(Request.Cookies, User.Identity.Name, isFromFilter,
-        //     ref page, ref sortState);
-        // _pizzaService.GetFilterCookiesForUserIfNull(Request.Cookies, User.Identity.Name, isFromFilter,
-        //     ref selectedName);
-        // _pizzaService.SetDefaultValuesIfNull(ref selectedName, ref page, ref sortState);
-        // _pizzaService.SetCookies(Response.Cookies, User.Identity.Name, selectedName, page, sortState);
-
         if (model.Pizzas != null)
         {
             return View(model);
@@ -48,11 +35,6 @@ public class PizzaController : Controller
     // GET: Manufacturers/Details/5
     public IActionResult Details(int id)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
-
         var pizza = _pizzaService.Get(id);
         if (pizza == null)
         {
@@ -87,10 +69,6 @@ public class PizzaController : Controller
     // GET: Manufacturers/Create
     public IActionResult Create()
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         return View();
     }
     
@@ -101,10 +79,6 @@ public class PizzaController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Create([Bind("Name,Caloric")] PizzaDTO pizza)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         if (!ModelState.IsValid) return View(pizza);
         _pizzaService.Create(pizza);
         return RedirectToAction(nameof(Index));
@@ -113,10 +87,6 @@ public class PizzaController : Controller
     // GET: Manufacturers/Edit/5
     public IActionResult Edit(int id)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         var pizza = _pizzaService.Get(id);
         if (pizza == null)
         {
@@ -132,10 +102,6 @@ public class PizzaController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Edit(int id, [Bind("Id,Name,Caloric")] PizzaDTO pizza)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         if (id != pizza.Id)
         {
             return NotFound();
@@ -157,10 +123,6 @@ public class PizzaController : Controller
     // GET: Manufacturers/Delete/5
     public IActionResult Delete(int id)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         var pizza = _pizzaService.Get(id);
         if (pizza == null)
         {
@@ -174,10 +136,6 @@ public class PizzaController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult DeleteConfirmed(int id)
     {
-        // if (!User.IsInRole(Areas.Identity.Roles.Admin))
-        // {
-        //     return Redirect("~/Identity/Account/Login");
-        // }
         _pizzaService.Delete(id);
         return RedirectToAction(nameof(Index));
     }

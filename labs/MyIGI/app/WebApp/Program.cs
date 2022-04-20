@@ -1,7 +1,9 @@
 using BLL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using WebApp.Data;
+using WebApp.Roles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,24 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireAdminRole",
+        policy => policy.RequireRole("Admin"));
+    options.AddPolicy("RequireModerRole",
+        policy => policy.RequireRole("Moder"));
+    options.AddPolicy("RequireUserRole",
+        policy => policy.RequireRole("User"));
+    options.AddPolicy("ElevatedRights", policy =>
+        policy.RequireRole("Admin", "User", "Moder"));
+});
+
+await builder.Services.ConfigureRoles();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
