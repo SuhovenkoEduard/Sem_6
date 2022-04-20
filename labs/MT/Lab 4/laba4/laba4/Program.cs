@@ -31,7 +31,7 @@ namespace laba4
         {
             var list = new List<KeyValuePair<string, string>>
             {
-                new("S", "A"),               
+                // new("S", "A"), because this is first symbol              
                 new("A", "A-T"),
                 new("A", "T"),
                 new("T", "T^U"),
