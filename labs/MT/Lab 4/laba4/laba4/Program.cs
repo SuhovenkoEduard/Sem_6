@@ -44,8 +44,6 @@ namespace laba4
                 new KeyValuePair<string, string>("L", "m"),
             };
 
-            list.Reverse();
-
             var rules = list
                 .GroupBy(rule => rule.Key)
                 .ToDictionary(rule => rule.Key, rule => rule.Select(r => r.Value).ToList());
@@ -59,6 +57,7 @@ namespace laba4
             selectors.ForEach(selector =>
             {
                 rules.Keys
+                    .Reverse()
                     .ToList()
                     .ForEach(key => 
                         Console.WriteLine($"{selector.Key}({key}) -> [{string.Join(", ", CollectSideChars(key, rules, selector.Value))}]"));
