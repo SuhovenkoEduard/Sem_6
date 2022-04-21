@@ -21,3 +21,20 @@ export const createGetCatalogRequest = (): FetchRequest => ({
   url: `${RoutesPaths.backend}${RoutesPaths.catalog}`,
   method: RequestMethod.get,
 })
+
+export const createGetCommentsRequest = (): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.comments}${RoutesPaths.getAll}`,
+  method: RequestMethod.get,
+})
+
+export const createAddCommentsRequest = (comment: object): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.comments}${RoutesPaths.addOne}`,
+  method: RequestMethod.post,
+  body: comment,
+})
+
+export const createDeleteCommentsRequest = (id: number): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.comments}${RoutesPaths.deleteOne}`,
+  method: RequestMethod.delete,
+  body: { id },
+})

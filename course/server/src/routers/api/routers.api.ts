@@ -1,5 +1,4 @@
 import express from 'express'
-import Sequelize from 'sequelize'
 import { TableRoutes } from '../../constants/types'
 import {
   AccountSchema,
@@ -24,9 +23,10 @@ import {
   StatusModel,
 } from '../../models/models'
 import { generateApiRouter } from './generic.router'
+import { ModelWrapper } from '../../models/modelWrapper'
 
 type ModelData = {
-  model: Sequelize.ModelCtor<Sequelize.Model>
+  model: ModelWrapper
   identifierName: string
   route: TableRoutes
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useIsAuthenticated, useSignOut } from 'react-auth-kit'
 import { RoutesPaths } from '../../constants/constants'
+import { CommentsContainer } from './CommentsContainer'
 
 export const Home = () => {
   const signOut = useSignOut()
@@ -24,6 +25,7 @@ export const Home = () => {
           <button type="button" onClick={() => signOut()}>Sign Out!</button>
         </>
       )}
+      <CommentsContainer />
     </div>
   )
 }

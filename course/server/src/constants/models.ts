@@ -17,15 +17,18 @@ export type AccountDTO = IModel & {
 }
 
 export type ClientDTO = IUser & {
+  name: string
   phoneNumber: string
   description: string
 }
 
 export type CourierDTO = IWorker & {
+  name: string
   description: string
 }
 
 export type ManagerDTO = IWorker & {
+  name: string
   description: string
 }
 
@@ -60,3 +63,8 @@ export type ReportDTO = IModel & {
 export type StatusDTO = IModel & {
   type: string
 }
+
+export interface DataValues<T> {
+  dataValues: T
+}
+

@@ -9,4 +9,8 @@ export enum RoutesPaths {
   signUp = '/sign-up',
   catalog = '/catalog',
   profile = '/profile',
+  comments = '/comments',
+  getAll = '/get-all',
+  addOne = '/add-one',
+  deleteOne = '/delete-one',
 }

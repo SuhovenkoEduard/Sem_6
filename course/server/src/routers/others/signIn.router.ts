@@ -58,6 +58,8 @@ signInRouter.post(RoutesPaths.root, async (req: express.Request, res: express.Re
       return res.json({ account, manager })
     }
 
+    console.log(account, client, courier, manager)
+
     sendError(messages.NO_SUCH_USER_FOUND, res)
   } catch (e: any) {
     sendError(messages.NO_SUCH_USER_FOUND, res)

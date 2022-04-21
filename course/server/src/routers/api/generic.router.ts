@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
-import Sequelize from 'sequelize'
 import { ApiRouters, CLIENT_ERROR_STATUS_CODE } from '../../constants/constants'
 import { messages } from '../../constants/messages'
+import { ModelWrapper } from '../../models/modelWrapper'
 
 export const errorHandler = (reason: object, errorType: string, res: Response) =>
   res.status(CLIENT_ERROR_STATUS_CODE).json({ error: {
@@ -11,7 +11,7 @@ export const errorHandler = (reason: object, errorType: string, res: Response) =
   } })
 
 export const generateApiRouter = (
-  model: Sequelize.ModelCtor<Sequelize.Model>,
+  model: ModelWrapper,
   identifierName: string) => {
   const apiRouter = express.Router()
 

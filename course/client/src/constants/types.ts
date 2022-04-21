@@ -33,3 +33,11 @@ export type UserType = {
   courier?: CourierDTO
   manager?: ManagerDTO
 }
+
+export type CommentType = {
+  id: number
+  content: string
+  date: string
+  clientId: number
+  clientName: string
+}
