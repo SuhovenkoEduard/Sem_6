@@ -44,7 +44,8 @@ export type OrderDTO = IModel & {
   courierId: number
   statusId: number
   address: string
-  date: string
+  startDate: string
+  endDate: string
 }
 
 export type PizzaDTO = IModel & {

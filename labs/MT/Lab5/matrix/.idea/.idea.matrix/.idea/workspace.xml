@@ -4,22 +4,7 @@
     <projectFile>lab5/lab5.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba8ecfe9-5c92-43b1-ac09-8b8c213aa912" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.matrix/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.matrix/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.matrix/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.matrix/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.matrix/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/Form1.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/Form1.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/Form1.resx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/LabClasses/Grammar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/LabClasses/PrecendenceMatrixElement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/matrix/matrix.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="ba8ecfe9-5c92-43b1-ac09-8b8c213aa912" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650476315716</updated>
       <workItem from="1650476321952" duration="552000" />
+      <workItem from="1650527299463" duration="40000" />
     </task>
     <servers />
   </component>
@@ -76,7 +62,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

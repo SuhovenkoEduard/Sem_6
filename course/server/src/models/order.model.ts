@@ -51,7 +51,11 @@ export const OrderModel = sequelize.define<any, any>(TableNames.orders, {
     type: Sequelize.TEXT,
     allowNull: false,
   },
-  [OrderSchema.date]: {
+  [OrderSchema.startDate]: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  [OrderSchema.endDate]: {
     type: Sequelize.TEXT,
     allowNull: false,
   },

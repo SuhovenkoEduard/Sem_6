@@ -42,7 +42,8 @@ export enum OrderSchema {
   courierId = 'courierId',
   statusId = 'statusId',
   address = 'address',
-  date = 'date',
+  startDate = 'startDate',
+  endDate = 'endDate',
 }
 
 export enum PizzaSchema {
