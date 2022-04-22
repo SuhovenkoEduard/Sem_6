@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuthUser, useIsAuthenticated } from 'react-auth-kit'
+import { Button } from 'react-bootstrap'
 import { useFetch } from '../../hooks/useFetch'
 import {
   createAddCommentsRequest,
@@ -8,7 +9,7 @@ import {
 } from '../../api/api'
 import { CommentType, UserType } from '../../constants/types'
 
-import '../../scss/components/pages/comments-container.scss'
+import '../../scss/components/pages/comments.scss'
 
 export const Comments = () => {
   const isAuthenticated = useIsAuthenticated()
@@ -74,19 +75,22 @@ export const Comments = () => {
       {!loading && !error && (
         <>
           {isAuthenticated() && userData?.client && (
-            <div>
-              <div>Add comment form:</div>
-              <label htmlFor="comment-input">
-                <div>Input your comment:</div>
-                <input
-                  type="text"
-                  name="comment-input"
-                  id="comment-input"
+            <div className="comment-input-container">
+              <label className="comment-textarea-label" htmlFor="comment-textarea">
+                <div>Your comment:</div>
+                <textarea
+                  name="comment-textarea"
                   value={currentComment}
                   onChange={onChangeComment}
                 />
               </label>
-              <button type="button" onClick={addComment}>Add</button>
+              <Button
+                className="comment-button"
+                variant="outline-primary"
+                onClick={addComment}
+              >
+                Add
+              </Button>
             </div>
           )}
           <div className="comments-cards-container">

@@ -1,0 +1,30 @@
+.comments-container {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 20px;
+  .comment-input-container {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .comments-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .comment-card {
+      max-width: 300px;
+      background: white;
+      padding: 10px;
+      border: 2px solid black;
+      border-radius: 10px;
+    }
+  }
+}
