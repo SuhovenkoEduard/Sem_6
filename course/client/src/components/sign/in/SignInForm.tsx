@@ -15,7 +15,8 @@ export const SignInForm = (props: SignInFormProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault()
     onSignIn({ email, password })
   }
 

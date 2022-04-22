@@ -4,15 +4,22 @@ import classNames from 'classnames'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
+import { useAuthUser } from 'react-auth-kit'
+import { Form } from 'react-bootstrap'
 import { useFetch } from '../../hooks/useFetch'
 import { PizzaDTO } from '../../constants/models'
 import { createGetCatalogRequest } from '../../api/api'
+import { UserType } from '../../constants/types'
 
 import '../../scss/components/pages/catalog.scss'
 
 export const Catalog = () => {
   // const navigate = useNavigate()
   const [pizzas, setPizzas] = useState<PizzaDTO[]>([])
+  const [selectedPizza, setSelectedPizza] = useState<PizzaDTO | null>(null)
+
+  const authData = useAuthUser()
+  const userData = authData() as UserType
 
   const {
     loading, request, error,
@@ -30,9 +37,16 @@ export const Catalog = () => {
     getData()
   }, [])
 
-  const [isOrderModalOpen, setIsOrderModalOpen] = useState(false)
+  const [isOrderModalShown, setIsOrderModalShown] = useState(false)
 
-  const toggleIsOrderModalOpen = () => setIsOrderModalOpen(!isOrderModalOpen)
+  const toggleIsOrderModalOpen = () => setIsOrderModalShown(!isOrderModalShown)
+
+  const openOrderModal = (pizzaId: number) => {
+    setSelectedPizza(pizzas.find((pizza) => pizza.id === pizzaId)!)
+    setIsOrderModalShown(true)
+  }
+
+  const isClientLogged = !!userData?.client
 
   return (
     <div className="catalog-container">
@@ -58,39 +72,67 @@ export const Catalog = () => {
                     <div className="catalog-container__body__card__data__name">{pizza.name}</div>
                     <div className="catalog-container__body__card__data__description">{pizza.description}</div>
                   </div>
-                  <button
+                  {!userData?.client && (
+                    <div>You must be logged as client.</div>
+                  )}
+                  <Button
+                    disabled={!isClientLogged}
+                    variant="danger"
                     className="catalog-container__body__card__order"
-                    type="button"
-                    onClick={toggleIsOrderModalOpen}
+                    onClick={() => openOrderModal(pizza.id)}
                   >
                     Order now
-                  </button>
+                  </Button>
                 </div>
               ))}
-              <Modal
-                show={isOrderModalOpen}
-                onHide={toggleIsOrderModalOpen}
-                backdrop="static"
-                keyboard={false}
-                // animation={false}
-                centered
-              >
-                <Modal.Header closeButton>
-                  <Modal.Title>Modal title</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                  <p>Modal body text goes here.</p>
-                </Modal.Body>
-                <Modal.Footer>
-                  <Button
-                    variant="secondary"
-                    onClick={toggleIsOrderModalOpen}
-                  >
-                    Close
-                  </Button>
-                  <Button variant="primary">Save changes</Button>
-                </Modal.Footer>
-              </Modal>
+              {isClientLogged && selectedPizza && (
+                <Modal
+                  show={isOrderModalShown}
+                  onHide={toggleIsOrderModalOpen}
+                  backdrop="static"
+                  keyboard={false}
+                  centered
+                >
+                  <Modal.Header closeButton>
+                    <Modal.Title>Order pizza</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Form.Group className="mb-2">
+                      <Form.Label>Client Name</Form.Label>
+                      <Form.Text as="div">{userData!.client!.name}</Form.Text>
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label>Start Date</Form.Label>
+                      <Form.Text as="div">{new Date().toUTCString()}</Form.Text>
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label>Selected Pizza</Form.Label>
+                      <Form.Text as="div">{selectedPizza!.name}</Form.Text>
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label>Amount of pizza</Form.Label>
+                      <Form.Text as="div">1</Form.Text>
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label>Address</Form.Label>
+                      <Form.Control type="text" placeholder="Address" />
+                    </Form.Group>
+                    <Form.Group className="mb-2">
+                      <Form.Label>End Date</Form.Label>
+                      <Form.Control type="date" placeholder="End Date" />
+                    </Form.Group>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button
+                      variant="outline-secondary"
+                      onClick={toggleIsOrderModalOpen}
+                    >
+                      Close
+                    </Button>
+                    <Button variant="outline-secondary">Order</Button>
+                  </Modal.Footer>
+                </Modal>
+              )}
             </div>
           )}
         </>
