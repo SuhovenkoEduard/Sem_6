@@ -1,10 +1,16 @@
 @import "../../colors";
 
 .app-header {
-  background-color: $red-light-40;
-  height: 60px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  gap: 20px;
+  background-color: black;
+  height: 60px;
+
+  button {
+    font-size: 14pt;
+    padding: 5px 15px;
+  }
 }

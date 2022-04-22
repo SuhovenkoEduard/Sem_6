@@ -10,7 +10,7 @@ import { CommentType, UserType } from '../../constants/types'
 
 import '../../scss/components/pages/comments-container.scss'
 
-export const CommentsContainer = () => {
+export const Comments = () => {
   const isAuthenticated = useIsAuthenticated()
   const authData = useAuthUser()
   const userData = authData() as UserType
