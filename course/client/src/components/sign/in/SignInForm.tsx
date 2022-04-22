@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import { Button, Form } from 'react-bootstrap'
 import { AccountType } from '../../../constants/types'
 
-import styles from '../../../scss/components/sign/sign-in-form.module.scss'
+import '../../../scss/components/sign/sign-in-form.scss'
 
 type SignInFormProps = {
   goToHome: () => void
@@ -16,43 +15,48 @@ export const SignInForm = (props: SignInFormProps) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
+  const handleSubmit = () => {
     onSignIn({ email, password })
   }
 
   return (
-    <div className={styles.formContainer}>
-      <div className={styles.formHeader}>Sign In</div>
-      <form className={styles.signInForm} onSubmit={handleSubmit}>
-        <TextField
-          label="Email"
-          variant="filled"
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <TextField
-          label="Password"
-          variant="filled"
-          type="password"
-          required
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <div className={styles.buttonsContainer}>
-          <Button variant="contained" color="secondary" onClick={() => goToSignUp()}>
+    <div className="sign-in-form-container">
+      <Form
+        className="sign-in-form"
+        onSubmit={handleSubmit}
+      >
+        <div className="form-header">Sign In</div>
+        <Form.Group className="mb-1" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            // required
+            value={email}
+            placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="mb-1" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type="password"
+            // required
+            value={password}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </Form.Group>
+        <div className="buttons-container">
+          <Button variant="outline-primary" color="secondary" onClick={() => goToSignUp()}>
             Sign Up
           </Button>
-          <Button variant="contained" onClick={() => goToHome()}>
+          <Button variant="outline-secondary" onClick={() => goToHome()}>
             Home
           </Button>
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="outline-danger" color="primary">
             Sign In
           </Button>
         </div>
-      </form>
+      </Form>
     </div>
   )
 }

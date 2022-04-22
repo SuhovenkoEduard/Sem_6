@@ -1,17 +1,17 @@
-.formContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+@import "../../colors";
+
+.sign-up-form-container {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  .formHeader {
-    font-size: 30pt;
-  }
-  .signUpForm {
+  .sign-up-form {
+    .form-header {
+      font-size: 30pt;
+    }
+    border-radius: 10px;
+    border: 2px solid $blue-dark-60;
     min-width: 300px;
     max-width: 400px;
     display: flex;
@@ -20,7 +20,7 @@
     align-content: center;
     padding: 20px;
     gap: 10px;
-    .buttonsContainer {
+    .buttons-container {
       display: flex;
       justify-content: space-between;
       gap: 20px;

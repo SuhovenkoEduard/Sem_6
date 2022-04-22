@@ -16,14 +16,14 @@ export const AppHeader = () => {
       <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.catalog)}>Catalog</button>
       {!isAuthenticated() && (
         <>
-          <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.signIn)}>Login</button>
-          <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.signUp)}>Register</button>
+          <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.signIn)}>Sign In</button>
+          <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.signUp)}>Sign Up</button>
         </>
       )}
       {isAuthenticated() && (
         <>
           <button type="button" className="btn btn-lg btn-primary" onClick={() => navigate(RoutesPaths.profile)}>Profile</button>
-          <button type="button" className="btn btn-lg btn-primary" onClick={() => signOut()}>Sign Out!</button>
+          <button type="button" className="btn btn-lg btn-primary" onClick={() => signOut()}>Sign Out</button>
         </>
       )}
     </header>
