@@ -7,7 +7,7 @@ import {
   createAcceptOrderRequest,
   createGetOrdersByCourierIdRequest,
 } from '../../../../api/api'
-import { CourierOrdersTable } from './utils/CourierOrdersTable'
+import { CourierOrdersTable } from './CourierOrdersTable'
 import { PizzaModal } from '../../../../common/PizzaModal'
 import { FormInput } from '../../../../common/FormInput'
 import { FormText } from '../../../../common/FormText'

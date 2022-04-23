@@ -28,6 +28,7 @@ export const ReportModel = sequelize.define<any, any>(TableNames.reports, {
       model: OrderModel,
       key: OrderSchema.id,
     },
+    unique: true,
   },
   [ReportSchema.date]: {
     type: Sequelize.TEXT,

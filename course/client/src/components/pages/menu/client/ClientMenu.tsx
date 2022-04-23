@@ -7,7 +7,7 @@ import {
   createGetOrdersByClientIdRequest,
 } from '../../../../api/api'
 import { FullOrder, UserType } from '../../../../constants/types'
-import { ClientOrdersTable } from './utils/ClientOrdersTable'
+import { ClientOrdersTable } from './ClientOrdersTable'
 
 export const ClientMenu = () => {
   const {

@@ -1,18 +1,18 @@
 import React from 'react'
 import { Button, Table } from 'react-bootstrap'
-import { FullOrder } from '../../../../../constants/types'
+import { FullOrder } from '../../../../constants/types'
 
-type CourierOrdersTableProps = {
+type ClientOrdersTableProps = {
   orders: FullOrder[]
   isHistoryShown: boolean
-  acceptOrder: (orderId: number) => void
+  declineOrder: (orderId: number) => void
 }
 
-export const CourierOrdersTable = (props: CourierOrdersTableProps) => {
+export const ClientOrdersTable = (props: ClientOrdersTableProps) => {
   const {
     orders,
     isHistoryShown,
-    acceptOrder,
+    declineOrder,
   } = props
 
   return (
@@ -28,12 +28,6 @@ export const CourierOrdersTable = (props: CourierOrdersTableProps) => {
             <th>Address</th>
             <th>Start Date</th>
             <th>End Date</th>
-            {isHistoryShown && (
-              <>
-                <th>Report Date</th>
-                <th>Report Description</th>
-              </>
-            )}
             {!isHistoryShown && <th>Actions</th>}
           </tr>
         </thead>
@@ -48,20 +42,14 @@ export const CourierOrdersTable = (props: CourierOrdersTableProps) => {
               <td>{order.address}</td>
               <td>{order.startDate}</td>
               <td>{order.endDate}</td>
-              {isHistoryShown && (
-                <>
-                  <td>{order.report?.date}</td>
-                  <td>{order.report?.description}</td>
-                </>
-              )}
               {!isHistoryShown && (
                 <td>
                   <Button
                     className="mx-auto my-auto"
-                    variant="outline-success"
-                    onClick={() => acceptOrder(order.id)}
+                    variant="outline-danger"
+                    onClick={() => declineOrder(order.id)}
                   >
-                    Accept
+                    Decline
                   </Button>
                 </td>
               )}

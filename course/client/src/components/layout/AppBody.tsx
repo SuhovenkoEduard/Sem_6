@@ -10,7 +10,7 @@ import { SignUp } from '../sign/up/SignUp'
 import { Profile } from '../pages/Profile'
 import { ClientMenu } from '../pages/menu/client/ClientMenu'
 import { CourierMenu } from '../pages/menu/courier/CourierMenu'
-import { ManagerMenu } from '../pages/menu/ManagerMenu'
+import { ManagerMenu } from '../pages/menu/manager/ManagerMenu'
 
 import '../../scss/components/layout/app-body.scss'
 
