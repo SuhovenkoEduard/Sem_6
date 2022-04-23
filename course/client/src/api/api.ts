@@ -44,3 +44,17 @@ export const createAddOrderRequest = (state: OrderType): FetchRequest => ({
   method: RequestMethod.post,
   body: state,
 })
+
+// eslint-disable-next-line max-len
+export const createGetOrdersRequest = (clientId: number, isFilterApplied: boolean): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.clientMenu}${RoutesPaths.getOrders}`,
+  method: RequestMethod.post,
+  body: { clientId, isFilterApplied },
+})
+
+export const createDeclineOrderRequest = (orderId: number): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.clientMenu}${RoutesPaths.declineOrder}`,
+  method: RequestMethod.post,
+  body: { id: orderId },
+})
+

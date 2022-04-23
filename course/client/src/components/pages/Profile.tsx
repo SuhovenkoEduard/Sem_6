@@ -1,12 +1,8 @@
 import React from 'react'
-import { useAuthUser, useSignOut } from 'react-auth-kit'
-import { useNavigate } from 'react-router-dom'
+import { useAuthUser } from 'react-auth-kit'
 import { UserType } from '../../constants/types'
-import { RoutesPaths } from '../../constants/constants'
 
 export const Profile = () => {
-  const navigate = useNavigate()
-  const signOut = useSignOut()
   const authUser = useAuthUser()
   const authedUser = authUser() as UserType
 
@@ -32,9 +28,6 @@ export const Profile = () => {
           <div>{JSON.stringify(authedUser.manager, null, '  ')}</div>
         </>
       )}
-      <button type="button" onClick={() => navigate(RoutesPaths.catalog)}>Catalog</button>
-      <button type="button" onClick={() => navigate(RoutesPaths.home)}>Home</button>
-      <button type="button" onClick={() => signOut()}>Sign Out!</button>
     </>
   )
 }

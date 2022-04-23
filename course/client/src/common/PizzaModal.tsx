@@ -1,5 +1,5 @@
-import Modal from 'react-bootstrap/Modal'
 import React from 'react'
+import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 type PizzaModalProps = {

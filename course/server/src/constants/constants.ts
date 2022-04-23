@@ -21,6 +21,11 @@ export enum RoutesPaths {
   getAll = '/get-all',
   addOne = '/add-one',
   deleteOne = '/delete-one',
+  clientMenu = '/menu/client',
+  courierMenu = '/menu/courier',
+  managerMenu = '/menu/manager',
+  getOrders = '/get-orders',
+  declineOrder = '/decline-order',
 }
 
 export enum ApiRouters {
