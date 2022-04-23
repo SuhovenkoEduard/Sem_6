@@ -30,7 +30,7 @@ export const SignInForm = (props: SignInFormProps) => {
         <Form.Group className="mb-1" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
-            // required
+            required
             value={email}
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
@@ -40,7 +40,7 @@ export const SignInForm = (props: SignInFormProps) => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            // required
+            required
             value={password}
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}

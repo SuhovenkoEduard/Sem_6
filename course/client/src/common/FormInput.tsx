@@ -10,6 +10,7 @@ type FormInputProps = {
   placeholder?: string
   inputAs?: ElementType
   required?: boolean
+  className?: string
 }
 
 export const FormInput = (props: FormInputProps) => {
@@ -22,12 +23,14 @@ export const FormInput = (props: FormInputProps) => {
     placeholder = label,
     inputAs = 'input',
     required = false,
+    className = '',
   } = props
 
   return (
     <Form.Group>
       <Form.Label>{label}</Form.Label>
       <Form.Control
+        className={className}
         name={name}
         placeholder={placeholder}
         type={type}

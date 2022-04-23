@@ -5,6 +5,7 @@ type FormTextProps = {
   label: string
   value: string
   labelClassName?: string
+  valueClassName?: string
   textAs?: ElementType
 }
 
@@ -14,12 +15,13 @@ export const FormText = (props: FormTextProps) => {
     value,
     labelClassName = 'mt-2 mb-0',
     textAs = 'div',
+    valueClassName = '',
   } = props
 
   return (
     <Form.Group>
       <Form.Label className={labelClassName}>{label}</Form.Label>
-      <Form.Text as={textAs}>{value}</Form.Text>
+      <Form.Text className={valueClassName} as={textAs}>{value}</Form.Text>
     </Form.Group>
   )
 }

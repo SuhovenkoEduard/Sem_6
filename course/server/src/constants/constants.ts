@@ -21,14 +21,20 @@ export enum RoutesPaths {
   getAll = '/get-all',
   addOne = '/add-one',
   deleteOne = '/delete-one',
+  // client
   clientMenu = '/menu/client',
-  courierMenu = '/menu/courier',
-  managerMenu = '/menu/manager',
   getOrdersByClientId = '/get-orders-by-client-id',
   declineOrder = '/decline-order',
+  // courier
+  courierMenu = '/menu/courier',
   getOrdersByCourierId = '/get-orders-by-courier-id',
   acceptOrder = '/accept-order',
+  // manager
+  managerMenu = '/menu/manager',
+  getGroupedReports = '/get-grouped-reports',
+  editCourierSalary = '/edit-courier-salary',
 }
+
 
 export enum ApiRouters {
   api = '/api',

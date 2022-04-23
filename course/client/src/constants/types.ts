@@ -64,3 +64,18 @@ export type AcceptOrderRequestType = {
   date: string
   description: string
 }
+
+export type OrderWithoutReportAndCourier = OrderDTO & {
+  pizza: PizzaDTO
+  client: ClientDTO
+  status: StatusDTO
+}
+
+export type FullReport = ReportDTO & {
+  order: OrderWithoutReportAndCourier
+}
+
+export type CourierGroupedReports = {
+  courier: CourierDTO
+  reports: FullReport[]
+}

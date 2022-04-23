@@ -1,7 +1,11 @@
 import { RoutesPaths } from '../constants/constants'
 import {
   AcceptOrderRequestType,
-  AccountType, ClientType, FetchRequest, OrderType, RequestMethod,
+  AccountType,
+  ClientType,
+  FetchRequest,
+  OrderType,
+  RequestMethod,
 } from '../constants/types'
 
 export const api = () => {}
@@ -70,4 +74,16 @@ export const createAcceptOrderRequest = (state: AcceptOrderRequestType): FetchRe
   url: `${RoutesPaths.backend}${RoutesPaths.courierMenu}${RoutesPaths.acceptOrder}`,
   method: RequestMethod.post,
   body: state,
+})
+
+export const createGetGroupedReportsRequest = (): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.managerMenu}${RoutesPaths.getGroupedReports}`,
+  method: RequestMethod.get,
+})
+
+// eslint-disable-next-line max-len
+export const createEditCourierSalaryRequest = (courierId: number, salary: number): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.managerMenu}${RoutesPaths.editCourierSalary}`,
+  method: RequestMethod.post,
+  body: { courierId, salary },
 })
