@@ -7,7 +7,7 @@ export const Profile = () => {
   const authedUser = authUser() as UserType
 
   return (
-    <>
+    <div className="mx-auto my-auto">
       <div>Account</div>
       <div>{JSON.stringify(authedUser.account, null, '  ')}</div>
       {authedUser?.client && (
@@ -28,6 +28,6 @@ export const Profile = () => {
           <div>{JSON.stringify(authedUser.manager, null, '  ')}</div>
         </>
       )}
-    </>
+    </div>
   )
 }

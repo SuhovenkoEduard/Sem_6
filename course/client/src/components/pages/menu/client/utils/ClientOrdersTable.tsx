@@ -1,14 +1,14 @@
 import React from 'react'
 import { Button, Table } from 'react-bootstrap'
-import { FullOrder } from '../../../constants/types'
+import { FullOrder } from '../../../../../constants/types'
 
-type OrdersTableProps = {
+type ClientOrdersTableProps = {
   orders: FullOrder[]
   isHistoryShown: boolean
   declineOrder: (orderId: number) => void
 }
 
-export const OrdersTable = (props: OrdersTableProps) => {
+export const ClientOrdersTable = (props: ClientOrdersTableProps) => {
   const {
     orders,
     isHistoryShown,
@@ -21,6 +21,7 @@ export const OrdersTable = (props: OrdersTableProps) => {
         <thead>
           <tr>
             <th>Pizza Name</th>
+            <th>Price</th>
             <th>Client Name</th>
             <th>Courier Name</th>
             <th>Status</th>
@@ -34,6 +35,7 @@ export const OrdersTable = (props: OrdersTableProps) => {
           {orders.map((order: FullOrder) => (
             <tr key={order.id}>
               <td>{order.pizza.name}</td>
+              <td>{`${order.pizza.price}$`}</td>
               <td>{order.client.name}</td>
               <td>{order.courier.name}</td>
               <td>{order.status.type}</td>

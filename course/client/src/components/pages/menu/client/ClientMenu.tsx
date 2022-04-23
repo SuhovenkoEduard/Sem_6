@@ -1,10 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Button } from 'react-bootstrap'
 import { useAuthUser } from 'react-auth-kit'
-import { useFetch } from '../../../hooks/useFetch'
-import { createDeclineOrderRequest, createGetOrdersRequest } from '../../../api/api'
-import { FullOrder, UserType } from '../../../constants/types'
-import { OrdersTable } from '../roles/OrdersTable'
+import { useFetch } from '../../../../hooks/useFetch'
+import {
+  createDeclineOrderRequest,
+  createGetOrdersByClientIdRequest,
+} from '../../../../api/api'
+import { FullOrder, UserType } from '../../../../constants/types'
+import { ClientOrdersTable } from './utils/ClientOrdersTable'
 
 export const ClientMenu = () => {
   const {
@@ -14,14 +17,14 @@ export const ClientMenu = () => {
   const authData = useAuthUser()
   const userData = authData() as UserType
 
-  const [isHistoryShown, setIsHistoryShown] = useState<boolean>(true)
+  const [isHistoryShown, setIsHistoryShown] = useState<boolean>(false)
   const [orders, setOrders] = useState<FullOrder[]>([])
 
   const getOrdersAsync = useCallback(async (isRestoreNeeded?: boolean) => {
     clearError()
     try {
       // eslint-disable-next-line max-len
-      const orders: FullOrder[] = await request(createGetOrdersRequest(userData.client!.id, !isHistoryShown))
+      const orders: FullOrder[] = await request(createGetOrdersByClientIdRequest(userData.client!.id, !isHistoryShown))
       setOrders(orders)
       return Promise.resolve()
     } catch (e: any) {
@@ -66,28 +69,26 @@ export const ClientMenu = () => {
           <div>
             {isHistoryShown ? (
               <Button
+                className="my-3"
                 variant="outline-primary"
                 disabled={!!error}
-                onClick={() => {
-                  setIsHistoryShown(false)
-                }}
+                onClick={() => setIsHistoryShown(false)}
               >
                 Get pending orders
               </Button>
             ) : (
               <Button
+                className="my-3"
                 variant="outline-primary"
                 disabled={!!error}
-                onClick={() => {
-                  setIsHistoryShown(true)
-                }}
+                onClick={() => setIsHistoryShown(true)}
               >
                 Get history
               </Button>
             )}
           </div>
           {!error && (
-            <OrdersTable
+            <ClientOrdersTable
               orders={orders}
               isHistoryShown={isHistoryShown}
               declineOrder={declineOrder}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
 import { useNavigate, Navigate } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 import { SignInForm } from './SignInForm'
 import { AccountType, UserType } from '../../../constants/types'
 import { RoutesPaths } from '../../../constants/constants'
@@ -44,12 +45,12 @@ export const SignIn = () => {
   return (
     loading ? (<div>Loading...</div>) : (
       error ? (
-        <>
+        <div className="mx-auto my-auto">
           <div>{`Error: ${error}`}</div>
-          <button type="button" onClick={clearError}>
+          <Button variant="outline-danger" onClick={clearError}>
             Try Again
-          </button>
-        </>
+          </Button>
+        </div>
       ) : (
         <SignInForm
           goToHome={() => navigate(RoutesPaths.home)}

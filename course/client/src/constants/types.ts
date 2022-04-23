@@ -1,5 +1,5 @@
 import {
-  AccountDTO, ClientDTO, CourierDTO, ManagerDTO, OrderDTO, PizzaDTO, StatusDTO,
+  AccountDTO, ClientDTO, CourierDTO, ManagerDTO, OrderDTO, PizzaDTO, ReportDTO, StatusDTO,
 } from './models'
 
 export enum RequestMethod {
@@ -55,4 +55,12 @@ export type FullOrder = OrderDTO & {
   courier: CourierDTO
   pizza: PizzaDTO
   status: StatusDTO
+  report?: ReportDTO
+}
+
+export type AcceptOrderRequestType = {
+  courierId: number
+  orderId: number
+  date: string
+  description: string
 }

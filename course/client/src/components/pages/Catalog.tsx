@@ -9,7 +9,7 @@ import { createGetCatalogRequest } from '../../api/api'
 import { UserType } from '../../constants/types'
 
 import '../../scss/components/pages/catalog.scss'
-import { OrderModal } from './roles/OrderModal'
+import { OrderModal } from './menu/client/utils/OrderModal'
 
 export const Catalog = () => {
   // const navigate = useNavigate()

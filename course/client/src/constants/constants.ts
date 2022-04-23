@@ -16,6 +16,8 @@ export enum RoutesPaths {
   clientMenu = '/menu/client',
   courierMenu = '/menu/courier',
   managerMenu = '/menu/manager',
-  getOrders = '/get-orders',
+  getOrdersByClientId = '/get-orders-by-client-id',
   declineOrder = '/decline-order',
+  getOrdersByCourierId = '/get-orders-by-courier-id',
+  acceptOrder = '/accept-order',
 }

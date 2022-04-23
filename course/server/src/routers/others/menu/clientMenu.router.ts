@@ -1,13 +1,13 @@
 import express from 'express'
-import { CLIENT_ERROR_STATUS_CODE, RoutesPaths } from '../../constants/constants'
-import { ClientModel, CourierModel, OrderModel, PizzaModel, StatusModel } from '../../models/models'
-import { CourierDTO, OrderDTO, PizzaDTO, StatusDTO } from '../../constants/models'
-import { ClientSchema, OrderSchema } from '../../constants/schemas'
+import { CLIENT_ERROR_STATUS_CODE, RoutesPaths } from '../../../constants/constants'
+import { ClientModel, CourierModel, OrderModel, PizzaModel, ReportModel, StatusModel } from '../../../models/models'
+import { CourierDTO, OrderDTO, PizzaDTO, ReportDTO, StatusDTO } from '../../../constants/models'
+import { ClientSchema, OrderSchema } from '../../../constants/schemas'
 import { Op } from 'sequelize'
 
 export const clientMenuRouter = express.Router()
 
-clientMenuRouter.post(RoutesPaths.getOrders, async (req: express.Request, res: express.Response) => {
+clientMenuRouter.post(RoutesPaths.getOrdersByClientId, async (req: express.Request, res: express.Response) => {
   try {
     const filter = req.body.isFilterApplied ?
       { [OrderSchema.statusId]: { [Op.eq]: 1 } }
@@ -21,6 +21,7 @@ clientMenuRouter.post(RoutesPaths.getOrders, async (req: express.Request, res: e
     const statuses: StatusDTO[] = await StatusModel.findAll({})
     const pizzas: PizzaDTO[] = await PizzaModel.findAll({})
     const couriers: CourierDTO[] = await CourierModel.findAll({})
+    const reports: ReportDTO[] = await ReportModel.findAll({})
     const client: CourierDTO = await ClientModel.findOne({
       where: {
         [ClientSchema.id]: req.body.clientId,
@@ -33,6 +34,7 @@ clientMenuRouter.post(RoutesPaths.getOrders, async (req: express.Request, res: e
       status: statuses.find(status => status.id === order.statusId),
       courier: couriers.find(courier => courier.id === order.courierId),
       client: client,
+      report: reports.find(report => report.orderId === order.id),
     }))
     res.json(fullFilteredOrders)
   } catch (e: any) {

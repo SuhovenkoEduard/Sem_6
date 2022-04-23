@@ -57,6 +57,7 @@ export type PizzaDTO = IModel & {
 
 export type ReportDTO = IModel & {
   courierId: number
+  orderId: number
   date: string
   description: string
 }

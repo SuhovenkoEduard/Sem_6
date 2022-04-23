@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { useIsAuthenticated, useSignIn } from 'react-auth-kit'
+import { Button } from 'react-bootstrap'
 import { RoutesPaths } from '../../../constants/constants'
 import { SignUpForm } from './SignUpForm'
 import { generateUuid } from '../../../helpers/helpers'
@@ -45,12 +46,12 @@ export const SignUp = () => {
   return (
     loading ? (<div>Loading...</div>) : (
       error ? (
-        <>
+        <div className="mx-auto my-auto">
           <div>{`Error: ${error}`}</div>
-          <button type="button" onClick={clearError}>
+          <Button variant="outline-danger" onClick={clearError}>
             Try Again
-          </button>
-        </>
+          </Button>
+        </div>
       ) : (
         <SignUpForm
           goToHome={() => navigate(RoutesPaths.home)}

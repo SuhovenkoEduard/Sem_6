@@ -6,7 +6,7 @@ import '../../scss/components/pages/home-page.scss'
 export const HomePage = () => {
   return (
     <div className="home-page-container">
-      <div className="home-page-container__header">Home</div>
+      <div className="home-page-container__header mx-auto">Home</div>
       <Comments />
     </div>
   )

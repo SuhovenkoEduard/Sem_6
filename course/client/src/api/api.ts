@@ -1,5 +1,6 @@
 import { RoutesPaths } from '../constants/constants'
 import {
+  AcceptOrderRequestType,
   AccountType, ClientType, FetchRequest, OrderType, RequestMethod,
 } from '../constants/types'
 
@@ -46,8 +47,8 @@ export const createAddOrderRequest = (state: OrderType): FetchRequest => ({
 })
 
 // eslint-disable-next-line max-len
-export const createGetOrdersRequest = (clientId: number, isFilterApplied: boolean): FetchRequest => ({
-  url: `${RoutesPaths.backend}${RoutesPaths.clientMenu}${RoutesPaths.getOrders}`,
+export const createGetOrdersByClientIdRequest = (clientId: number, isFilterApplied: boolean): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.clientMenu}${RoutesPaths.getOrdersByClientId}`,
   method: RequestMethod.post,
   body: { clientId, isFilterApplied },
 })
@@ -58,3 +59,15 @@ export const createDeclineOrderRequest = (orderId: number): FetchRequest => ({
   body: { id: orderId },
 })
 
+// eslint-disable-next-line max-len
+export const createGetOrdersByCourierIdRequest = (courierId: number, isFilterApplied: boolean): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.courierMenu}${RoutesPaths.getOrdersByCourierId}`,
+  method: RequestMethod.post,
+  body: { courierId, isFilterApplied },
+})
+
+export const createAcceptOrderRequest = (state: AcceptOrderRequestType): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.courierMenu}${RoutesPaths.acceptOrder}`,
+  method: RequestMethod.post,
+  body: state,
+})

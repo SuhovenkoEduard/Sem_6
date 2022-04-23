@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAuthUser, useIsAuthenticated } from 'react-auth-kit'
-import { Button } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 import { useFetch } from '../../hooks/useFetch'
 import {
   createAddCommentsRequest,
@@ -10,6 +10,7 @@ import {
 import { CommentType, UserType } from '../../constants/types'
 
 import '../../scss/components/pages/comments.scss'
+import { FormInput } from '../../common/FormInput'
 
 export const Comments = () => {
   const isAuthenticated = useIsAuthenticated()
@@ -21,11 +22,8 @@ export const Comments = () => {
   } = useFetch()
 
   const [currentComment, setCurrentComment] = useState<string>('')
-  const onChangeComment = ({ target }: React.SyntheticEvent) => {
-    const input = target as HTMLInputElement
-    setCurrentComment(input.value)
-  }
-  const addComment = () => {
+  const addComment = (e: React.SyntheticEvent) => {
+    e.preventDefault()
     const addData = async () => {
       if (currentComment === '') return
       try {
@@ -74,43 +72,45 @@ export const Comments = () => {
       {loading && <div>Loading...</div>}
       {!loading && !error && (
         <>
-          {isAuthenticated() && userData?.client && (
-            <div className="comment-input-container">
-              <label className="comment-textarea-label" htmlFor="comment-textarea">
-                <div>Your comment:</div>
-                <textarea
-                  name="comment-textarea"
-                  value={currentComment}
-                  onChange={onChangeComment}
-                />
-              </label>
-              <Button
-                className="comment-button"
-                variant="outline-primary"
-                onClick={addComment}
-              >
-                Add
-              </Button>
-            </div>
-          )}
           <div className="comments-cards-container">
-            <div>Comments section: </div>
+            <div>Comments: </div>
             {comments.map((comment) => (
               <div className="comment-card" key={comment.id}>
                 <div>{`ClientName: ${comment.clientName}`}</div>
                 <div>{`Content: ${comment.content}`}</div>
                 <div>{`Date: ${comment.date}`}</div>
                 {userData?.client?.id === comment.clientId && (
-                  <button
-                    type="button"
+                  <Button
+                    className="mt-2"
+                    variant="danger"
                     onClick={() => deleteComment(comment.id)}
                   >
                     Delete
-                  </button>
+                  </Button>
                 )}
               </div>
             ))}
           </div>
+          {isAuthenticated() && userData?.client && (
+            <Form className="comment-input-container" onSubmit={addComment}>
+              <FormInput
+                required
+                name="comment-textarea"
+                label="Your comment"
+                placeholder="Comment"
+                value={currentComment}
+                onChange={(_, value) => setCurrentComment(value)}
+                inputAs="textarea"
+              />
+              <Button
+                type="submit"
+                className="comment-button"
+                variant="primary"
+              >
+                Submit comment
+              </Button>
+            </Form>
+          )}
         </>
       )}
     </div>

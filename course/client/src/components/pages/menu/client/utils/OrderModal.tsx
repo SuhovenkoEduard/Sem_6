@@ -1,13 +1,13 @@
 import { Form } from 'react-bootstrap'
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
-import { OrderType, UserType } from '../../../constants/types'
-import { PizzaDTO } from '../../../constants/models'
-import { PizzaModal } from '../../../common/PizzaModal'
-import { FormText } from '../../../common/FormText'
-import { FormInput } from '../../../common/FormInput'
-import { useFetch } from '../../../hooks/useFetch'
-import { createAddOrderRequest } from '../../../api/api'
+import { OrderType, UserType } from '../../../../../constants/types'
+import { PizzaDTO } from '../../../../../constants/models'
+import { PizzaModal } from '../../../../../common/PizzaModal'
+import { FormText } from '../../../../../common/FormText'
+import { FormInput } from '../../../../../common/FormInput'
+import { useFetch } from '../../../../../hooks/useFetch'
+import { createAddOrderRequest } from '../../../../../api/api'
 
 type OrderModalProps = {
   isOrderModalShown: boolean
@@ -94,6 +94,7 @@ export const OrderModal = (props: OrderModalProps) => {
         <FormText label="Client Name" value={userData!.client!.name} />
         <FormText label="Start Date" value={startDate} />
         <FormText label="Selected Pizza" value={selectedPizza!.name} />
+        <FormText label="Price" value={`${selectedPizza!.price}$`} />
         <FormText label="Amount of pizza" value="1" />
         <FormInput
           name="address"
