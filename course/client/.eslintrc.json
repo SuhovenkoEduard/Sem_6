@@ -45,7 +45,8 @@
     "no-unused-vars": ["off"],
     "no-nested-ternary": ["off"],
     "quote-props": ["off"],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error", "windows"],
+    "react/require-default-props": ["off"]
   },
   "settings": {
     "import/resolver": {

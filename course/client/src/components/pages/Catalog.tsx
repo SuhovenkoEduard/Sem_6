@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import classNames from 'classnames'
-// import { useNavigate } from 'react-router-dom'
-import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 import { useAuthUser } from 'react-auth-kit'
-import { Form } from 'react-bootstrap'
 import { useFetch } from '../../hooks/useFetch'
 import { PizzaDTO } from '../../constants/models'
 import { createGetCatalogRequest } from '../../api/api'
 import { UserType } from '../../constants/types'
 
 import '../../scss/components/pages/catalog.scss'
+import { OrderModal } from './OrderModal'
 
 export const Catalog = () => {
   // const navigate = useNavigate()
@@ -39,11 +37,13 @@ export const Catalog = () => {
 
   const [isOrderModalShown, setIsOrderModalShown] = useState(false)
 
-  const toggleIsOrderModalOpen = () => setIsOrderModalShown(!isOrderModalShown)
-
   const openOrderModal = (pizzaId: number) => {
     setSelectedPizza(pizzas.find((pizza) => pizza.id === pizzaId)!)
     setIsOrderModalShown(true)
+  }
+
+  const onOrderModalClose = () => {
+    setIsOrderModalShown(false)
   }
 
   const isClientLogged = !!userData?.client
@@ -86,52 +86,12 @@ export const Catalog = () => {
                 </div>
               ))}
               {isClientLogged && selectedPizza && (
-                <Modal
-                  show={isOrderModalShown}
-                  onHide={toggleIsOrderModalOpen}
-                  backdrop="static"
-                  keyboard={false}
-                  centered
-                >
-                  <Modal.Header closeButton>
-                    <Modal.Title>Order pizza</Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body>
-                    <Form.Group className="mb-2">
-                      <Form.Label>Client Name</Form.Label>
-                      <Form.Text as="div">{userData!.client!.name}</Form.Text>
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label>Start Date</Form.Label>
-                      <Form.Text as="div">{new Date().toUTCString()}</Form.Text>
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label>Selected Pizza</Form.Label>
-                      <Form.Text as="div">{selectedPizza!.name}</Form.Text>
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label>Amount of pizza</Form.Label>
-                      <Form.Text as="div">1</Form.Text>
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label>Address</Form.Label>
-                      <Form.Control type="text" placeholder="Address" />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                      <Form.Label>End Date</Form.Label>
-                      <Form.Control type="date" placeholder="End Date" />
-                    </Form.Group>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button
-                      variant="outline-secondary"
-                      onClick={toggleIsOrderModalOpen}
-                    >
-                      Close
-                    </Button>
-                    <Button variant="outline-secondary">Order</Button>
-                  </Modal.Footer>
-                </Modal>
+                <OrderModal
+                  isOrderModalShown={isOrderModalShown}
+                  selectedPizza={selectedPizza}
+                  userData={userData}
+                  onOrderModalClose={onOrderModalClose}
+                />
               )}
             </div>
           )}

@@ -41,3 +41,11 @@ export type CommentType = {
   clientId: number
   clientName: string
 }
+
+export type OrderType = {
+  clientId: number
+  pizzaId: number
+  address: string
+  startDate: string
+  endDate: string
+}

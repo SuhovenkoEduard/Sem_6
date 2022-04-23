@@ -1,6 +1,6 @@
 import { RoutesPaths } from '../constants/constants'
 import {
-  AccountType, ClientType, FetchRequest, RequestMethod,
+  AccountType, ClientType, FetchRequest, OrderType, RequestMethod,
 } from '../constants/types'
 
 export const api = () => {}
@@ -37,4 +37,10 @@ export const createDeleteCommentsRequest = (id: number): FetchRequest => ({
   url: `${RoutesPaths.backend}${RoutesPaths.comments}${RoutesPaths.deleteOne}`,
   method: RequestMethod.delete,
   body: { id },
+})
+
+export const createAddOrderRequest = (state: OrderType): FetchRequest => ({
+  url: `${RoutesPaths.backend}${RoutesPaths.catalog}${RoutesPaths.addOne}`,
+  method: RequestMethod.post,
+  body: state,
 })
