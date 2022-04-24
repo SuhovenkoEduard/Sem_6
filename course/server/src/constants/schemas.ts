@@ -56,7 +56,6 @@ export enum PizzaSchema {
 
 export enum ReportSchema {
   id = 'id',
-  courierId = 'courierId',
   orderId = 'orderId',
   date = 'date',
   description = 'description',

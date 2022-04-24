@@ -76,7 +76,6 @@ export const CourierMenu = () => {
     e.preventDefault()
     const requestState: AcceptOrderRequestType = {
       orderId: selectedOrder!.id,
-      courierId: userData.courier!.id,
       description: acceptState!.description,
       date: acceptState!.date,
     }

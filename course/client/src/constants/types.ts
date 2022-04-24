@@ -1,5 +1,13 @@
 import {
-  AccountDTO, ClientDTO, CourierDTO, ManagerDTO, OrderDTO, PizzaDTO, ReportDTO, StatusDTO,
+  AccountDTO,
+  ClientDTO,
+  CommentDTO,
+  CourierDTO,
+  ManagerDTO,
+  OrderDTO,
+  PizzaDTO,
+  ReportDTO,
+  StatusDTO,
 } from './models'
 
 export enum RequestMethod {
@@ -34,11 +42,7 @@ export type UserType = {
   manager?: ManagerDTO
 }
 
-export type CommentType = {
-  id: number
-  content: string
-  date: string
-  clientId: number
+export type FullComment = CommentDTO & {
   clientName: string
 }
 
@@ -59,7 +63,6 @@ export type FullOrder = OrderDTO & {
 }
 
 export type AcceptOrderRequestType = {
-  courierId: number
   orderId: number
   date: string
   description: string

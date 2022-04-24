@@ -93,7 +93,8 @@ export const OrderModal = (props: OrderModalProps) => {
       <Form onSubmit={onSubmit}>
         <FormText label="Client Name" value={userData!.client!.name} />
         <FormText label="Start Date" value={startDate} />
-        <FormText label="Selected Pizza" value={selectedPizza!.name} />
+        <FormText label="Pizza Name" value={selectedPizza!.name} />
+        <FormText label="Pizza Description" value={selectedPizza!.description} />
         <FormText label="Price" value={`${selectedPizza!.price}$`} />
         <FormText label="Amount of pizza" value="1" />
         <FormInput

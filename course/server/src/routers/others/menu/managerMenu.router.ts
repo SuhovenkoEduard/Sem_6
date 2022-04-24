@@ -23,7 +23,8 @@ managerMenuRouter.get(RoutesPaths.getGroupedReports, async (req: express.Request
     })
 
     const groupedReports = couriers.map((courier) => {
-      const filteredReports = reports.filter(report => report.courierId === courier.id)
+      const filteredOrders = orders.filter(order => order.courierId === courier.id)
+      const filteredReports = reports.filter(report => filteredOrders.some(order => order.id === report.orderId))
         .map(report => ({
           ...report,
           order: mapShortOrderToFull(orders.find(order => order.id === report.orderId)),

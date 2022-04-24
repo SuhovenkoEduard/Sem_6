@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { RequireAuth } from 'react-auth-kit'
+import { RequireAuth, useAuthUser, useIsAuthenticated } from 'react-auth-kit'
 import { RoutesPaths } from '../../constants/constants'
 import { HomePage } from '../pages/HomePage'
 import { Catalog } from '../pages/Catalog'
@@ -13,6 +13,7 @@ import { CourierMenu } from '../pages/menu/courier/CourierMenu'
 import { ManagerMenu } from '../pages/menu/manager/ManagerMenu'
 
 import '../../scss/components/layout/app-body.scss'
+import { UserType } from '../../constants/types'
 
 const securedRoute = (path: string, element: JSX.Element) => (
   <Route
@@ -22,6 +23,15 @@ const securedRoute = (path: string, element: JSX.Element) => (
 )
 
 export const AppBody = () => {
+  const isAuthenticated = useIsAuthenticated()
+  const authData = useAuthUser()
+  const userData = authData() as UserType
+
+  const isLogged = isAuthenticated()
+  const isClient = isLogged && !!userData.client
+  const isCourier = isLogged && !!userData.courier
+  const isManager = isLogged && !!userData.manager
+
   return (
     <main className="app-body p-3">
       <Routes>
@@ -29,10 +39,10 @@ export const AppBody = () => {
         <Route path={RoutesPaths.catalog} element={<Catalog />} />
         <Route path={RoutesPaths.signIn} element={<SignIn />} />
         <Route path={RoutesPaths.signUp} element={<SignUp />} />
-        {securedRoute(RoutesPaths.profile, <Profile />)}
-        {securedRoute(RoutesPaths.clientMenu, <ClientMenu />)}
-        {securedRoute(RoutesPaths.courierMenu, <CourierMenu />)}
-        {securedRoute(RoutesPaths.managerMenu, <ManagerMenu />)}
+        {isLogged && securedRoute(RoutesPaths.profile, <Profile />)}
+        {isClient && securedRoute(RoutesPaths.clientMenu, <ClientMenu />)}
+        {isCourier && securedRoute(RoutesPaths.courierMenu, <CourierMenu />)}
+        {isManager && securedRoute(RoutesPaths.managerMenu, <ManagerMenu />)}
         <Route path={RoutesPaths.any} element={<Navigate to={RoutesPaths.home} replace />} />
       </Routes>
     </main>

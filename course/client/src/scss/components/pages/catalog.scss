@@ -23,7 +23,7 @@
       background-color: $red-light-20;
       width: 33%;
       max-width: 350px;
-      max-height: 520px;
+      max-height: 620px;
       aspect-ratio: 1 / 1.2;
       display: grid;
       grid-template-areas:
@@ -61,6 +61,8 @@
         &__description {
           align-self: center;
           font-size: 0.8rem;
+          height: 100px;
+          overflow: hidden;
         }
       }
       &__order {

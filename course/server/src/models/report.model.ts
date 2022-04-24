@@ -1,8 +1,7 @@
 import Sequelize from 'sequelize'
 import { sequelize } from '../dbConnection/dbConnection'
 import { TableNames } from '../constants/types'
-import { CourierSchema, OrderSchema, ReportSchema } from '../constants/schemas'
-import { CourierModel } from './courier.model'
+import { OrderSchema, ReportSchema } from '../constants/schemas'
 import { OrderModel } from './order.model'
 
 export const ReportModel = sequelize.define<any, any>(TableNames.reports, {
@@ -12,14 +11,6 @@ export const ReportModel = sequelize.define<any, any>(TableNames.reports, {
     autoIncrement: true,
     unique: true,
     allowNull: false,
-  },
-  [ReportSchema.courierId]: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-    references: {
-      model: CourierModel,
-      key: CourierSchema.id,
-    },
   },
   [ReportSchema.orderId]: {
     type: Sequelize.INTEGER,

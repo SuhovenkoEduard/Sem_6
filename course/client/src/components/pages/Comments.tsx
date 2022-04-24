@@ -7,7 +7,7 @@ import {
   createDeleteCommentsRequest,
   createGetCommentsRequest,
 } from '../../api/api'
-import { CommentType, UserType } from '../../constants/types'
+import { FullComment, UserType } from '../../constants/types'
 
 import '../../scss/components/pages/comments.scss'
 import { FormInput } from '../../common/FormInput'
@@ -16,7 +16,7 @@ export const Comments = () => {
   const isAuthenticated = useIsAuthenticated()
   const authData = useAuthUser()
   const userData = authData() as UserType
-  const [comments, setComments] = useState<CommentType[]>([])
+  const [comments, setComments] = useState<FullComment[]>([])
   const {
     loading, request, error,
   } = useFetch()
@@ -57,7 +57,7 @@ export const Comments = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const comments: CommentType[] = await request(createGetCommentsRequest())
+        const comments: FullComment[] = await request(createGetCommentsRequest())
         setComments(comments)
       } catch (e: any) {
         console.log(e.message)

@@ -35,7 +35,6 @@ export enum RoutesPaths {
   editCourierSalary = '/edit-courier-salary',
 }
 
-
 export enum ApiRouters {
   api = '/api',
   getAll = '/',
