@@ -22,17 +22,17 @@ internal class PrecendenceMatrixElement
 
         if (DoesYieldPrecendenceTo)
         {
-            chars[index] = '<'; //'⋖';
+            chars[index] = '<'; 
             index++;
         }
 
         if (HasSamePrecendenceAs)
         {
-            chars[index] = '='; //'≐';
+            chars[index] = '=';
             index++;
         }
 
-        if (DoesTakePrecendenceOver) chars[index] = '>'; //'⋗';
+        if (DoesTakePrecendenceOver) chars[index] = '>';
 
         return string.Join(null, chars);
     }

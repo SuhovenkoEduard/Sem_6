@@ -205,12 +205,12 @@ internal class Grammar
     {
         GetSymbolsSet(getLeftSymbolsSet);
 
-        var setSymbol = 'ℒ';
+        var setSymbol = 'L';
         var symbolSet = leftSymbolsSet;
 
         if (!getLeftSymbolsSet)
         {
-            setSymbol = 'ℛ';
+            setSymbol = 'R';
             symbolSet = rightSymbolsSet;
         }
 

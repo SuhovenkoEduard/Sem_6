@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(608, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 30);
             this.label1.TabIndex = 0;
@@ -52,20 +52,22 @@
             // 
             // tbGrammar
             // 
-            this.tbGrammar.Location = new System.Drawing.Point(12, 42);
+            this.tbGrammar.BackColor = System.Drawing.Color.Gold;
+            this.tbGrammar.Location = new System.Drawing.Point(608, 44);
             this.tbGrammar.Multiline = true;
             this.tbGrammar.Name = "tbGrammar";
             this.tbGrammar.ReadOnly = true;
             this.tbGrammar.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbGrammar.Size = new System.Drawing.Size(231, 637);
+            this.tbGrammar.Size = new System.Drawing.Size(231, 538);
             this.tbGrammar.TabIndex = 1;
-            this.tbGrammar.Text = "S→A \r\nA→Y  \r\nA→A*Y \r\nY→T \r\nT→H \r\nT→T/H \r\nH→I\r\nH→(C\r\nC→A)\r\nI→D\r\nI→ID\r\nD→0\r\nD→1\r\nD→" +
-    "2\r\nD→3\r\nD→4\r\nD→5\r\nD→6\r\nD→7\r\nD→8\r\nD→9";
+            this.tbGrammar.Text = "S→B\r\nB→W\r\nB→B-W\r\nW→X\r\nX→Z\r\nX→X^Z\r\nZ→N\r\nZ→(C\r\nC→B)\r\nN→L\r\nN→NL\r\nL→a\r\nL→b\r\nL→c\r\nL→d\r" +
+    "\nL→e\r\nL→f\r\nL→g\r\nL→h\r\nL→i\r\nL→j\r\nL→k\r\nL→l\r\nL→m\r\nL→n\r\nL→o\r\nL→p\r\nL→q\r\nL→r\r\nL→s\r\nL→t\r" +
+    "\nL→u\r\nL→v\r\nL→w\r\nL→x\r\nL→y\r\nL→z";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(249, 9);
+            this.label2.Location = new System.Drawing.Point(2, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(294, 30);
             this.label2.TabIndex = 2;
@@ -73,7 +75,8 @@
             // 
             // tbLeftSymbolsSet
             // 
-            this.tbLeftSymbolsSet.Location = new System.Drawing.Point(249, 42);
+            this.tbLeftSymbolsSet.BackColor = System.Drawing.Color.Gold;
+            this.tbLeftSymbolsSet.Location = new System.Drawing.Point(2, 41);
             this.tbLeftSymbolsSet.Multiline = true;
             this.tbLeftSymbolsSet.Name = "tbLeftSymbolsSet";
             this.tbLeftSymbolsSet.ReadOnly = true;
@@ -83,7 +86,8 @@
             // 
             // tbRightSymbolsSet
             // 
-            this.tbRightSymbolsSet.Location = new System.Drawing.Point(249, 331);
+            this.tbRightSymbolsSet.BackColor = System.Drawing.Color.Gold;
+            this.tbRightSymbolsSet.Location = new System.Drawing.Point(2, 328);
             this.tbRightSymbolsSet.Multiline = true;
             this.tbRightSymbolsSet.Name = "tbRightSymbolsSet";
             this.tbRightSymbolsSet.ReadOnly = true;
@@ -96,7 +100,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(249, 298);
+            this.label3.Location = new System.Drawing.Point(2, 295);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(307, 30);
             this.label3.TabIndex = 4;
@@ -107,7 +111,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 649);
+            this.label4.Location = new System.Drawing.Point(666, 596);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 30);
             this.label4.TabIndex = 6;
@@ -117,12 +121,14 @@
             // 
             this.bBuildPrecendenceMatrix.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bBuildPrecendenceMatrix.Location = new System.Drawing.Point(249, 588);
+            this.bBuildPrecendenceMatrix.BackColor = System.Drawing.Color.SeaGreen;
+            this.bBuildPrecendenceMatrix.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.bBuildPrecendenceMatrix.Location = new System.Drawing.Point(2, 582);
             this.bBuildPrecendenceMatrix.Name = "bBuildPrecendenceMatrix";
-            this.bBuildPrecendenceMatrix.Size = new System.Drawing.Size(1287, 58);
+            this.bBuildPrecendenceMatrix.Size = new System.Drawing.Size(419, 58);
             this.bBuildPrecendenceMatrix.TabIndex = 8;
             this.bBuildPrecendenceMatrix.Text = "Построить матрицу предшествования";
-            this.bBuildPrecendenceMatrix.UseVisualStyleBackColor = true;
+            this.bBuildPrecendenceMatrix.UseVisualStyleBackColor = false;
             this.bBuildPrecendenceMatrix.Click += new System.EventHandler(this.bBuildPrecendenceMatrix_Click);
             // 
             // label5
@@ -139,6 +145,7 @@
             this.tbPrecendenceMatrix.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPrecendenceMatrix.BackColor = System.Drawing.Color.Gold;
             this.tbPrecendenceMatrix.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPrecendenceMatrix.Location = new System.Drawing.Point(855, 42);
             this.tbPrecendenceMatrix.Multiline = true;
@@ -161,8 +168,10 @@
             // 
             // Form1
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(1548, 690);
             this.Controls.Add(this.lResult);
             this.Controls.Add(this.tbPrecendenceMatrix);
@@ -178,7 +187,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "Form1";
-            this.Text = "Методы трансляции. Лабораторная работа №5";
+            this.Text = "Методы трансляции. Лабораторная работа №5 Вариант 12 Суховенко Эдуард";
             this.ResumeLayout(false);
             this.PerformLayout();
 
