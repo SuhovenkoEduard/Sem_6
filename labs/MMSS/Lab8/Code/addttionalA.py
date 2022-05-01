@@ -20,6 +20,6 @@ def additionalA():
     print(W7)
 
     y, x = step(W7)
-    plt.plot(x, y)
+    plt.plot(x[:100], y[:100])
     plt.grid()
     plt.show()
