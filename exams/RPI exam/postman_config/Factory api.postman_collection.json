@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "184478ac-7e25-45fa-b04f-adb484e65f68",
+		"name": "Factory api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19075768"
+	},
+	"item": [
+		{
+			"name": "special task",
+			"item": [
+				{
+					"name": "full workers info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/special/getFullWorkersInfo/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"special",
+								"getFullWorkersInfo",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "full clients info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/special/getFullClientInfo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"special",
+								"getFullClientInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[GET] [ALL]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[GET] [SINGLE]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orders/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[PUT] [SINGLE]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"finalPrice\": 3001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/orders/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[POST] [SINGLE]",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"Sun Jan 02 1997\",\r\n    \"clientId\": 7,\r\n    \"productId\": 2,\r\n    \"quantity\": 99,\r\n    \"finalPrice\": 9999,\r\n    \"workerId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/orders/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[DELETE] [SINGLE]",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/orders/7",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"orders",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
