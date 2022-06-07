@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1654608417 source:d:\projects\university\sem_6\exams\aisd exam\factory\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<algorithm>
+

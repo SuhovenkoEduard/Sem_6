@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1650006946 source:d:\projects\university\sem_6\labs\aisd\lab5\graph\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+
+1654606415 source:d:\projects\university\sem_6\exams\aisd exam\graph\main.cpp
+	<iostream>
+	<vector>
+	<cmath>
+	<algorithm>
+	"edge.h"
+	"dsu.h"
+	"prima.h"
+	"boruvka.h"
+
+1654604972 d:\projects\university\sem_6\exams\aisd exam\graph\edge.h
+
+1654603582 d:\projects\university\sem_6\exams\aisd exam\graph\dsu.h
+	<vector>
+
+1654603194 d:\projects\university\sem_6\exams\aisd exam\graph\prima.h
+	<vector>
+	<set>
+	"edge.h"
+
+1654606142 d:\projects\university\sem_6\exams\aisd exam\graph\boruvka.h
+	<vector>
+	<set>
+	<map>
+	"dsu.h"
+	"edge.h"
+
